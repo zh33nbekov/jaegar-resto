@@ -1,0 +1,101 @@
+.login {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+}
+.login__form {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	height: 440px;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	box-shadow: 0 0 25px #000;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	padding: 15px 0 23px 0;
+}
+.login__form:hover .closeButton > svg {
+	transform: rotate(360deg);
+	transition: transform 555ms ease-in-out;
+}
+.login__formTitle {
+	font-weight: 800;
+	padding-bottom: 34px;
+}
+.login__formInput {
+	position: relative;
+	width: 80%;
+	margin: 8px 0;
+}
+.login__formInput input {
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 7px;
+	outline: none;
+	transition: border-color 0.3s ease;
+}
+.login__formInput input:focus + label,
+.login__formInput input:not(:placeholder-shown) + label {
+	top: -7px;
+	font-size: 12px;
+	color: #3f51b5;
+}
+.login__formInput label {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	color: #999;
+	font-size: 16px;
+	pointer-events: none;
+	transition: 0.3s ease all;
+	background-color: #fff;
+	clip-path: inset(0 0 0 0);
+	overflow: hidden;
+}
+.login__formVisibilityInput {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.login__through {
+	padding: 23px 0;
+	display: flex;
+	gap: 23px;
+}
+.login__formButton {
+	font-weight: bold;
+	margin-top: auto;
+	background-color: #3104ff;
+	color: #f3fcdf;
+	width: 80%;
+	padding: 10px;
+	border-radius: 7px;
+	font-size: 17.5px;
+}
+.login__formButton:hover {
+	background-color: #6b49ff;
+	transition: background-color 0.4s;
+}
+.login__formButton:not(:hover) {
+	transition: background-color 0.4s;
+}
+.login__formButton:active {
+	background-color: #2907c1;
+	transition: background-color 0.03s ease;
+}
+.login__link {
+	margin-left: auto;
+	padding: 5px 40px 0 0;
+}
+.closeButton {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
