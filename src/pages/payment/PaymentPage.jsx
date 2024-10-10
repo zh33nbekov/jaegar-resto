@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useRef, useState } from 'react';
 import styles from './PaymentPage.module.css';
 
@@ -51,7 +52,6 @@ const PaymentPage = () => {
 		const { value } = event.target;
 		setPhone(value);
 	};
-
 	const handleFocus = () => {
 		// Очищаем поле для ввода номера
 		setPhone('+996 ('); // Устанавливаем начальное значение
@@ -68,10 +68,63 @@ const PaymentPage = () => {
 		setPhone('+996 (___) __-__-__');
 	};
 
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		const apiKey = process.env.API_KEY;
+		const ID = process.env.ID;
+
+		if (!phone || !message) {
+			alert('Пожалуйста, заполните все поля.');
+			return;
+		}
+
+		const url = process.env.URI;
+
+		const headers = {
+			Authorization: `App ${apiKey}`,
+			'Content-Type': 'application/json',
+			Accept: 'application/json',
+		};
+
+		const data = {
+			messages: [
+				{
+					destinations: [{ to: phone }],
+					from: ID, // Замените на ваш ID отправителя
+					text: message,
+				},
+			],
+		};
+
+		try {
+			const response = await axios.post(url, data, { headers });
+			console.log('SMS отправлено:', response.data);
+		} catch (error) {
+			console.error(
+				'Ошибка при отправке SMS:',
+				error.response ? error.response.data : error.message
+			);
+			alert(
+				`Ошибка: ${
+					error.response ? error.response.data.text : error.message
+				}`
+			);
+		}
+	};
+
 	return (
 		<div className={styles.payment}>
-			<form className={styles.payment__form} onSubmit={() => {}}>
-				<input
+			<form className={styles.payment__form} onSubmit={handleSubmit}>
+				<div className={styles.payment__input}>
+					<input type='name' id='name' placeholder=' ' required />
+					<label htmlFor='name'>Имя</label>
+				</div>
+				<div className={styles.payment__input}>
+					<input type='tel' id='tel' placeholder=' ' required />
+					<label htmlFor='tel'>Номер</label>
+				</div>
+
+				{/* <input
 					className={styles.payment__input}
 					type='text'
 					placeholder='Полное имя...'
@@ -86,16 +139,14 @@ const PaymentPage = () => {
 					ref={phoneRef} // Привязываем реф к инпуту
 					maxLength='19'
 					placeholder='+996 (___) __-__-__'
-				/>
-				<textarea
-					placeholder='Ваше сообщение'
-					value={message}
-					onChange={(e) => setMessage(e.target.value)}
-				/>
+				/> */}
+
 				<span style={{ color: 'violet' }}>
 					{responseMessage && <p>{responseMessage}</p>}
 				</span>
-				<button>Отправить</button>
+				<button className={`${styles.payment__button} btn`}>
+					Отправить
+				</button>
 			</form>
 		</div>
 	);
