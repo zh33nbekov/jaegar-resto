@@ -1,15 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Outlet } from 'react-router-dom';
-import AppLayout from '../../layouts/AppLayout';
-import styles from './SettingsPage.module.css';
-import SettingsNavbar from './navbar/SettingsNavbar';
 
-const SettingsPage = () => {
+const AppereancePage = () => {
 	return (
-		<AppLayout>
+		<div>
 			<Helmet>
-				<title>Jaegar Resto | Настройки</title>
+				<title>Jaegar Resto | Настройки | Дизайна</title>
 				<meta
 					name='description'
 					content='Страница настроек Jaegar Resto – управление профилем, настройками бронирования, уведомлениями и другими параметрами ресторана для улучшения сервиса.'
@@ -24,23 +20,9 @@ const SettingsPage = () => {
 					content='width=device-width, initial-scale=1.0'
 				/>
 			</Helmet>
-
-			<h1 className={styles.title}>Настройки</h1>
-			<div
-				style={{
-					display: 'flex',
-					justifyContent: 'space-between',
-					columnGap: '24px',
-					alignItems: '',
-					width: '100%',
-					height: '670px',
-				}}
-			>
-				<SettingsNavbar />
-				<Outlet />
-			</div>
-		</AppLayout>
+			<h1>AppereancePage</h1>
+		</div>
 	);
 };
 
-export default SettingsPage;
+export default AppereancePage;

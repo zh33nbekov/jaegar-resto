@@ -37,7 +37,7 @@ const Navbar = () => {
 						<NavLink
 							to={ROUTE_KEYS.HOME}
 							className={({ ...params }) =>
-								`${styles[checkActiveLink(params)]} ${
+								`${styles[checkActiveLink(params)] || ''} ${
 									styles.navigation__link
 								}`
 							}
@@ -53,7 +53,7 @@ const Navbar = () => {
 						<NavLink
 							to={ROUTE_KEYS.DISCOUNT}
 							className={({ ...params }) =>
-								`${styles[checkActiveLink(params)]} ${
+								`${styles[checkActiveLink(params)] || ''} ${
 									styles.navigation__link
 								}`
 							}
@@ -69,7 +69,7 @@ const Navbar = () => {
 						<NavLink
 							to={ROUTE_KEYS.DASHBOARD}
 							className={({ ...params }) =>
-								`${styles[checkActiveLink(params)]} ${
+								`${styles[checkActiveLink(params)] || ''} ${
 									styles.navigation__link
 								}`
 							}
@@ -103,7 +103,7 @@ const Navbar = () => {
 						<NavLink
 							to={ROUTE_KEYS.SETTINGS}
 							className={({ ...params }) =>
-								`${styles[checkActiveLink(params)]} ${
+								`${styles[checkActiveLink(params)] || ''} ${
 									styles.navigation__link
 								}`
 							}

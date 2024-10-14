@@ -1,0 +1,53 @@
+.management {
+	width: 600px;
+	background-color: rgb(31, 29, 43);
+	border-radius: 8px;
+	padding: 24px;
+}
+.management__header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding-bottom: 24px;
+}
+.management__title {
+	color: #fff;
+	font-size: 20px;
+	font-weight: 600;
+}
+.management__option {
+	border: 1px solid rgb(57, 60, 73);
+	border-radius: 8px;
+	box-shadow: 0px 8px 24px 0px rgba(146, 136, 224, 0.3);
+	padding: 14px;
+	display: flex;
+	align-items: center;
+	column-gap: 8px;
+}
+.management__optionText {
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+}
+.management__dishes {
+	padding-top: 24px;
+	border-top: 1px solid rgb(57, 60, 73);
+}
+
+.management__button {
+	border: 1px dashed rgb(234, 124, 105);
+	border-radius: 8px;
+	width: 221px;
+	height: 299px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.management__buttonText {
+	color: rgb(234, 124, 105);
+	font-size: 16px;
+	font-weight: 600;
+	padding-top: 22px;
+}
