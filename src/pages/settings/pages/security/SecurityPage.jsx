@@ -20,7 +20,7 @@ const SecurityPage = () => {
 					content='width=device-width, initial-scale=1.0'
 				/>
 			</Helmet>
-			<h1>Security</h1>
+			<h1 style={{ color: '#fff' }}>Защита</h1>
 		</div>
 	);
 };

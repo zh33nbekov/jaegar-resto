@@ -9,6 +9,7 @@
 	padding: 24px;
 	/* border: 1px solid khaki; */
 	animation: fade-in-right 500ms ease forwards;
+	z-index: 99;
 }
 .sidebar.closed {
 	animation: fade-out-right 500ms ease forwards;

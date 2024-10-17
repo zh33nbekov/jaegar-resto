@@ -5,6 +5,7 @@ const DishesTypes = ({ dishesTypes, activeDishType, getInfoForPagination }) => {
 	const toggleDishType = ({ index, name }) => {
 		getInfoForPagination(index, name);
 	};
+
 	return (
 		<ul className={styles.dishesTypes}>
 			{dishesTypes.map((elem, index) => (

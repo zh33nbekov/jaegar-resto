@@ -20,7 +20,7 @@ const NotificationsPage = () => {
 					content='width=device-width, initial-scale=1.0'
 				/>
 			</Helmet>
-			<h1>NotificationsPage</h1>
+			<h1 style={{ color: '#fff' }}>Уведомления</h1>
 		</div>
 	);
 };

@@ -85,6 +85,7 @@
 button {
 	cursor: pointer;
 	border: 0;
+	background: none;
 }
 body {
 	background-color: #252836;

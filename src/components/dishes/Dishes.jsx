@@ -32,7 +32,7 @@ const Dishes = () => {
 	const dishBasketCtx = useDishBasketContext();
 
 	// Пагинация
-	const totalPages = Math.ceil(dishesCtx.dummyDishes.length / itemsPerPage);
+	const totalPages = Math.ceil(dishesCtx.storageDishes?.length / itemsPerPage);
 	const startIndex = (currentPage - 1) * itemsPerPage;
 	const endIndex = startIndex + itemsPerPage;
 	const currentItems = dishesCtx.filteredAndSortedDishes(
@@ -144,7 +144,7 @@ const Dishes = () => {
 				</div>
 				<div className={styles.dishes__content}>
 					<div className={styles.dishes__wrapper}>
-						{currentItems.map((elem) => (
+						{currentItems?.map((elem) => (
 							<Dish
 								key={elem.id}
 								id={elem.id}

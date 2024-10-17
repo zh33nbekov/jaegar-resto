@@ -12,6 +12,7 @@
 	width: 333px;
 	height: 111px;
 	animation: desktopOpen 500ms ease forwards;
+	z-index: 100;
 }
 .snackbar:hover .closeButton > svg {
 	transform: rotate(360deg);

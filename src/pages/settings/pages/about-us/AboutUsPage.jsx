@@ -20,8 +20,7 @@ const AboutUsPage = () => {
 					content='width=device-width, initial-scale=1.0'
 				/>
 			</Helmet>
-
-			<h1>AboutUsPage</h1>
+			<h1 style={{ color: '#fff' }}>О нас</h1>
 		</div>
 	);
 };

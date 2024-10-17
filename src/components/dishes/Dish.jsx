@@ -26,7 +26,7 @@ const Dish = ({
 			</p>
 			<div className={styles.dish__bottom}>
 				<span className={styles.dish__price}>{price}&nbsp;сом</span>
-				<span className={styles.dish__info}>{info}</span>
+				<span className={styles.dish__info}>Доступно {info}</span>
 			</div>
 			<button
 				className={`${styles.dish__button} btn`}

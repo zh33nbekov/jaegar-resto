@@ -1,12 +1,97 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import OptionIcon from '../../../../assets/icons/option.svg';
 import PlusIcon from '../../../../assets/icons/plus.svg';
+import Backdrop from '../../../../components/UI/backdrop/Backdrop';
+import Modal from '../../../../components/UI/modal/Modal';
+import { useDishesContext } from '../../../../context/dishes/DishesContext';
+import ManagementDishCard from './ManagementDishCard';
+import ManagementEditDish from './ManagementEditDish';
+import ManagementForm from './ManagementForm';
 import styles from './ManagementPage.module.css';
 
 const ManagementPage = () => {
+	const [isNewDishForm, setIsNewDishForm] = useState(false);
+	const [isEditDishForm, setIsEditDishForm] = useState(false);
+	const [isAnimationClass, setIsAnimationClass] = useState('');
+	const [editDish, setEditDish] = useState({
+		description: '',
+		price: 0,
+		info: '',
+		imageURL: '',
+	});
+	const dishesCtx = useDishesContext();
+
+	const showNewDishForm = () => {
+		setIsNewDishForm(true);
+	};
+	const hideNewDishForm = () => {
+		setIsAnimationClass('closed');
+		const formID = setTimeout(() => {
+			setIsNewDishForm(false);
+			setIsAnimationClass('');
+		}, 285);
+
+		return () => {
+			clearTimeout(formID);
+		};
+	};
+
+	const showEditDishForm = (data) => {
+		setEditDish((prevState) => {
+			return {
+				...prevState,
+				description: data.description,
+				info: data.info,
+				price: data.price,
+				imageURL: data.imageURL,
+			};
+		});
+		setIsEditDishForm(true);
+	};
+	const hideEditDishForm = () => {
+		setIsAnimationClass('closed');
+		const formID = setTimeout(() => {
+			setIsEditDishForm(false);
+			setIsAnimationClass('');
+		}, 285);
+
+		return () => {
+			clearTimeout(formID);
+		};
+	};
+
 	return (
 		<>
+			{/* Добавить новое блюдо */}
+
+			<Backdrop
+				open={isNewDishForm}
+				onClose={hideNewDishForm}
+				animationClass={isAnimationClass}
+			/>
+			<Modal
+				open={isNewDishForm}
+				onClose={hideNewDishForm}
+				animationClass={isAnimationClass}
+			>
+				<ManagementForm />
+			</Modal>
+
+			{/* Добавить новое блюдо */}
+
+			{/* Редактировать блюдо */}
+
+			<Backdrop
+				open={isEditDishForm}
+				onClose={hideEditDishForm}
+				animationClass={isAnimationClass}
+			/>
+			<Modal open={isEditDishForm} animationClass={isAnimationClass}>
+				<ManagementEditDish data={editDish} />
+			</Modal>
+
+			{/* Редактировать блюдо */}
 			<Helmet>
 				<title>Jaegar Resto | Настройки | Управление</title>
 				<meta
@@ -37,12 +122,29 @@ const ManagementPage = () => {
 				</div>
 
 				<div className={styles.management__dishes}>
-					<div className={styles.management__button}>
+					<button
+						className={styles.management__button}
+						onClick={showNewDishForm}
+					>
 						<img src={PlusIcon} alt='' />
 						<span className={styles.management__buttonText}>
 							Добавьте новое блюдо
 						</span>
-					</div>
+					</button>
+
+					{dishesCtx.storageDishes?.map((dish) => (
+						<div className={styles.management__dish} key={dish.id}>
+							<ManagementDishCard
+								description={dish.description}
+								info={dish.info}
+								price={dish.price}
+								id={dish.id}
+								imageURL={dish.imageURL}
+								onOpen={showEditDishForm}
+								onClose={hideEditDishForm}
+							/>
+						</div>
+					))}
 				</div>
 			</section>
 		</>

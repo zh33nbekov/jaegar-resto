@@ -2,7 +2,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import Dishes from '../../components/dishes/Dishes';
 import Header from '../../components/header/Header';
-import Orders from '../../components/orders/Orders';
 import AppLayout from '../../layouts/AppLayout';
 
 const MainPage = () => {
@@ -21,7 +20,6 @@ const MainPage = () => {
 			</Helmet>
 			<Header />
 			<Dishes />
-			<Orders />
 		</AppLayout>
 	);
 };

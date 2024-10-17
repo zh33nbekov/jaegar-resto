@@ -5,10 +5,11 @@
 	width: 100vw;
 	height: 100vh;
 	background-color: rgba(0, 0, 0, 0.5);
-	animation: opened 300ms;
+	z-index: 50;
+	animation: opened 300ms ease;
 }
 .backdrop.closed {
-	animation: closed 300ms;
+	animation: closed 300ms ease;
 }
 
 @keyframes opened {
@@ -20,9 +21,6 @@
 	}
 }
 @keyframes closed {
-	from {
-		opacity: 1;
-	}
 	to {
 		opacity: 0;
 	}

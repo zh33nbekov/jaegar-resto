@@ -20,7 +20,7 @@ const RestaurantPage = () => {
 					content='width=device-width, initial-scale=1.0'
 				/>
 			</Helmet>
-			<h1>Restaurant</h1>
+			<h1 style={{ color: '#fff' }}>Ресторан</h1>
 		</div>
 	);
 };

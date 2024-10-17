@@ -20,7 +20,7 @@ const AppereancePage = () => {
 					content='width=device-width, initial-scale=1.0'
 				/>
 			</Helmet>
-			<h1>AppereancePage</h1>
+			<h1 style={{ color: '#fff' }}>Дизайн</h1>
 		</div>
 	);
 };
