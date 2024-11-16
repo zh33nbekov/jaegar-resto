@@ -275,14 +275,8 @@ const DishesContextProvider = ({ children }) => {
 		},
 	]);
 	const [storageDishes, setStorageDishes] = useState(() => {
-		return getDataFromLocalStorage(STORAGE_KEYS.DISHES);
+		return getDataFromLocalStorage(STORAGE_KEYS.DISHES) || dummyDishes;
 	});
-
-	const setDishesToLocalStorage = () => {
-		if (!storageDishes) {
-			setDataToLocalStorage(STORAGE_KEYS.DISHES, dummyDishes);
-		}
-	};
 
 	const [searchValue, setSearchValue] = useState('');
 	const searchInputHandler = (event) => {
@@ -353,10 +347,6 @@ const DishesContextProvider = ({ children }) => {
 	useEffect(() => {
 		setDataToLocalStorage(STORAGE_KEYS.DISHES, storageDishes);
 	}, [storageDishes]);
-
-	useEffect(() => {
-		setDishesToLocalStorage();
-	}, []);
 
 	const values = {
 		dummyDishes,

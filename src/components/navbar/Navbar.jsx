@@ -20,6 +20,7 @@ const Navbar = () => {
 	const checkActiveLink = ({ isActive }) => {
 		return isActive ? 'navigation__linkActive' : '';
 	};
+	console.log(window.innerWidth);
 
 	return (
 		<>
@@ -99,7 +100,10 @@ const Navbar = () => {
 							/>
 						</NavLink>
 					</li>
-					<li className={styles.navigation__item}>
+					<li
+						className={styles.navigation__item}
+						style={window.innerWidth <= 930 ? { display: 'none' } : {}}
+					>
 						<NavLink
 							to={ROUTE_KEYS.SETTINGS}
 							className={({ ...params }) =>

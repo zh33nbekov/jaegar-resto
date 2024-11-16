@@ -78,6 +78,7 @@ const ManagementPage = () => {
 			});
 		};
 	};
+
 	const saveEditedDish = (event) => {
 		event.preventDefault();
 		dishesCtx.editDish(editDish.id, editDish);
