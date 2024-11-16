@@ -19,6 +19,8 @@ const ManagementPage = () => {
 		price: 0,
 		info: '',
 		imageURL: '',
+		id: null,
+		categories: [],
 	});
 	const dishesCtx = useDishesContext();
 
@@ -41,14 +43,17 @@ const ManagementPage = () => {
 		setEditDish((prevState) => {
 			return {
 				...prevState,
-				description: data.description,
-				info: data.info,
-				price: data.price,
-				imageURL: data.imageURL,
+				description: data?.description,
+				info: data?.info,
+				price: data?.price,
+				imageURL: data?.imageURL,
+				id: data?.id,
+				categories: data?.categories,
 			};
 		});
 		setIsEditDishForm(true);
 	};
+
 	const hideEditDishForm = () => {
 		setIsAnimationClass('closed');
 		const formID = setTimeout(() => {
@@ -59,6 +64,23 @@ const ManagementPage = () => {
 		return () => {
 			clearTimeout(formID);
 		};
+	};
+
+	const handleChange = (name) => {
+		return (event) => {
+			const { value } = event.target;
+
+			setEditDish((prevState) => {
+				return {
+					...prevState,
+					[name]: value,
+				};
+			});
+		};
+	};
+	const saveEditedDish = (event) => {
+		event.preventDefault();
+		dishesCtx.editDish(editDish.id, editDish);
 	};
 
 	return (
@@ -88,7 +110,11 @@ const ManagementPage = () => {
 				animationClass={isAnimationClass}
 			/>
 			<Modal open={isEditDishForm} animationClass={isAnimationClass}>
-				<ManagementEditDish data={editDish} />
+				<ManagementEditDish
+					data={editDish}
+					onChange={handleChange}
+					onSave={saveEditedDish}
+				/>
 			</Modal>
 
 			{/* Редактировать блюдо */}
@@ -142,6 +168,7 @@ const ManagementPage = () => {
 								imageURL={dish.imageURL}
 								onOpen={showEditDishForm}
 								onClose={hideEditDishForm}
+								categories={dish.categories}
 							/>
 						</div>
 					))}

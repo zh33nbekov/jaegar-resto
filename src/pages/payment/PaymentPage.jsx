@@ -12,7 +12,6 @@ const PaymentPage = () => {
 		const data = getDataFromLocalStorage(STORAGE_KEYS.BASKET);
 		return data;
 	});
-	console.log(basket);
 
 	const fetchBasketData = () => {
 		return basket
@@ -142,7 +141,6 @@ const PaymentPage = () => {
 
 		try {
 			const response = await axios.post(url, data, { headers });
-			console.log('SMS отправлено:', response.data);
 		} catch (error) {
 			console.error(
 				'Ошибка при отправке SMS:',

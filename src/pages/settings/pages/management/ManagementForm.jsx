@@ -1,6 +1,59 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { useDishesContext } from '../../../../context/dishes/DishesContext';
 import styles from './ManagementForm.module.css';
+
+const dishCategories = [
+	{
+		id: 'горячие блюда',
+		label: 'Горячие блюда',
+	},
+	{
+		id: 'салат',
+		label: 'Салат',
+	},
+	{
+		id: 'суп',
+		label: 'Суп',
+	},
+	{
+		id: 'гриль',
+		label: 'Гриль',
+	},
+	{
+		id: 'закуска',
+		label: 'Закуски',
+	},
+	{
+		id: 'напитки',
+		label: 'Напитки',
+	},
+];
+const inputs = [
+	{
+		label: 'Название',
+		id: 'name',
+		type: 'text',
+		key: 'description',
+	},
+	{
+		label: 'Доступно',
+		id: 'available',
+		type: 'number',
+		key: 'info',
+	},
+	{
+		label: 'Цена',
+		id: 'price',
+		type: 'number',
+		key: 'price',
+	},
+	{
+		label: 'Ссылка на image',
+		id: 'url',
+		type: 'text',
+		key: 'imageURL',
+	},
+];
 
 const ManagementForm = ({ onSubmit }) => {
 	const [isNewDish, setIsNewDish] = useState({
@@ -10,58 +63,6 @@ const ManagementForm = ({ onSubmit }) => {
 		isNew: false,
 		categories: ['все'],
 	});
-	const dishCategories = [
-		{
-			id: 'горячие блюда',
-			label: 'Горячие блюда',
-		},
-		{
-			id: 'салат',
-			label: 'Салат',
-		},
-		{
-			id: 'суп',
-			label: 'Суп',
-		},
-		{
-			id: 'гриль',
-			label: 'Гриль',
-		},
-		{
-			id: 'закуска',
-			label: 'Закуски',
-		},
-		{
-			id: 'напитки',
-			label: 'Напитки',
-		},
-	];
-	const inputs = [
-		{
-			label: 'Название',
-			id: 'name',
-			type: 'text',
-			key: 'description',
-		},
-		{
-			label: 'Доступно',
-			id: 'available',
-			type: 'number',
-			key: 'info',
-		},
-		{
-			label: 'Цена',
-			id: 'price',
-			type: 'number',
-			key: 'price',
-		},
-		{
-			label: 'Ссылка на image',
-			id: 'url',
-			type: 'text',
-			key: 'imageURL',
-		},
-	];
 
 	const inputsHandler = (name) => {
 		return (event) => {
@@ -92,14 +93,12 @@ const ManagementForm = ({ onSubmit }) => {
 		// }
 	};
 
-	const dishOptionsHandler = (event) => {
+	const dishOptionsHandler = () => {
 		setIsNewDish((prevState) => ({
 			...prevState,
 			isNew: !prevState.isNew, // Переключаем значение
 		}));
 	};
-
-	console.log(isNewDish);
 	const dishCtx = useDishesContext();
 
 	const submitHandler = (event) => {
@@ -153,4 +152,4 @@ const ManagementForm = ({ onSubmit }) => {
 	);
 };
 
-export default ManagementForm;
+export default memo(ManagementForm);

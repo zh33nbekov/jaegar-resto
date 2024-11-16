@@ -149,10 +149,6 @@
 	left: 30px;
 	z-index: 11;
 }
-.order__newImage {
-	width: 100%;
-	height: 100%;
-}
 .order:first-child {
 	padding-top: 0;
 }
@@ -173,12 +169,6 @@
 	height: 45px;
 	object-fit: cover;
 	transition: transform 111ms ease-in-out;
-}
-.order:hover .order__image {
-	transform: scale(1.03);
-}
-.order:hover .order__drinkImage {
-	transform: scale(1.3);
 }
 .order__summary {
 	width: 140px;

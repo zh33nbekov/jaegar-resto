@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import AppLogo from '../../../assets/icons/logo.svg';
 import styles from './Preloader.module.css';
 
@@ -27,4 +27,4 @@ const Preloader = () => {
 	);
 };
 
-export default Preloader;
+export default memo(Preloader);

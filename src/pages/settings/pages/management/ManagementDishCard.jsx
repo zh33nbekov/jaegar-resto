@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import EditIcon from '../../../../assets/icons/edit.svg';
 import styles from './ManagementDishCard.module.css';
 
@@ -9,6 +9,7 @@ const ManagementDishCard = ({
 	info,
 	imageURL,
 	onOpen,
+	categories,
 }) => {
 	return (
 		<div className={styles.dish}>
@@ -31,7 +32,9 @@ const ManagementDishCard = ({
 			</div>
 			<button
 				className={styles.dish__editButton}
-				onClick={() => onOpen({ id, description, info, price, imageURL })}
+				onClick={() =>
+					onOpen({ id, description, info, price, imageURL, categories })
+				}
 			>
 				<img src={EditIcon} alt='' />
 				<span>Изменить</span>
@@ -40,5 +43,4 @@ const ManagementDishCard = ({
 	);
 };
 
-export default ManagementDishCard;
-// {[id, description, price, info]}
+export default memo(ManagementDishCard);

@@ -1,6 +1,5 @@
 import React from 'react';
 import DeleteIcon from '../../assets/icons/delete.svg';
-import NewIcon from '../../assets/icons/new.svg';
 import styles from './Orders.module.css';
 
 const Order = ({
@@ -11,23 +10,16 @@ const Order = ({
 	categories = [],
 	imageURL,
 	onDelete,
-	isNew,
 }) => {
 	const drinkCategory = categories?.find((category) => category === 'напитки');
 
 	return (
 		<div className={styles.order}>
-			{/* {isNew ? (
-				<div className={styles.order__new}>
-					<img className={styles.order__newImage} src={NewIcon} alt='' />
-				</div>
-			) : null} */}
 			<div className={styles.order__header}>
 				<div className={styles.order__headerSummary}>
 					<img
-						className={`${styles.order__image} ${
-							drinkCategory ? styles.order__drinkImage : ''
-						}`}
+						className={styles.order__image}
+						style={drinkCategory ? { transform: 'rotate(15deg)' } : {}}
 						src={imageURL}
 						alt={description}
 					/>

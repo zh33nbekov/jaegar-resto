@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { createPortal } from 'react-dom';
 import styles from './Modal.module.css';
 
@@ -19,4 +19,4 @@ const Modal = ({ children, open, onClose, animationClass }) => {
 	);
 };
 
-export default Modal;
+export default memo(Modal);

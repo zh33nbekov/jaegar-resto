@@ -1,5 +1,5 @@
 import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
-import React from 'react';
+import React, { memo } from 'react';
 import NewIcon from '../../assets/icons/new.svg';
 import styles from './Dishes.module.css';
 
@@ -13,6 +13,12 @@ const Dish = ({
 	imageURL,
 	onSetToBasket,
 }) => {
+
+	const handleSetToBasket = (event) => {
+		event.preventDefault(); // Предотвращаем стандартное поведение кнопки
+		onSetToBasket({ id, description, price, categories, imageURL, isNew }); // Передаём нужные данные
+	};
+
 	return (
 		<div className={styles.dish}>
 			{isNew ? (
@@ -30,14 +36,7 @@ const Dish = ({
 			</div>
 			<button
 				className={`${styles.dish__button} btn`}
-				onClick={onSetToBasket({
-					id,
-					description,
-					price,
-					categories,
-					imageURL,
-					isNew,
-				})}
+				onClick={handleSetToBasket} // Передаем функцию-обработчик
 			>
 				<ShoppingCartRoundedIcon />
 			</button>
@@ -45,4 +44,4 @@ const Dish = ({
 	);
 };
 
-export default Dish;
+export default memo(Dish);

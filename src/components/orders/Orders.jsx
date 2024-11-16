@@ -1,5 +1,5 @@
 import CloseIcon from '@mui/icons-material/Close';
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ROUTE_KEYS } from '../../constants/common/RouteKeys';
 import { useDishBasketContext } from '../../context/dishes/DishBasketContext';
@@ -14,20 +14,15 @@ const Orders = () => {
 
 	const dishBasketCtx = useDishBasketContext();
 	const totalAmount = dishBasketCtx.calculateTotalAmount();
-	const orderTypeButtons = [
-		{
-			id: 0,
-			title: 'Пообедать в',
-		},
-		{
-			id: 1,
-			title: 'Идти',
-		},
-		{
-			id: 2,
-			title: 'Доставка',
-		},
-	];
+	const orderTypeButtons = useMemo(
+		() => [
+			{ id: 0, title: 'Пообедать в' },
+			{ id: 1, title: 'Идти' },
+			{ id: 2, title: 'Доставка' },
+		],
+		[]
+	);
+
 	const disabledBasketButton = !dishBasketCtx.basket.length
 		? 'orders__paymentDisabledButton'
 		: '';

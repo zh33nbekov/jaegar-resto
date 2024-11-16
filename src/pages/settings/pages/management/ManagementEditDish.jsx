@@ -1,39 +1,41 @@
-import React from 'react';
+import React, { memo, useMemo } from 'react';
 import styles from './ManagementEditDish.module.css';
 
-const ManagementEditDish = ({ data }) => {
-	console.log(data);
-
-	const inputs = [
-		{
-			label: 'Название',
-			id: 'name',
-			type: 'text',
-			key: 'description',
-			value: data.description,
-		},
-		{
-			label: 'Доступно',
-			id: 'available',
-			type: 'number',
-			key: 'info',
-			value: data.info,
-		},
-		{
-			label: 'Цена',
-			id: 'price',
-			type: 'number',
-			key: 'price',
-			value: data.price,
-		},
-		{
-			label: 'Ссылка на image',
-			id: 'url',
-			type: 'text',
-			key: 'imageURL',
-			value: data.imageURL,
-		},
-	];
+const ManagementEditDish = ({ data, onChange, onSave }) => {
+	const inputs = useMemo(
+		() => [
+			{
+				label: 'Название',
+				id: 'name',
+				type: 'text',
+				key: 'description',
+				value: data.description,
+				dishId: data.id,
+			},
+			{
+				label: 'Доступно',
+				id: 'available',
+				type: 'number',
+				key: 'info',
+				value: data.info,
+			},
+			{
+				label: 'Цена',
+				id: 'price',
+				type: 'number',
+				key: 'price',
+				value: data.price,
+			},
+			{
+				label: 'Ссылка на image',
+				id: 'url',
+				type: 'text',
+				key: 'imageURL',
+				value: data.imageURL,
+			},
+		],
+		[data.description, data.imageURL, data.info, data.price, data.id]
+	);
 	return (
 		<form className={styles.edit}>
 			{inputs.map((input) => (
@@ -43,15 +45,17 @@ const ManagementEditDish = ({ data }) => {
 						id={input.id}
 						placeholder=' '
 						required
-						onChange={() => {}}
+						onChange={onChange(input.key)}
 						value={input.value}
 					/>
 					<label htmlFor={input.id}>{input.label}</label>
 				</div>
 			))}
-			<button className={`${styles.edit__button} btn`}>Сохранить</button>
+			<button className={`${styles.edit__button} btn`} onClick={onSave}>
+				Сохранить
+			</button>
 		</form>
 	);
 };
 
-export default ManagementEditDish;
+export default memo(ManagementEditDish);

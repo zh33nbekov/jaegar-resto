@@ -36,18 +36,6 @@ const LogInPage = () => {
 		event.preventDefault();
 		navigate('/');
 	};
-	// const submitHandler = async (event) => {
-	// 	event.preventDefault();
-	// 	try {
-	// 		const res = await axios.post(
-	// 			'http://localhost:5500/api/v1/auth/signin',
-	// 			data
-	// 		);
-	// 		console.log(res);
-	// 	} catch (error) {
-	// 		console.log(error);
-	// 	}
-	// };
 	return (
 		<div className={styles.login}>
 			<form className={styles.login__form} onSubmit={() => {}}>

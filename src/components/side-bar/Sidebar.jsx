@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import styles from './Sidebar.module.css';
 
 const Sidebar = ({ open, children, animationClass }) => {
@@ -12,4 +12,4 @@ const Sidebar = ({ open, children, animationClass }) => {
 	);
 };
 
-export default Sidebar;
+export default memo(Sidebar);

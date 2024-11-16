@@ -337,6 +337,19 @@ const DishesContextProvider = ({ children }) => {
 		});
 	};
 
+	const editDish = (id, editedDish) => {
+		setStorageDishes((prevState) => {
+			const filteredDishes = prevState.filter((dish) => {
+				if (id !== dish.id) {
+					return true;
+				}
+				return false;
+			});
+
+			return [...filteredDishes, editedDish];
+		});
+	};
+
 	useEffect(() => {
 		setDataToLocalStorage(STORAGE_KEYS.DISHES, storageDishes);
 	}, [storageDishes]);
@@ -348,6 +361,7 @@ const DishesContextProvider = ({ children }) => {
 	const values = {
 		dummyDishes,
 		storageDishes,
+		editDish,
 		createNewDish,
 		searchInputHandler,
 		filteredAndSortedDishes,

@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, {
+	createContext,
+	useCallback,
+	useContext,
+	useEffect,
+	useState,
+} from 'react';
 
 const navigationContext = createContext(false);
 export const useNavigationContext = () => useContext(navigationContext);
@@ -7,11 +13,11 @@ const NavigationContextProvider = ({ children }) => {
 	const [isSideBarVisible, setIsSideBarVisible] = useState(false);
 	const [sideBarAnimationClass, setSideBarAnimationClass] = useState('');
 
-	const showNavigation = () => {
+	const showNavigation = useCallback(() => {
 		setIsSideBarVisible(true);
-	};
+	}, []);
 
-	const hideNavigation = () => {
+	const hideNavigation = useCallback(() => {
 		setSideBarAnimationClass('closed');
 		const sideBarId = setTimeout(() => {
 			setIsSideBarVisible(false);
@@ -21,7 +27,7 @@ const NavigationContextProvider = ({ children }) => {
 		return () => {
 			clearTimeout(sideBarId);
 		};
-	};
+	}, []);
 
 	useEffect(() => {
 		if (window.innerWidth > 1400) {

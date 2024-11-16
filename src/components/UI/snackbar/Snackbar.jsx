@@ -1,5 +1,5 @@
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import React from 'react';
+import React, { memo } from 'react';
 import { createPortal } from 'react-dom';
 import styles from './Snackbar.module.css';
 
@@ -26,4 +26,4 @@ const Snackbar = ({ open, onClose, animationClass, options }) => {
 	);
 };
 
-export default Snackbar;
+export default memo(Snackbar);

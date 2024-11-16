@@ -1,6 +1,6 @@
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useDishBasketContext } from '../../context/dishes/DishBasketContext';
 import { useDishesContext } from '../../context/dishes/DishesContext';
 import Snackbar from '../UI/snackbar/Snackbar';
@@ -70,15 +70,16 @@ const Dishes = () => {
 		};
 	};
 
-	const setDishToBasket =
-		({ ...basketItem }) =>
-		(event) => {
-			event.preventDefault();
+	const setDishToBasket = useCallback(
+		({ ...basketItem }) => {
+
 			const message = dishBasketCtx.setToBasket(basketItem);
 			showSnackbar(
 				message || `${basketItem.description} успешно добавлен в корзину!`
 			);
-		};
+		},
+		[dishBasketCtx]
+	);
 
 	const getIdxAndNameForDishPagination = (index, name) => {
 		setActiveDishType(index);
