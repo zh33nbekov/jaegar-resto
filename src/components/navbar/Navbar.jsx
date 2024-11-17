@@ -20,7 +20,6 @@ const Navbar = () => {
 	const checkActiveLink = ({ isActive }) => {
 		return isActive ? 'navigation__linkActive' : '';
 	};
-	console.log(window.innerWidth);
 
 	return (
 		<>
