@@ -11,7 +11,7 @@ import styles from './navbar.module.css'
 
 const Navbar = () => {
 	const { basketLength } = useDishBasketContext()
-	const { sidebarVisible, toggleSidebar } = useSidebarContext()
+	const sidebarContext = useSidebarContext()
 
 	return (
 		<nav className={styles.navigation}>
@@ -37,10 +37,10 @@ const Navbar = () => {
 				))}
 			</ul>
 			<button
-				onClick={toggleSidebar}
+				onClick={sidebarContext.toggleSidebar}
 				data-count={basketLength}
 				className={clsx(styles.basketButton, {
-					[styles.active]: sidebarVisible,
+					[styles.active]: sidebarContext.sidebarVisible,
 				})}
 			>
 				<span className='sr-only'>Корзина</span>

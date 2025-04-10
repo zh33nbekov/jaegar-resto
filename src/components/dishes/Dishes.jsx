@@ -90,10 +90,10 @@ const Dishes = () => {
 				options={snackbarOptions}
 			/>
 			<section className={styles.dishes}>
-				<DishesType
+				{/* <DishesType
 					activeDishType={activeDishType}
 					getInfoForPagination={getIdxAndNameForDishPagination}
-				/>
+				/> */}
 				<h3 className={styles.dishes__title}>Выбирайте блюда</h3>
 				<div className={styles.dishes__content}>
 					<div className={styles.dishes__wrapper}>
