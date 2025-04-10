@@ -6,25 +6,26 @@ import {
 	Notification,
 	Settings,
 } from '../../assets/icons/navbar'
-import { AboutUs, Heart, Management, Notifications, Restaurant, Security } from '../../assets/icons/navigation'
-// import AboutUsIcon from '../../assets/icons/navigation/about-us.svg'
-// import HeartIcon from '../../assets/icons/navigation/heart.svg'
-// import ManagementIcon from '../../assets/icons/navigation/management.svg'
-// import NotificationsIcon from '../../assets/icons/navigation/notifications.svg'
-// import RestaurantIcon from '../../assets/icons/navigation/restaurant.svg'
-// import SecurityIcon from '../../assets/icons/navigation/security.svg'
+import {
+	AboutUs,
+	Heart,
+	Management,
+	Notifications,
+	Restaurant,
+	Security,
+} from '../../assets/icons/navigation'
 
 export const NAVBAR_ROUTE_KEYS = {
 	HOME: '/',
-	DASHBOARD: '/Панель-администратора',
+	DASHBOARD: '/dashboard',
 	DISCOUNT: '/discounts',
 	SETTINGS: '/settings',
-	APPEREANCE: 'Дизайна',
-	RESTAURANT: 'Ресторана',
-	MANAGEMENT: 'Управления',
-	NOTIFICATIONS: 'Уведомлений',
-	SECURITY: 'Защиты',
-	ABOUT_US: 'О-нас',
+	APPEREANCE: 'design',
+	RESTAURANT: 'restaurant',
+	MANAGEMENT: 'management',
+	NOTIFICATIONS: 'notifications',
+	SECURITY: 'security',
+	ABOUT_US: 'about-us',
 }
 
 export const NAVBAR_LINKS = [
