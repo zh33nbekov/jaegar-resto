@@ -1,0 +1,65 @@
+.dish {
+	width: 221px;
+	height: 299px;
+	border: 1px solid rgb(57, 60, 73);
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+}
+.dish__header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.dish__image {
+	width: 132px;
+	height: 132px;
+	object-fit: cover;
+	display: block;
+}
+.dish__description {
+	color: #fff;
+	font-size: 14px;
+	font-weight: 500;
+	text-align: center;
+	padding: 14px 0 8px 0;
+	width: 144px;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	line-clamp: 2;
+	-webkit-line-clamp: 2;
+	height: 55px;
+}
+.dish__info {
+	display: flex;
+	align-items: center;
+	color: #fff;
+}
+.dish__info span {
+	color: rgb(171, 187, 194);
+	font-size: 14px;
+	font-weight: 400;
+}
+.dish__price {
+}
+.dish__subinfo {
+}
+.dish__editButton {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	background-color: #50343a;
+	width: 100%;
+	border-radius: 0px 0px 8px 8px;
+	margin-top: auto;
+	padding: 16px 0;
+	display: flex;
+	justify-content: center;
+}
+.dish__editButton span {
+	color: #ea7c69;
+	font-size: 14px;
+	font-weight: 600;
+}

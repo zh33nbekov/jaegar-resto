@@ -1,0 +1,122 @@
+.orders {
+	position: relative;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.orders__close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #ea7c69;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.orders__close:hover svg {
+	transform: rotate(360deg);
+	transition: transform 555ms ease-in-out;
+}
+.orders__close svg {
+	color: #fff;
+	font-size: 20px;
+}
+.orders__number {
+	color: #fff;
+	font-size: 20px;
+	font-weight: 600;
+}
+.orders__wrapper {
+	padding-top: 12px;
+	overflow-y: scroll;
+}
+.orders__infoMessage {
+	color: #fff;
+	text-align: center;
+}
+.orders__wrapper::-webkit-scrollbar {
+	width: 0;
+}
+.orders__payment {
+	height: 127px;
+	display: flex;
+	flex-direction: column;
+	margin-top: auto;
+}
+.orders__discount {
+	padding: 16px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.orders__discountTitle {
+	color: rgb(171, 187, 194);
+	font-size: 14px;
+	font-weight: 400;
+}
+.orders__discountPrice {
+	font-size: 16px;
+	font-weight: 500;
+	color: #fff;
+}
+.orders__total {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-bottom: 17px;
+}
+.orders__totalTitle {
+	color: rgb(171, 187, 194);
+	font-size: 14px;
+	font-weight: 400;
+}
+.orders__totalPrice {
+	font-size: 16px;
+	font-weight: 500;
+	color: #fff;
+}
+.orders__paymentBtn {
+	width: 100%;
+	padding: 14px;
+	margin-top: auto;
+	background-color: #ea7c69;
+	color: #fff;
+	border-radius: 10px;
+}
+@media (max-width: 1050px) {
+}
+@media (max-width: 390px) {
+	.order__headerSummary {
+		flex-direction: column;
+	}
+	.orders__infoHeader {
+		justify-content: space-between;
+	}
+	.orders__infoItem:first-child {
+		/* padding-right: 132px; */
+		padding-right: 38%;
+	}
+	.orders__infoItem:nth-child(2) {
+		padding-right: 0;
+	}
+	.orders__infoItem:last-child {
+		padding-right: 14px;
+	}
+	.order__header {
+		align-items: flex-start;
+		width: 100%;
+		justify-content: space-between;
+	}
+	.order__summary {
+		padding-top: 5px;
+		padding-left: 0;
+	}
+	.order__message {
+		width: 77%;
+	}
+}
+
+/* ----------------------------------Media Queries----------------------------- */

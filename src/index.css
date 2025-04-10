@@ -1,0 +1,191 @@
+@font-face {
+	font-family: 'TildaSans';
+	src: url('./assets/font/TildaSans-Black/TildaSans-Black.eot');
+	src: url('./assets/font/TildaSans-Black/TildaSans-Black.eot?#iefix')
+			format('embedded-opentype'),
+		url('./assets/font/TildaSans-Black/TildaSans-Black.woff2') format('woff2'),
+		url('./assets/font/TildaSans-Black/TildaSans-Black.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'TildaSans';
+	src: url('./assets/font/TildaSans-Bold/TildaSans-Bold.eot');
+	src: url('./assets/font/TildaSans-Bold/TildaSans-Bold.eot?#iefix')
+			format('embedded-opentype'),
+		url('./assets/font/TildaSans-Bold/TildaSans-Bold.woff2') format('woff2'),
+		url('./assets/font/TildaSans-Bold/TildaSans-Bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'TildaSans';
+	src: url('./assets/font/TildaSans-ExtraBold/TildaSans-ExtraBold.eot');
+	src: url('./assets/font/TildaSans-ExtraBold/TildaSans-ExtraBold.eot?#iefix')
+			format('embedded-opentype'),
+		url('./assets/font/TildaSans-ExtraBold/TildaSans-ExtraBold.woff2')
+			format('woff2'),
+		url('./assets/font/TildaSans-ExtraBold/TildaSans-ExtraBold.woff')
+			format('woff');
+	font-weight: 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'TildaSans';
+	src: url('./assets/font/TildaSans-Light/TildaSans-Light.eot');
+	src: url('./assets/font/TildaSans-Light/TildaSans-Light.eot?#iefix')
+			format('embedded-opentype'),
+		url('./assets/font/TildaSans-Light/TildaSans-Light.woff2') format('woff2'),
+		url('./assets/font/TildaSans-Light/TildaSans-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'TildaSans';
+	src: url('./assets/font/TildaSans-Medium/TildaSans-Medium.eot');
+	src: url('./assets/font/TildaSans-Medium/TildaSans-Medium.eot?#iefix')
+			format('embedded-opentype'),
+		url('./assets/font/TildaSans-Medium/TildaSans-Medium.woff2')
+			format('woff2'),
+		url('./assets/font/TildaSans-Medium/TildaSans-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'TildaSans';
+	src: url('./assets/font/TildaSans-Regular/TildaSans-Regular.eot');
+	src: url('./assets/font/TildaSans-Regular/TildaSans-Regular.eot?#iefix')
+			format('embedded-opentype'),
+		url('./assets/font/TildaSans-Regular/TildaSans-Regular.woff2')
+			format('woff2'),
+		url('./assets/font/TildaSans-Regular/TildaSans-Regular.woff')
+			format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'TildaSans';
+	src: url('./assets/font/TildaSans-Semibold/TildaSans-Semibold.eot');
+	src: url('./assets/font/TildaSans-Semibold/TildaSans-Semibold.eot?#iefix')
+			format('embedded-opentype'),
+		url('./assets/font/TildaSans-Semibold/TildaSans-Semibold.woff2')
+			format('woff2'),
+		url('./assets/font/TildaSans-Semibold/TildaSans-Semibold.woff')
+			format('woff');
+	font-weight: 600;
+	font-style: normal;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'TildaSans', Arial, sans-serif;
+}
+a,
+button {
+	user-select: none;
+}
+button {
+	border: 0;
+	cursor: pointer;
+	background: none;
+}
+input {
+	border: none;
+	outline: none;
+}
+html,
+body {
+	/* height: 100%; */
+	min-height: 100%;
+}
+body {
+	height: 100%;
+	background-color: #252836;
+}
+.wrapper {
+	width: 100%;
+	height: 100%;
+	max-width: 1000px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+.settings-wrapper {
+	width: 100%;
+	height: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+.btn {
+	color: rgb(250, 250, 250);
+	transition: all 200ms ease;
+	border-radius: 8px;
+	background-color: #ea7c69;
+	box-shadow: 0px 8px 24px 0px rgba(234, 124, 105, 0.3);
+}
+button[active] {
+	background-color: #cd543e;
+}
+button[disabled] {
+	cursor: no-drop;
+	background-color: #ed9d8f;
+}
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+.spinnerWrapper {
+	position: fixed;
+	z-index: 999;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	background-color: #232732;
+	transition: opacity 0.3s ease-in-out;
+}
+.spinner {
+	width: clamp(25px, 22.4px + 0.8vw, 34px);
+	height: clamp(25px, 22.4px + 0.8vw, 34px);
+	position: relative;
+}
+.spinner::before,
+.spinner::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border: 3px solid white;
+}
+.spinner::before {
+	opacity: 0.2;
+}
+.spinner::after {
+	border-color: #fff transparent transparent transparent;
+	animation: spin 3s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+}
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(360deg);
+	}
+	100% {
+		transform: rotate(-360deg);
+	}
+}

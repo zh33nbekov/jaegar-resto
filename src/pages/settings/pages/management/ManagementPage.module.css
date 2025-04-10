@@ -1,0 +1,67 @@
+.management {
+	max-width: 871px;
+	background-color: #1f1d2b;
+	border-radius: 8px;
+	padding: 24px;
+}
+.management__header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding-bottom: 24px;
+}
+.management__title {
+	color: #fff;
+	font-size: 20px;
+	font-weight: 600;
+}
+.management__option {
+	border: 1px solid #393c49;
+	border-radius: 8px;
+	box-shadow: 0px 8px 24px 0px #9288e04d;
+	padding: 14px;
+	display: flex;
+	align-items: center;
+	column-gap: 8px;
+}
+.management__optionText {
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+}
+.management__dishes {
+	padding-top: 24px;
+	border-top: 1px solid #393c49;
+	display: flex;
+	justify-content: space-evenly;
+	row-gap: 34px;
+	flex-wrap: wrap;
+	height: 550px;
+	overflow-y: scroll;
+}
+
+.management__button {
+	border: 1px dashed #ea7c69;
+	border-radius: 8px;
+	width: 221px;
+	height: 299px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.management__buttonText {
+	color: #ea7c69;
+	font-size: 16px;
+	font-weight: 600;
+	padding-top: 22px;
+}
+
+/*  */
+
+.management__dish {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

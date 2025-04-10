@@ -1,0 +1,119 @@
+.order {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 13px 0;
+	border-bottom: 1px solid #393c49;
+}
+.order__new {
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	top: 0;
+	left: 30px;
+	z-index: 11;
+}
+.order:first-child {
+	padding-top: 0;
+}
+.order:last-child {
+	padding-bottom: 0;
+	border-bottom: 0;
+}
+.order__header {
+	display: flex;
+	align-items: center;
+	color: #fff;
+}
+.order__headerSummary {
+	display: flex;
+}
+.order__image {
+	width: 45px;
+	height: 45px;
+	object-fit: cover;
+	transition: transform 111ms ease-in-out;
+}
+.order__summary {
+	width: 140px;
+	display: flex;
+	flex-direction: column;
+	padding-left: 5.5px;
+}
+.order__description {
+	width: 140px;
+	overflow: hidden;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 14px;
+	font-weight: 500;
+}
+.order__price {
+	color: #abbbc2;
+	font-size: 12px;
+	font-weight: 500;
+	padding-top: 4px;
+}
+.order__quantity {
+	color: #fff;
+	font-size: 16px;
+	font-weight: 500;
+	border: 1px solid #393c49;
+	border-radius: 8px;
+	background: #2d303e;
+	padding: 14px 0 14px 7px;
+	width: 48px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 16px;
+	font-weight: 500;
+	margin-left: auto;
+}
+.order__totalPrice {
+	font-size: 16px;
+	font-weight: 500;
+	padding-left: 24px;
+}
+.order__footer {
+	padding-top: 10px;
+	display: flex;
+	align-items: center;
+}
+.order__message {
+	width: 264px;
+	border: 1px solid #393c49;
+	border-radius: 8px;
+	background: #2d303e;
+	padding: 14px;
+	color: #e0e6e9;
+	font-size: 14px;
+	font-weight: 400;
+	transition: border 0.15s ease-in-out;
+}
+.order__message:focus {
+	border: 1px solid #e0e0e0;
+}
+.order__message::placeholder {
+	color: #fff;
+	opacity: 0.7;
+}
+.order__deleteButton {
+	border: 1px solid #ea7c69;
+	background: none;
+	padding: 14px;
+	border-radius: 8px;
+	margin-left: auto;
+	color: #ea7c69;
+	transition: color 0.15s ease-in-out, border 0.15s ease-in-out;
+}
+.order__deleteButton:hover {
+	color: red;
+	border: 1px solid red;
+}
+.order__deleteButton svg > path {
+	fill: currentColor;
+}

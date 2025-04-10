@@ -1,0 +1,21 @@
+.info {
+	padding-top: 24px;
+}
+.info__header {
+	width: 100%;
+	display: flex;
+	padding-bottom: 12px;
+	border-bottom: 1px solid rgb(57, 60, 73);
+}
+.info__item {
+	list-style: none;
+	font-size: 16px;
+	font-weight: 600;
+	color: #fff;
+}
+.info__item:first-child {
+	padding-right: 169px;
+}
+.info__item:nth-child(2) {
+	padding-right: 25px;
+}

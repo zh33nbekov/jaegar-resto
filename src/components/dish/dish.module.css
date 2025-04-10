@@ -1,0 +1,163 @@
+.dish {
+	position: relative;
+	width: 192px;
+	height: 226px;
+	border-radius: 16px;
+	background-color: rgb(31, 29, 43);
+	padding: 104px 24px 0 24px;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.dish__new {
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	width: 33px;
+	height: 33px;
+	pointer-events: none;
+}
+.dish__newImage {
+	width: 100%;
+	height: 100%;
+}
+.dish:hover .dish__image {
+	transform: rotateY(360deg);
+	transition: transform 1s ease-in-out;
+}
+.dish:hover .dish__price,
+.dish:hover .dish__info {
+	opacity: 0;
+	visibility: hidden;
+}
+.dish:hover .dish__button {
+	transform: translateX(-50%) scaleY(1);
+	opacity: 1;
+	visibility: visible;
+}
+.dish__image {
+	width: 132px;
+	height: 132px;
+	object-fit: cover;
+	position: absolute;
+	pointer-events: none;
+	top: -36px;
+	animation: imageRotate 1s ease-in-out;
+}
+.dish__description {
+	font-size: 14px;
+	font-weight: 500;
+	text-align: center;
+	height: 51px;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	line-clamp: 3;
+	-webkit-line-clamp: 3;
+}
+.dish__bottom {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.dish__price,
+.dish__info,
+.dish__button {
+	transition: opacity 200ms ease-in-out;
+}
+.dish__price {
+	font-size: 14px;
+	font-weight: 400;
+	padding: 8px 0 4px;
+	opacity: 1;
+}
+.dish__info {
+	color: rgb(171, 187, 194);
+	font-size: 14px;
+	font-weight: 400;
+	opacity: 1;
+}
+.dish__button {
+	position: absolute;
+	bottom: 21px;
+	left: 50%;
+	transform: translateX(-50%) scaleY(0);
+	transform-origin: top;
+	opacity: 0;
+	visibility: hidden;
+	padding: 5px 11px;
+	font-size: 14px;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+@media (max-width: 440px) {
+	.dish__image {
+		width: 115px;
+		height: 115px;
+	}
+}
+@media (max-width: 516px) and (min-width: 440px) {
+	.dish {
+		width: 80%;
+	}
+}
+@media (max-width: 440px) {
+	.dish {
+		width: 100%;
+	}
+}
+@media (max-width: 724px) and (min-width: 664px) {
+	.dish {
+		width: 31.5%;
+	}
+	.dish__image {
+		width: 124px;
+		height: 124px;
+	}
+}
+@media (max-width: 550px) {
+	.dish {
+		width: 192px;
+	}
+	.dish__button {
+		bottom: 21px;
+		right: 24px;
+		opacity: 1;
+		visibility: visible;
+		padding: 5.5px;
+		font-weight: 600;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transform: translateX(0) scaleY(1);
+		left: initial;
+	}
+	.dish__button svg {
+		width: 20px;
+		height: 20px;
+	}
+	.dish:hover .dish__button {
+		transform: initial;
+		opacity: initial;
+		visibility: initial;
+	}
+	.dish:hover .dish__price,
+	.dish:hover .dish__info {
+		opacity: initial;
+		visibility: initial;
+	}
+	.dish__bottom {
+		align-self: flex-start;
+	}
+}
+@keyframes imageRotate {
+	0% {
+		transform: rotateY(0deg);
+	}
+	100% {
+		transform: rotateY(360deg);
+	}
+}

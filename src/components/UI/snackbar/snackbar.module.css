@@ -1,0 +1,88 @@
+.snackbar {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	border-radius: 20px;
+	background: rgba(255, 255, 255, 0.2);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	padding: 20px;
+	width: 333px;
+	height: 111px;
+	animation: desktopOpen 500ms ease forwards;
+	z-index: 100;
+}
+.snackbar:hover .closeButton > svg {
+	transform: rotate(360deg);
+	transition: transform 555ms ease-in-out;
+}
+.snackbar__content {
+	position: relative;
+}
+.closeButton {
+	position: absolute;
+	top: -30px;
+	left: -30px;
+	background-color: #e5e5e5a9;
+	border-radius: 50%;
+	padding: 3px;
+	display: flex;
+}
+.closeButton svg {
+	color: #fff;
+}
+.snackbar.closed {
+	animation: desktopClose 500ms ease forwards;
+}
+.snackbar__message {
+	color: #fff;
+}
+
+@keyframes desktopOpen {
+	from {
+		margin-right: -342px;
+		opacity: 0;
+	}
+	to {
+		margin-right: 0;
+		opacity: 1;
+	}
+}
+@keyframes desktopClose {
+	to {
+		margin-right: -342px;
+		opacity: 0;
+	}
+}
+
+@media (max-width: 680px) {
+	.snackbar {
+		width: 88%;
+		height: auto;
+		left: 50%;
+		transform: translateX(-50%);
+		animation: mobileOpen 500ms ease forwards;
+	}
+	.snackbar.snackbar.closed {
+		animation: mobileClose 500ms ease-in-out forwards;
+	}
+}
+
+@keyframes mobileOpen {
+	from {
+		margin-top: -222px;
+		opacity: 0;
+	}
+	to {
+		margin-top: 0;
+		opacity: 1;
+	}
+}
+@keyframes mobileClose {
+	to {
+		margin-top: -222px;
+		opacity: 0;
+	}
+}

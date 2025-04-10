@@ -1,0 +1,25 @@
+.orderTypes {
+	display: flex;
+	column-gap: 8px;
+	padding-top: 24px;
+}
+.orderType {
+	padding: 7px 12px;
+	color: #ea7c69;
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 8px;
+	border: 1px solid rgb(57, 60, 73);
+	background-color: rgb(31, 29, 43);
+	transition: all 200ms ease;
+}
+.orderType.active {
+	color: #fff;
+	background-color: #ea7c69;
+	border-color: transparent;
+}
+.orderType:hover {
+	background-color: #ea7c69;
+	color: #fff;
+	border: 1px solid transparent;
+}

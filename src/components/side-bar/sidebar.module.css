@@ -1,0 +1,38 @@
+.sidebar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 390px;
+	height: 100svh;
+	border-radius: 10px 0 0 10px;
+	background-color: #1f1d2b;
+	padding: 24px;
+	animation: fade-in-right 500ms ease forwards;
+	z-index: 99;
+}
+.sidebar.closed {
+	animation: fade-out-right 500ms ease forwards;
+}
+@media (max-width: 1050px) {
+}
+@media (max-width: 390px) {
+	.sidebar {
+		width: 100vw;
+	}
+}
+@keyframes fade-in-right {
+	from {
+		transform: translateX(390px);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+@keyframes fade-out-right {
+	to {
+		transform: translateX(390px);
+		opacity: 0;
+	}
+}
