@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import React from 'react'
 import { createPortal } from 'react-dom'
-import { useScrollLock } from '../../../hooks'
+import { useScrollLock } from '../../../hooks/useScrollLock'
 import styles from './backdrop.module.css'
 
 export const Backdrop = ({ open, onClose, animationClass, zIndex }) => {

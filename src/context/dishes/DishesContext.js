@@ -18,7 +18,6 @@ const DishesContext = createContext({
 export const useDishesContext = () => useContext(DishesContext)
 
 const DishesProvider = ({ children }) => {
-	const [dummyDishes] = useState(DUMMY_DISHES)
 	const [storageDishes, setStorageDishes] = useState(() => {
 		return getDataFromLocalStorage(STORAGE_KEYS.DISHES) || DUMMY_DISHES
 	})
@@ -29,7 +28,7 @@ const DishesProvider = ({ children }) => {
 	}
 
 	const filteredAndSortedDishes = (category, currentPage, itemsPerPage) => {
-		console.log('rendered')
+		// console.log('rendered')
 		const filteredDishes = storageDishes?.filter((dish) => {
 			return dish.description
 				.toLowerCase()
@@ -87,7 +86,6 @@ const DishesProvider = ({ children }) => {
 
 	const values = {
 		editDish,
-		dummyDishes,
 		storageDishes,
 		createNewDish,
 		searchInputHandler,

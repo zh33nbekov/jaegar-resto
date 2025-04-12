@@ -6,8 +6,10 @@ import DishesPagination from '../dishes-pagination/DishesPagination'
 import DishesType from '../dishes-type/DishesType'
 import { Snackbar } from '../UI'
 import styles from './dishes.module.css'
+import { useSnackbar } from '../../hooks/useSnackbar'
 
 const Dishes = () => {
+	// const {} = useSnackbar()
 	const [snackbar, setSnackbar] = useState(false)
 	const [snackbarOptions, setSnackbarOptions] = useState({ message: '' })
 	const [activeDishType, setActiveDishType] = useState(0)
@@ -23,7 +25,7 @@ const Dishes = () => {
 		currentPage,
 		itemsPerPage
 	)
-	console.log(currentItems)
+	console.log(currentPage, 'rendered')
 	const goToNextPage = useCallback(() => {
 		if (currentPage < totalPages) {
 			setCurrentPage(currentPage + 1)
@@ -51,7 +53,7 @@ const Dishes = () => {
 		return () => clearTimeout(snackbarID)
 	}
 
-	const addDishToBasket = async ({ ...basketItem }) => {
+	const addDishToBasket = ({ ...basketItem }) => {
 		const message = dishBasketCtx.addDishToBasket(basketItem)
 		showSnackbar(message)
 		const snackbarID = setTimeout(hideSnackbar, 3000)
@@ -62,23 +64,6 @@ const Dishes = () => {
 		setActiveDishType(index)
 		setCheckedCategory(name.toLowerCase())
 		setCurrentPage(1)
-	}, [])
-
-	useEffect(() => {
-		const handleResize = () => {
-			if (window.innerWidth < 550) {
-				setItemsPerPage(4)
-			} else if (window.innerWidth < 965) {
-				setItemsPerPage(6)
-			} else {
-				setItemsPerPage(8)
-			}
-		}
-		handleResize()
-		window.addEventListener('resize', handleResize)
-		return () => {
-			window.removeEventListener('resize', handleResize)
-		}
 	}, [])
 
 	return (

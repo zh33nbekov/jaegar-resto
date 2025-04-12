@@ -12,7 +12,7 @@ export const Snackbar = memo(({ open, onClose, animationClass, options }) => {
 				<div className={clsx(styles.snackbar, styles[animationClass])}>
 					<div className={styles.snackbar__content}>
 						<button onClick={onClose} className={styles.closeButton}>
-							<Close style={{ width: '20px', height: '20px' }} />
+							<Close />
 						</button>
 						<p className={styles.snackbar__message}>{options?.message}</p>
 					</div>

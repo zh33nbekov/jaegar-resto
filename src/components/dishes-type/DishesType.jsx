@@ -9,11 +9,11 @@ const DishesType = memo((props) => {
 	}
 
 	return (
-		<ul className={styles.dishesType}>
+		<ul className={styles['dishes-type']}>
 			{DISHES_TYPES.map((elem, index) => (
 				<li
 					key={elem.name}
-					className={clsx(styles.dishesType__item, {
+					className={clsx(styles['dishes-type__item'], {
 						[styles.active]: props.activeDishType === index,
 					})}
 					onClick={() => toggleDishType({ index, name: elem.name })}

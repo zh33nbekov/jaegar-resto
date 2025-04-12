@@ -13,10 +13,10 @@ export const HeaderSearch = (props) => {
 				<Search />
 			</button>
 			<input
+				type='search'
 				ref={searchRef}
 				className={styles.search__input}
-				placeholder='Ищите еду, кофе и так далее...'
-				type='search'
+				placeholder={props.placeholder}
 			/>
 		</div>
 	)

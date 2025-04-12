@@ -104,3 +104,8 @@
 		right: -1px;
 	}
 }
+@media (max-width: 970px) {
+	.navigation {
+		display: none;
+	}
+}
