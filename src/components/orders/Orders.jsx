@@ -1,6 +1,5 @@
-import CloseIcon from '@mui/icons-material/Close'
-import clsx from 'clsx'
 import React, { useCallback, useState } from 'react'
+import { Close } from '../../assets/icons/common/Close'
 import { useDishBasketContext } from '../../context/dishes/DishBasketContext'
 import { useSidebarContext } from '../../context/sidebar/SidebarContext'
 import OrderInfo from '../order-info/OrderInfo'
@@ -35,65 +34,70 @@ const Orders = () => {
 				onClose={sidebarContext.hideSidebar}
 				animationClass={sidebarContext.sidebarAnimationClass}
 			/>
-			<Sidebar
-				open={sidebarContext.sidebarVisible}
-				animationClass={sidebarContext.sidebarAnimationClass}
-			>
-				<div className={styles.orders}>
-					<button
-						onClick={sidebarContext.hideSidebar}
-						className={clsx(styles.orders__close)}
-					>
-						<CloseIcon />
-					</button>
-					<span className={styles.orders__number}>Заказ #34562</span>
-					<OrderTypes
-						onToggleOrderType={toggleOrderType}
-						checkedOrderType={isCheckedOrderType}
-					/>
-					<OrderInfo />
-					<div className={styles.orders__wrapper}>
-						{dishBasketCtx.basket?.map((elem) => (
-							<Order
-								key={elem.id}
-								id={elem.id}
-								description={elem.description}
-								price={elem.price}
-								categories={elem.categories}
-								isNew={elem.isNew}
-								imageURL={elem.imageURL}
-								onKeyDown={handleKeyDown}
-								onDelete={removeDishFromBasket}
-							/>
-						))}
-						{!dishBasketCtx.basket && (
-							<p className={styles.orders__infoMessage}>
-								Ваша корзина пуста. <br /> Добавьте товары, чтобы
-								продолжить покупки.
-							</p>
-						)}
-					</div>
-					<div className={styles.orders__payment}>
-						<div className={styles.orders__discount}>
-							<span className={styles.orders__discountTitle}>
-								Скидка
-							</span>
-							<span className={styles.orders__discountPrice}>
-								{0}&nbsp;сом
-							</span>
-						</div>
-						<div className={styles.orders__total}>
-							<span className={styles.orders__totalTitle}>Итого</span>
-							<span className={styles.orders__totalPrice}>
-								{dishBasketCtx.totalAmount}&nbsp;сом
-							</span>
-						</div>
-						<button disabled={true} className={styles.orders__paymentBtn}>
-							Перейти к оплате
+			{sidebarContext.sidebarVisible && (
+				<Sidebar
+					open={sidebarContext.sidebarVisible}
+					animationClass={sidebarContext.sidebarAnimationClass}
+				>
+					<div className={styles.orders}>
+						<button
+							onClick={sidebarContext.hideSidebar}
+							className={styles.orders__close}
+						>
+							<Close />
 						</button>
+						<span className={styles.orders__number}>Заказ #34562</span>
+						<OrderTypes
+							onToggleOrderType={toggleOrderType}
+							checkedOrderType={isCheckedOrderType}
+						/>
+						<OrderInfo />
+						<div className={styles.orders__wrapper}>
+							{dishBasketCtx.basket?.map((elem) => (
+								<Order
+									key={elem.id}
+									id={elem.id}
+									description={elem.description}
+									price={elem.price}
+									categories={elem.categories}
+									isNew={elem.isNew}
+									imageURL={elem.imageURL}
+									onKeyDown={handleKeyDown}
+									onDelete={removeDishFromBasket}
+								/>
+							))}
+							{!dishBasketCtx.basket && (
+								<p className={styles.orders__infoMessage}>
+									Ваша корзина пуста. <br /> Добавьте товары, чтобы
+									продолжить покупки.
+								</p>
+							)}
+						</div>
+						<div className={styles.orders__payment}>
+							<div className={styles.orders__discount}>
+								<span className={styles.orders__discountTitle}>
+									Скидка
+								</span>
+								<span className={styles.orders__discountPrice}>
+									{0}&nbsp;сом
+								</span>
+							</div>
+							<div className={styles.orders__total}>
+								<span className={styles.orders__totalTitle}>Итого</span>
+								<span className={styles.orders__totalPrice}>
+									{dishBasketCtx.totalAmount}&nbsp;сом
+								</span>
+							</div>
+							<button
+								// onClick={handleOrder}
+								className={styles.orders__paymentBtn}
+							>
+								Перейти к оплате
+							</button>
+						</div>
 					</div>
-				</div>
-			</Sidebar>
+				</Sidebar>
+			)}
 		</>
 	)
 }

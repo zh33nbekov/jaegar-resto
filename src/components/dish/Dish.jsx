@@ -1,28 +1,23 @@
-import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded'
+import clsx from 'clsx'
 import React, { memo } from 'react'
-import NewIcon from '../../assets/icons/new.svg'
+import { ShoppingCart } from '../../assets/icons/common/ShoppingCart'
 import styles from './dish.module.css'
 
 const Dish = memo((props) => {
 	const handleSetToBasket = () => {
 		const basketDish = {
 			id: props.id,
-			description: props.description,
 			price: props.price,
-			categories: props.categories,
-			imageURL: props.imageURL,
 			isNew: props.isNew,
+			imageURL: props.imageURL,
+			categories: props.categories,
+			description: props.description,
 		}
-		props.onSetToBasket(basketDish)
+		props.onAddToBasket(basketDish)
 	}
 
 	return (
-		<div className={styles.dish}>
-			{props.isNew && (
-				<div className={styles.dish__new}>
-					<img className={styles.dish__newImage} src={NewIcon} alt='' />
-				</div>
-			)}
+		<div className={clsx(styles.dish, { [styles.new]: props.isNew })}>
 			<img className={styles.dish__image} src={props.imageURL} alt='Блюдо' />
 			<p className={styles.dish__description} title={props.description}>
 				{props.description}
@@ -32,10 +27,10 @@ const Dish = memo((props) => {
 				<span className={styles.dish__info}>Доступно {props.info}</span>
 			</div>
 			<button
-				className={`${styles.dish__button} btn`}
 				onClick={handleSetToBasket}
+				className={`${styles.dish__button} btn`}
 			>
-				<ShoppingCartRoundedIcon />
+				<ShoppingCart />
 			</button>
 		</div>
 	)

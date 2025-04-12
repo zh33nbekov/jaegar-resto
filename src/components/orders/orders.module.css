@@ -15,11 +15,16 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	color: #fff;
 }
 .orders__close:hover svg {
 	transform: rotate(360deg);
 	transition: transform 555ms ease-in-out;
 }
+.orders__close svg path {
+	stroke: currentColor;
+}
+
 .orders__close svg {
 	color: #fff;
 	font-size: 20px;

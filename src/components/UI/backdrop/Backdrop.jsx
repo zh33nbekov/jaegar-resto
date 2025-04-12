@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom'
 import { useScrollLock } from '../../../hooks'
 import styles from './backdrop.module.css'
 
-export const Backdrop = ({ open, onClose, animationClass }) => {
+export const Backdrop = ({ open, onClose, animationClass, zIndex }) => {
 	const { lockScroll, unlockScroll } = useScrollLock()
 	if (open) {
 		lockScroll()
@@ -19,6 +19,7 @@ export const Backdrop = ({ open, onClose, animationClass }) => {
 				<div
 					onClick={onClose}
 					className={clsx(styles.backdrop, styles[animationClass])}
+					style={{ zIndex: zIndex }}
 				/>,
 				document.getElementById('backdrop')
 			)}

@@ -1,7 +1,7 @@
-import BasketIcon from '@mui/icons-material/ShoppingCart'
 import clsx from 'clsx'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { ShoppingCart } from '../../assets/icons/common/ShoppingCart'
 import { AppLogo } from '../../assets/icons/navbar'
 import { NAVBAR_LINKS } from '../../constants'
 import { NAVBAR_ROUTE_KEYS } from '../../constants/navbar'
@@ -44,7 +44,7 @@ const Navbar = () => {
 				})}
 			>
 				<span className='sr-only'>Корзина</span>
-				<BasketIcon />
+				<ShoppingCart />
 			</button>
 		</nav>
 	)

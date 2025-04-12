@@ -23,7 +23,7 @@ const Dishes = () => {
 		currentPage,
 		itemsPerPage
 	)
-
+	console.log(currentItems)
 	const goToNextPage = useCallback(() => {
 		if (currentPage < totalPages) {
 			setCurrentPage(currentPage + 1)
@@ -86,28 +86,28 @@ const Dishes = () => {
 			<Snackbar
 				open={snackbar}
 				onClose={hideSnackbar}
-				animationClass={snackbarAnimationClass}
 				options={snackbarOptions}
+				animationClass={snackbarAnimationClass}
 			/>
 			<section className={styles.dishes}>
-				{/* <DishesType
+				<DishesType
 					activeDishType={activeDishType}
 					getInfoForPagination={getIdxAndNameForDishPagination}
-				/> */}
+				/>
 				<h3 className={styles.dishes__title}>Выбирайте блюда</h3>
 				<div className={styles.dishes__content}>
 					<div className={styles.dishes__wrapper}>
 						{currentItems?.map((elem) => (
 							<Dish
-								key={elem.id}
 								id={elem.id}
-								description={elem.description}
-								price={elem.price}
-								categories={elem.categories}
-								isNew={elem.isNew}
+								key={elem.id}
 								info={elem.info}
+								isNew={elem.isNew}
+								price={elem.price}
 								imageURL={elem.imageURL}
-								onSetToBasket={addDishToBasket}
+								categories={elem.categories}
+								description={elem.description}
+								onAddToBasket={addDishToBasket}
 							/>
 						))}
 					</div>

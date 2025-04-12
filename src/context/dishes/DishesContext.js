@@ -24,29 +24,29 @@ const DishesProvider = ({ children }) => {
 	})
 
 	const [searchValue, setSearchValue] = useState('')
-	const searchInputHandler = (event) => {
-		const { value } = event.target
-		setSearchValue(value)
+	const searchInputHandler = (searchQuery) => {
+		setSearchValue(searchQuery)
 	}
 
 	const filteredAndSortedDishes = (category, currentPage, itemsPerPage) => {
-		const filteredStorageDishes = storageDishes?.filter((dish) => {
+		console.log('rendered')
+		const filteredDishes = storageDishes?.filter((dish) => {
 			return dish.description
 				.toLowerCase()
 				.includes(searchValue.toLowerCase())
 		})
 
 		if (category) {
-			const categoryFilteredDishes = filteredStorageDishes.filter(
-				({ categories }) => categories.includes(category)
+			const filteringByCategory = filteredDishes.filter(({ categories }) =>
+				categories.includes(category)
 			)
-			return categoryFilteredDishes?.slice(
+			return filteringByCategory?.slice(
 				(currentPage - 1) * itemsPerPage,
 				currentPage * itemsPerPage
 			)
 		}
 
-		return filteredStorageDishes?.slice(
+		return filteredDishes?.slice(
 			(currentPage - 1) * itemsPerPage,
 			currentPage * itemsPerPage
 		)
