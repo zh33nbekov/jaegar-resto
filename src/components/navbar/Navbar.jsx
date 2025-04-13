@@ -46,8 +46,8 @@ const Navbar = () => {
 						))}
 					</ul>
 					<button
-						onClick={sidebarContext.toggleSidebar}
 						data-count={basketLength}
+						onClick={sidebarContext.toggleSidebar}
 						className={clsx(styles.basketButton, {
 							[styles.active]: sidebarContext.sidebarVisible,
 						})}

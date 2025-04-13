@@ -26,7 +26,7 @@ const Header = () => {
 					onClick={() => toggleNavbar()}
 					className={styles.header__button}
 				>
-					<Menu />
+					<MenuIcon isOpen={open} />
 				</button>
 			</div>
 			<HeaderSearch
@@ -37,3 +37,13 @@ const Header = () => {
 	)
 }
 export default Header
+
+export const MenuIcon = ({ isOpen }) => {
+	return (
+		<div className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	)
+}
