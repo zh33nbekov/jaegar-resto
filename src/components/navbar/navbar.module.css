@@ -2,7 +2,7 @@
 	padding: 20px 0;
 	background-color: rgb(31, 29, 43);
 	height: 100svh;
-	min-height: 100svh;
+	min-height: 100vh;
 	display: flex;
 	align-items: center;
 	position: sticky;
