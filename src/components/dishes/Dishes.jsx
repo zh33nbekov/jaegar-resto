@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { useDishBasketContext } from '../../context/dishes/DishBasketContext'
 import { useDishesContext } from '../../context/dishes/DishesContext'
 import Dish from '../dish/Dish'
@@ -6,7 +6,6 @@ import DishesPagination from '../dishes-pagination/DishesPagination'
 import DishesType from '../dishes-type/DishesType'
 import { Snackbar } from '../UI'
 import styles from './dishes.module.css'
-import { useSnackbar } from '../../hooks/useSnackbar'
 
 const Dishes = () => {
 	// const {} = useSnackbar()
@@ -25,7 +24,6 @@ const Dishes = () => {
 		currentPage,
 		itemsPerPage
 	)
-	console.log(currentPage, 'rendered')
 	const goToNextPage = useCallback(() => {
 		if (currentPage < totalPages) {
 			setCurrentPage(currentPage + 1)

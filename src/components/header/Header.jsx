@@ -1,12 +1,15 @@
 import React from 'react'
 import { Menu } from '../../assets/icons/header/Menu'
 import { useDishesContext } from '../../context/dishes/DishesContext'
+import { useNavbarContext } from '../../context/navbar/NavbarContext'
 import { DATE_NOW } from '../../utils/header'
 import { HeaderSearch } from '../header-search/HeaderSearch'
 import styles from './header.module.css'
 
 const Header = () => {
 	const dishesCtx = useDishesContext()
+	const { toggleNavbar, open } = useNavbarContext()
+	console.log(open)
 
 	const handleSearch = (searchQuery) => {
 		dishesCtx.searchInputHandler(searchQuery)
@@ -19,7 +22,10 @@ const Header = () => {
 					<h1 className={styles.header__title}>Jaegar Resto</h1>
 					<span className={styles.header__date}>{DATE_NOW}</span>
 				</div>
-				<button className={styles.header__button}>
+				<button
+					onClick={() => toggleNavbar()}
+					className={styles.header__button}
+				>
 					<Menu />
 				</button>
 			</div>

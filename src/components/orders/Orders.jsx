@@ -73,6 +73,16 @@ const Orders = () => {
 								</p>
 							)}
 						</div>
+						{!dishBasketCtx.basket.length && (
+							<div className={styles['basket-is-empty']}>
+								<h4 className={styles['basket-is-empty__title']}>
+									Здесь пока пусто
+								</h4>
+								<p className={styles['basket-is-empty__description']}>
+									Добавьте что-то из блюд
+								</p>
+							</div>
+						)}
 						<div className={styles.orders__payment}>
 							<div className={styles.orders__discount}>
 								<span className={styles.orders__discountTitle}>
@@ -88,10 +98,7 @@ const Orders = () => {
 									{dishBasketCtx.totalAmount}&nbsp;сом
 								</span>
 							</div>
-							<button
-								// onClick={handleOrder}
-								className={styles.orders__paymentBtn}
-							>
+							<button className={styles.orders__paymentBtn}>
 								Перейти к оплате
 							</button>
 						</div>

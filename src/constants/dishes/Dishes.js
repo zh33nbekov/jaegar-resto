@@ -279,8 +279,4 @@ export const DISHES_TYPES = [
 	{ name: 'Закуска' },
 	{ name: 'Десерт' },
 	{ name: 'Напитки' },
-	{ name: 'Алкоголь' },
-	{ name: 'Чай' },
-	{ name: 'Кофе' },
-	{ name: 'Холодный чай' },
 ]

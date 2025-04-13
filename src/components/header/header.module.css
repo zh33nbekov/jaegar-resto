@@ -7,7 +7,6 @@
 }
 .header__info {
 	display: flex;
-	/* align-items: center; */
 	justify-content: space-between;
 }
 .header__title {
@@ -46,7 +45,7 @@
 		padding-bottom: 25px;
 	}
 }
-@media (min-width: 971px) {
+@media (min-width: 656px) {
 	.header__button {
 		display: none;
 	}
