@@ -12,13 +12,15 @@
 }
 /* @media (hover: hover) and (pointer: fine) {
 } */
-.search:hover {
-	border: 1px solid #0066ff;
-}
-.search:hover .search__button svg {
-	fill: #0066ff;
-	animation: diagonal-spin 0.6s ease-in-out;
-	transform-origin: center;
+@media (hover: hover) and (pointer: fine) {
+	.search:hover {
+		border: 1px solid #0066ff;
+	}
+	.search:hover .search__button svg {
+		fill: #0066ff;
+		animation: diagonal-spin 0.6s ease-in-out;
+		transform-origin: center;
+	}
 }
 .search:has(.search__input:focus) {
 	border-color: #0066ff;
@@ -48,6 +50,12 @@
 	background-color: transparent;
 	border: 0;
 	color: #fff;
+	border-radius: inherit;
+}
+.search:has(.search__input:focus) .search__button svg {
+	fill: #0066ff;
+	animation: diagonal-spin 0.6s ease-in-out;
+	transform-origin: center;
 }
 .search__input::placeholder {
 	color: rgb(171, 187, 194);

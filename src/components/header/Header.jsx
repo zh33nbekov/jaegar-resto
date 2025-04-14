@@ -1,5 +1,4 @@
 import React from 'react'
-import { Menu } from '../../assets/icons/header/Menu'
 import { useDishesContext } from '../../context/dishes/DishesContext'
 import { useNavbarContext } from '../../context/navbar/NavbarContext'
 import { DATE_NOW } from '../../utils/header'
