@@ -10,7 +10,7 @@ const ProductsList = (props) => {
 	)
 	const intersectionRef = React.useRef(null)
 	const intersection = useIntersection(intersectionRef, {
-		rootMargin: '0px 0px -30% 0px',
+		rootMargin: '0px 0px -60% 0px',
 		threshold: 0.1,
 	})
 	useEffect(() => {

@@ -1,7 +1,7 @@
 .products-list {
 	color: #fff;
-	padding-top: 55px;
-	padding-bottom: 55px;
+	padding-top: clamp(33px, 22.6px + 3.24vw, 55px);
+	padding-bottom: clamp(33px, 22.6px + 3.24vw, 55px);
 }
 .products-list__wrapper {
 	display: flex;
@@ -10,9 +10,10 @@
 	column-gap: 15px;
 	/* justify-content: space-between; */
 	width: 100%;
-	padding-top: 75px;
+	padding-top: clamp(65px, 60.2px + 1.47vw, 75px);
 }
 .products-list__title {
 	text-transform: capitalize;
 	font-size: 25px;
+	font-size: clamp(21px, 19.1px + 0.59vw, 25px);
 }
