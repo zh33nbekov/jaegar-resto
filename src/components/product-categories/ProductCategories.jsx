@@ -5,7 +5,6 @@ import styles from './product-categories.module.css'
 
 const ProductCategories = (props) => {
 	const activeCategory = useCategoryStore((state) => state.activeCategory)
-	console.log(activeCategory)
 	return (
 		<ul className={styles['product-categories']}>
 			{props.categories.map((category) => (
