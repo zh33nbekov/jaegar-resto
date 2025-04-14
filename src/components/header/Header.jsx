@@ -2,6 +2,7 @@ import React from 'react'
 import { useDishesContext } from '../../context/dishes/DishesContext'
 import { useNavbarContext } from '../../context/navbar/NavbarContext'
 import { DATE_NOW } from '../../utils/header'
+import BurgerMenu from '../burger-menu/BurgerMenu'
 import { HeaderSearch } from '../header-search/HeaderSearch'
 import styles from './header.module.css'
 
@@ -25,7 +26,7 @@ const Header = () => {
 					onClick={() => toggleNavbar()}
 					className={styles.header__button}
 				>
-					<MenuIcon isOpen={open} />
+					<BurgerMenu isOpen={open} />
 				</button>
 			</div>
 			<HeaderSearch
@@ -36,13 +37,3 @@ const Header = () => {
 	)
 }
 export default Header
-
-export const MenuIcon = ({ isOpen }) => {
-	return (
-		<div className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
-			<span></span>
-			<span></span>
-			<span></span>
-		</div>
-	)
-}
