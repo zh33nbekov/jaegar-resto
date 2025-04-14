@@ -54,6 +54,15 @@
 .product-category:hover {
 	color: #ea7c69;
 }
+.product-category.active {
+	color: #ea7c69;
+	filter: drop-shadow(0 0 3px #000);
+}
+.product-category.active::before {
+	left: 0;
+	width: 100%;
+	transform: translateX(0);
+}
 .product-category__link {
 	color: currentColor;
 }

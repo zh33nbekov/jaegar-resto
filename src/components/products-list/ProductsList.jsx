@@ -1,10 +1,30 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useIntersection } from 'react-use'
+import { useCategoryStore } from '../../store/use'
 import Product from '../product/Product'
 import styles from './products-list.module.css'
 
 const ProductsList = (props) => {
+	const setActiveCategory = useCategoryStore(
+		(state) => state.setActiveCategory
+	)
+	const intersectionRef = React.useRef(null)
+	const intersection = useIntersection(intersectionRef, {
+		threshold: 0.5,
+	})
+	useEffect(() => {
+		if (intersection?.isIntersecting) {
+			console.log(intersectionRef.current)
+			setActiveCategory(intersectionRef.current.id)
+		}
+	}, [intersection?.isIntersecting, setActiveCategory])
+
 	return (
-		<div className={styles['products-list']} id={props.category}>
+		<div
+			id={props.category}
+			className={styles['products-list']}
+			ref={intersectionRef}
+		>
 			<h4 className={styles['products-list__title']}>{props.category}</h4>
 			<div className={styles['products-list__wrapper']}>
 				{props.items.map((item) => (
