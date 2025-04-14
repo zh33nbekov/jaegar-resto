@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useIntersection } from 'react-use'
-import { useCategoryStore } from '../../store/use'
+import { useCategoryStore } from '../../store/useCategory'
 import Product from '../product/Product'
 import styles from './products-list.module.css'
 

@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import React from 'react'
-import { useCategoryStore } from '../../store/use'
+import { useCategoryStore } from '../../store/useCategory'
 import styles from './product-categories.module.css'
 
 const ProductCategories = (props) => {
