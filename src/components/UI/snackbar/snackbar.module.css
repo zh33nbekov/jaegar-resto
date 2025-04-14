@@ -2,15 +2,14 @@
 	position: fixed;
 	top: 20px;
 	right: 20px;
-	border-radius: 20px;
+	border-radius: 15px;
 	background: rgba(255, 255, 255, 0.2);
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
 	border: 1px solid rgba(255, 255, 255, 0.3);
-	padding: 20px;
+	padding: 10px;
 	width: 333px;
-	height: 111px;
 	animation: desktopOpen 500ms ease forwards;
 	z-index: 100;
 }
@@ -23,8 +22,8 @@
 }
 .closeButton {
 	position: absolute;
-	top: -30px;
-	left: -30px;
+	top: -20px;
+	left: -20px;
 	width: 25px;
 	height: 25px;
 	background-color: #e5e5e5a9;

@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import { Close } from '../../assets/icons/common/Close'
-import { useDishBasketContext } from '../../context/dishes/DishBasketContext'
+import { useBasketContext } from '../../context/basket/BasketContext'
 import { useSidebarContext } from '../../context/sidebar/SidebarContext'
 import OrderInfo from '../order-info/OrderInfo'
 import OrderTypes from '../order-types/OrderTypes'
@@ -17,14 +17,14 @@ const Orders = () => {
 	const [isCheckedOrderType, setCheckedOrderType] = useState(null)
 	const toggleOrderType = useCallback((id) => setCheckedOrderType(id), [])
 	const sidebarContext = useSidebarContext()
-	const dishBasketCtx = useDishBasketContext()
+	const dishBasketCtx = useBasketContext()
 	const handleKeyDown = (event) => {
 		if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown') {
 			event.preventDefault()
 		}
 	}
 	const removeDishFromBasket = (id) => {
-		dishBasketCtx.handleDishDelete(id)
+		dishBasketCtx.handleProductDelete(id)
 	}
 
 	return (

@@ -81,7 +81,9 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'TildaSans', Arial, sans-serif;
-	/* border: 1px solid red; */
+}
+a {
+	text-decoration: none;
 }
 a,
 button {
@@ -98,8 +100,8 @@ input {
 }
 html,
 body {
-	/* height: 100%; */
 	min-height: 100%;
+	scroll-behavior: smooth;
 }
 body {
 	height: 100%;

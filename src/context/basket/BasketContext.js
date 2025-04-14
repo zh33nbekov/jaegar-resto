@@ -5,17 +5,17 @@ import {
 	setDataToLocalStorage,
 } from '../../helpers/common'
 
-const DishBasketContext = createContext({
+const BasketContext = createContext({
 	basket: [],
 	totalAmount: 0,
 	basketLength: 0,
 	readBasketData: () => {},
-	addDishToBasket: () => {},
-	handleDishDelete: () => {},
+	addProductToBasket: () => {},
+	handleProductDelete: () => {},
 })
-export const useDishBasketContext = () => useContext(DishBasketContext)
+export const useBasketContext = () => useContext(BasketContext)
 
-const DishBasketProvider = ({ children }) => {
+const BasketProvider = ({ children }) => {
 	const [basket, setBasket] = useState(
 		() => getDataFromLocalStorage(STORAGE_KEYS.BASKET) || []
 	)
@@ -25,21 +25,23 @@ const DishBasketProvider = ({ children }) => {
 		setBasket(updatedBasket)
 	}
 
-	const addDishToBasket = (newDish) => {
+	const addProductToBasket = (newProduct) => {
 		let message
-		const doesTheElementExist = basket.find((dish) => dish.id === newDish.id)
+		const doesTheElementExist = basket.find(
+			(product) => product.id === newProduct.id
+		)
 		if (!doesTheElementExist) {
-			const updatedBasket = [...basket, newDish]
+			const updatedBasket = [...basket, newProduct]
 			setDataToLocalStorage(STORAGE_KEYS.BASKET, updatedBasket)
 			setBasket(updatedBasket)
-			message = `${newDish.description} успешно добавлен в корзину!`
+			message = `${newProduct.description} успешно добавлен в корзину!`
 		} else {
-			message = `${newDish.description} уже существует!`
+			message = `${newProduct.description} уже существует!`
 		}
 		return message
 	}
 
-	const handleDishDelete = (id) => {
+	const handleProductDelete = (id) => {
 		const filteredBasket = basket.filter((elem) => elem.id !== id)
 		setDataToLocalStorage(STORAGE_KEYS.BASKET, filteredBasket)
 		setBasket(filteredBasket)
@@ -55,15 +57,13 @@ const DishBasketProvider = ({ children }) => {
 		basket,
 		totalAmount,
 		readBasketData,
-		addDishToBasket,
-		handleDishDelete,
+		addProductToBasket,
+		handleProductDelete,
 		basketLength: basket.length,
 	}
 	return (
-		<DishBasketContext.Provider value={values}>
-			{children}
-		</DishBasketContext.Provider>
+		<BasketContext.Provider value={values}>{children}</BasketContext.Provider>
 	)
 }
 
-export default DishBasketProvider
+export default BasketProvider

@@ -4,12 +4,9 @@ import styles from './header-search.module.css'
 
 export const HeaderSearch = (props) => {
 	const searchRef = useRef(null)
-	const handleSearch = () => {
-		props.onSearch(searchRef.current.value)
-	}
 	return (
 		<div className={styles.search}>
-			<button className={styles.search__button} onClick={handleSearch}>
+			<button className={styles.search__button}>
 				<Search />
 			</button>
 			<input

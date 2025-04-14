@@ -5,13 +5,13 @@ import { ShoppingCart } from '../../assets/icons/common/ShoppingCart'
 import { AppLogo } from '../../assets/icons/navbar'
 import { NAVBAR_LINKS } from '../../constants'
 import { NAVBAR_ROUTE_KEYS } from '../../constants/navbar'
-import { useDishBasketContext } from '../../context/dishes/DishBasketContext'
+import { useBasketContext } from '../../context/basket/BasketContext'
 import { useNavbarContext } from '../../context/navbar/NavbarContext'
 import { useSidebarContext } from '../../context/sidebar/SidebarContext'
 import styles from './navbar.module.css'
 
 const Navbar = () => {
-	const { basketLength } = useDishBasketContext()
+	const { basketLength } = useBasketContext()
 	const sidebarContext = useSidebarContext()
 	const { windowWidth, isVisible, animationClass, open } = useNavbarContext()
 

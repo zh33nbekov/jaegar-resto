@@ -1,5 +1,4 @@
 import React, { memo, useState } from 'react'
-import { useDishesContext } from '../../../../context/dishes/DishesContext'
 import styles from './ManagementForm.module.css'
 
 const dishCategories = [
@@ -64,7 +63,7 @@ const ManagementForm = ({ onSubmit }) => {
 		isNew: false,
 		categories: ['все'],
 	})
-	const dishCtx = useDishesContext()
+	// const dishCtx = useDishesContext()
 
 	const inputsHandler = (name) => {
 		return (event) => {
@@ -98,7 +97,7 @@ const ManagementForm = ({ onSubmit }) => {
 
 	const submitHandler = (event) => {
 		event.preventDefault()
-		dishCtx.createNewDish(isNewDish)
+		// dishCtx.createNewDish(isNewDish)
 	}
 
 	return (

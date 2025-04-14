@@ -1,0 +1,18 @@
+.products-list {
+	color: #fff;
+	padding-top: 55px;
+	padding-bottom: 55px;
+}
+.products-list__wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 55px;
+	column-gap: 15px;
+	/* justify-content: space-between; */
+	width: 100%;
+	padding-top: 75px;
+}
+.products-list__title {
+	text-transform: capitalize;
+	font-size: 25px;
+}

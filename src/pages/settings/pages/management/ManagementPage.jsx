@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet'
 import OptionIcon from '../../../../assets/icons/option.svg'
 import PlusIcon from '../../../../assets/icons/plus.svg'
 import { Backdrop, Modal } from '../../../../components/UI'
-import { useDishesContext } from '../../../../context/dishes/DishesContext'
 import ManagementDishCard from './ManagementDishCard'
 import ManagementEditDish from './ManagementEditDish'
 import ManagementForm from './ManagementForm'
@@ -21,7 +20,6 @@ const ManagementPage = () => {
 		id: null,
 		categories: [],
 	})
-	const dishesCtx = useDishesContext()
 
 	const showNewDishForm = () => {
 		setIsNewDishForm(true)
@@ -80,7 +78,7 @@ const ManagementPage = () => {
 
 	const saveEditedDish = (event) => {
 		event.preventDefault()
-		dishesCtx.editDish(editDish.id, editDish)
+		// dishesCtx.editDish(editDish.id, editDish)
 	}
 
 	return (
@@ -156,7 +154,7 @@ const ManagementPage = () => {
 						</span>
 					</button>
 
-					{dishesCtx.storageDishes?.map((dish) => (
+					{[].map((dish) => (
 						<div className={styles.management__dish} key={dish.id}>
 							<ManagementDishCard
 								description={dish.description}

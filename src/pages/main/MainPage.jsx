@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import Dishes from '../../components/dishes/Dishes'
 import Header from '../../components/header/Header'
+import Products from '../../components/products/Products'
 import AppLayout from '../../layouts/AppLayout'
 
 const MainPage = () => {
@@ -19,7 +19,7 @@ const MainPage = () => {
 				/>
 			</Helmet>
 			<Header />
-			<Dishes />
+			<Products />
 		</AppLayout>
 	)
 }
