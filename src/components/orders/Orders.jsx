@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react'
 import { Close } from '../../assets/icons/common/Close'
-import { useBasketContext } from '../../context/basket/BasketContext'
 import { useSidebar } from '../../hooks/useSidebar'
+import { useBasketStore } from '../../store/basket'
 import { useSidebarStore } from '../../store/sidebar'
 import OrderInfo from '../order-info/OrderInfo'
 import OrderTypes from '../order-types/OrderTypes'
@@ -19,15 +19,20 @@ const Orders = () => {
 	const toggleOrderType = useCallback((id) => setCheckedOrderType(id), [])
 	const { handleClose } = useSidebar()
 	const sidebarStore = useSidebarStore()
-	const dishBasketCtx = useBasketContext()
+	const basket = useBasketStore((state) => state.items)
+	const removeFromBasket = useBasketStore((state) => state.removeFromBasket)
 	const handleKeyDown = (event) => {
 		if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown') {
 			event.preventDefault()
 		}
 	}
-	const removeDishFromBasket = (id) => {
-		dishBasketCtx.handleProductDelete(id)
+	const handleDelete = (title) => {
+		removeFromBasket(title)
 	}
+
+	const totalAmount = basket.reduce((acc, elem) => {
+		return (acc += elem.price)
+	}, 0)
 
 	return (
 		<>
@@ -55,52 +60,48 @@ const Orders = () => {
 						/>
 						<OrderInfo />
 						<div className={styles.orders__wrapper}>
-							{dishBasketCtx.basket?.map((elem) => (
+							{basket?.map((elem) => (
 								<Order
 									key={elem.title}
 									price={elem.price}
 									isNew={elem.isNew}
 									title={elem.title}
+									onDelete={handleDelete}
 									imageURL={elem.imageURL}
 									category={elem.category}
 									onKeyDown={handleKeyDown}
 									description={elem.description}
-									onDelete={removeDishFromBasket}
 								/>
 							))}
-							{!dishBasketCtx.basket && (
-								<p className={styles.orders__infoMessage}>
-									Ваша корзина пуста. <br /> Добавьте товары, чтобы
-									продолжить покупки.
-								</p>
-							)}
 						</div>
-						{!dishBasketCtx.basket.length && (
+						{!basket.length && (
 							<div className={styles['basket-is-empty']}>
 								<h4 className={styles['basket-is-empty__title']}>
-									Здесь пока пусто
+									Ваша корзина пуста.
 								</h4>
 								<p className={styles['basket-is-empty__description']}>
-									Добавьте что-то из блюд
+									Добавьте товары, чтобы продолжить покупки.
 								</p>
 							</div>
 						)}
 						<div className={styles.orders__payment}>
 							<div className={styles.orders__discount}>
-								<span className={styles.orders__discountTitle}>
+								<span className={styles['orders__discount-title']}>
 									Скидка
 								</span>
-								<span className={styles.orders__discountPrice}>
+								<span className={styles['orders__discount-price']}>
 									{0}&nbsp;сом
 								</span>
 							</div>
 							<div className={styles.orders__total}>
-								<span className={styles.orders__totalTitle}>Итого</span>
-								<span className={styles.orders__totalPrice}>
-									{dishBasketCtx.totalAmount}&nbsp;сом
+								<span className={styles['orders__total-title']}>
+									Итого
+								</span>
+								<span className={styles['orders__total-price']}>
+									{totalAmount}&nbsp;сом
 								</span>
 							</div>
-							<button className={styles.orders__paymentBtn}>
+							<button className={styles['orders__payment-btn']}>
 								Перейти к оплате
 							</button>
 						</div>

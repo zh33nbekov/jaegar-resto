@@ -9,7 +9,7 @@ const Order = (props) => {
 	return (
 		<div className={styles.order}>
 			<div className={styles.order__header}>
-				<div className={styles.order__headerSummary}>
+				<div className={styles['order__header-summary']}>
 					<img
 						src={props.imageURL}
 						alt={props.description}
@@ -18,11 +18,8 @@ const Order = (props) => {
 						})}
 					/>
 					<div className={styles.order__summary}>
-						<p
-							className={styles.order__description}
-							title={props.description}
-						>
-							{props.description}
+						<p className={styles.order__title} title={props.title}>
+							{props.title}
 						</p>
 						<span className={styles.order__price}>
 							{props.price}&nbsp;сом
@@ -37,7 +34,7 @@ const Order = (props) => {
 					onKeyDown={props.onKeyDown}
 					className={styles.order__quantity}
 				/>
-				<span className={styles.order__totalPrice}>
+				<span className={styles['order__total-price']}>
 					{props.price}&nbsp;сом
 				</span>
 			</div>
@@ -48,7 +45,7 @@ const Order = (props) => {
 					placeholder='Примечание к заказу...'
 				/>
 				<button
-					className={styles.order__deleteButton}
+					className={styles['order__delete-button']}
 					onClick={() => props.onDelete(props.title)}
 				>
 					<Delete />

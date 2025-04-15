@@ -5,16 +5,16 @@ import { ShoppingCart } from '../../assets/icons/common/ShoppingCart'
 import { AppLogo } from '../../assets/icons/navbar'
 import { NAVBAR_LINKS } from '../../constants'
 import { NAVBAR_ROUTE_KEYS } from '../../constants/navbar'
-import { useBasketContext } from '../../context/basket/BasketContext'
 import { useSidebar } from '../../hooks/useSidebar'
+import { useBasketStore } from '../../store/basket'
 import { useNavbarStore } from '../../store/navbar'
 import { useSidebarStore } from '../../store/sidebar'
 import styles from './navbar.module.css'
 
 const Navbar = () => {
-	const { basketLength } = useBasketContext()
 	const navbarStore = useNavbarStore((state) => state)
 	const sidebarStore = useSidebarStore((state) => state)
+	const basketLength = useBasketStore((state) => state.items.length)
 	const { toggleSidebar } = useSidebar()
 
 	return (

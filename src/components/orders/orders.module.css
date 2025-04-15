@@ -56,12 +56,12 @@
 	align-items: center;
 	justify-content: space-between;
 }
-.orders__discountTitle {
+.orders__discount-title {
 	color: rgb(171, 187, 194);
 	font-size: 14px;
 	font-weight: 400;
 }
-.orders__discountPrice {
+.orders__discount-price {
 	font-size: 16px;
 	font-weight: 500;
 	color: #fff;
@@ -72,17 +72,17 @@
 	justify-content: space-between;
 	padding-bottom: 17px;
 }
-.orders__totalTitle {
+.orders__total-title {
 	color: rgb(171, 187, 194);
 	font-size: 14px;
 	font-weight: 400;
 }
-.orders__totalPrice {
+.orders__total-price {
 	font-size: 16px;
 	font-weight: 500;
 	color: #fff;
 }
-.orders__paymentBtn {
+.orders__payment-btn {
 	width: 100%;
 	padding: 14px;
 	margin-top: auto;

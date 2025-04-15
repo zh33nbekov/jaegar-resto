@@ -1,12 +1,12 @@
 import clsx from 'clsx'
 import React, { memo } from 'react'
 import { ShoppingCart } from '../../assets/icons/common/ShoppingCart'
-import { useBasketContext } from '../../context/basket/BasketContext'
+import { useBasketStore } from '../../store/basket'
 import styles from './product.module.css'
 
 const Product = memo((props) => {
 	const isDrink = props.category === 'напитки'
-	const basketContext = useBasketContext()
+	const addToBasket = useBasketStore((state) => state.addToBasket)
 
 	return (
 		<div className={clsx(styles['product'], { [styles.new]: props.isNew })}>
@@ -31,7 +31,7 @@ const Product = memo((props) => {
 				</span>
 			</div>
 			<button
-				onClick={() => basketContext.addProductToBasket(props)}
+				onClick={() => addToBasket(props)}
 				className={`${styles.product__button} btn`}
 			>
 				<ShoppingCart />
