@@ -7,10 +7,10 @@ const Product = (props) => {
 	return (
 		<div className={clsx(styles['product'], { [styles.new]: props.isNew })}>
 			<img
-				alt='Блюдо'
+				loading='lazy'
+				alt={props.title}
 				src={props.imageURL}
 				className={styles['product__image']}
-				loading='lazy'
 			/>
 			<h4>{props.title}</h4>
 			<p

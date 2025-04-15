@@ -15,7 +15,8 @@
 	padding-top: clamp(65px, 60.2px + 1.47vw, 75px);
 	width: 100%;
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	/* grid-template-columns: repeat(3, 1fr); */
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 	grid-auto-rows: minmax(100px, auto);
 	row-gap: 63px;
 	column-gap: 20px;
