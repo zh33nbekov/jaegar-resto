@@ -1,23 +1,20 @@
 import { useNavbarStore } from '../store/navbar'
 
 export const useNavbar = () => {
-	const open = useNavbarStore((state) => state.open)
-	const hideNavbar = useNavbarStore((state) => state.hideNavbar)
-	const forceCloseNavbar = useNavbarStore((state) => state.forceCloseNavbar)
-	const showNavbar = useNavbarStore((state) => state.forceCloseNavbar)
+	const navbarStore = useNavbarStore()
 
 	const handleClose = () => {
-		hideNavbar()
+		navbarStore.hideNavbar()
 
 		setTimeout(() => {
-			forceCloseNavbar()
+			navbarStore.forceCloseNavbar()
 		}, 200)
 	}
 	const toggleNavbar = () => {
-		if (open) {
+		if (navbarStore.open) {
 			handleClose()
 		} else {
-			showNavbar()
+			navbarStore.showNavbar()
 		}
 	}
 
