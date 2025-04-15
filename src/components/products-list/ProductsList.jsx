@@ -8,14 +8,14 @@ const ProductsList = (props) => {
 	const setActiveCategory = useCategoryStore(
 		(state) => state.setActiveCategory
 	)
-	const intersectionRef = React.useRef(null)
-	const intersection = useIntersection(intersectionRef, {
+	const productsListRef = React.useRef(null)
+	const intersection = useIntersection(productsListRef, {
 		rootMargin: '0px 0px -60% 0px',
 		threshold: 0.1,
 	})
 	useEffect(() => {
 		if (intersection?.isIntersecting) {
-			setActiveCategory(intersectionRef.current.id)
+			setActiveCategory(productsListRef.current.id)
 		}
 	}, [intersection?.isIntersecting, setActiveCategory])
 
@@ -23,16 +23,16 @@ const ProductsList = (props) => {
 		<div
 			id={props.category}
 			className={styles['products-list']}
-			ref={intersectionRef}
+			ref={productsListRef}
 		>
 			<h4 className={styles['products-list__title']}>{props.category}</h4>
 			<div className={styles['products-list__wrapper']}>
 				{props.items.map((item) => (
 					<Product
-						key={item.id}
+						key={item.title}
 						price={item.price}
-						info={item.info}
 						isNew={item.isNew}
+						title={item.title}
 						imageURL={item.imageURL}
 						description={item.description}
 					/>

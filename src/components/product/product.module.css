@@ -26,12 +26,7 @@
 	background-position: center;
 }
 @media (hover: hover) and (pointer: fine) {
-	.product:hover .product__image {
-		transform: rotateY(360deg);
-		transition: transform 1s ease-in-out;
-	}
-	.product:hover .product__price,
-	.product:hover .product__info {
+	.product:hover .product__price {
 		opacity: 0;
 		visibility: hidden;
 	}
@@ -67,7 +62,6 @@
 	align-items: center;
 }
 .product__price,
-.product__info,
 .product__button {
 	transition: opacity 200ms ease-in-out;
 }
@@ -75,12 +69,6 @@
 	font-size: 14px;
 	font-weight: 400;
 	padding: 8px 0 4px;
-	opacity: 1;
-}
-.product__info {
-	color: rgb(171, 187, 194);
-	font-size: 14px;
-	font-weight: 400;
 	opacity: 1;
 }
 .product__button {
@@ -156,8 +144,7 @@
 		opacity: initial;
 		visibility: initial;
 	}
-	.product:hover .product__price,
-	.product:hover .product__info {
+	.product:hover .product__price {
 		opacity: initial;
 		visibility: initial;
 	}
