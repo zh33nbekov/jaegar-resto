@@ -1,8 +1,8 @@
 import Orders from './components/orders/Orders'
 import { Preloader } from './components/UI'
 import BasketProvider from './context/basket/BasketContext'
-import NavbarProvider from './context/navbar/NavbarContext'
 import SidebarProvider from './context/sidebar/SidebarContext'
+import NavbarProvider from './providers/NavbarProvider'
 import AppRoutes from './routes/AppRoutes'
 
 const AppContent = () => {

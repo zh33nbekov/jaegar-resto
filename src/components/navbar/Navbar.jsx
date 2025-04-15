@@ -6,23 +6,28 @@ import { AppLogo } from '../../assets/icons/navbar'
 import { NAVBAR_LINKS } from '../../constants'
 import { NAVBAR_ROUTE_KEYS } from '../../constants/navbar'
 import { useBasketContext } from '../../context/basket/BasketContext'
-import { useNavbarContext } from '../../context/navbar/NavbarContext'
 import { useSidebarContext } from '../../context/sidebar/SidebarContext'
+import { useNavbarStore } from '../../store/navbar'
 import styles from './navbar.module.css'
 
 const Navbar = () => {
 	const { basketLength } = useBasketContext()
 	const sidebarContext = useSidebarContext()
-	const { windowWidth, isVisible, animationClass, open } = useNavbarContext()
+	const navbarStore = useNavbarStore((state) => state)
 
 	return (
 		<>
-			{open || isVisible ? (
+			{navbarStore.open || navbarStore.isVisible ? (
 				<nav
 					className={clsx(styles.navigation, {
-						[styles[animationClass]]: animationClass,
+						[styles[navbarStore.animationClass]]:
+							navbarStore.animationClass,
 					})}
-					style={windowWidth > 655 ? undefined : { position: 'fixed' }}
+					style={
+						navbarStore.windowWidth > 655
+							? undefined
+							: { position: 'fixed' }
+					}
 				>
 					<NavLink to={NAVBAR_ROUTE_KEYS.HOME} className={styles.appLogo}>
 						<span className='sr-only'>Логотип</span>

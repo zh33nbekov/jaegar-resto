@@ -1,12 +1,14 @@
 import React from 'react'
-import { useNavbarContext } from '../../context/navbar/NavbarContext'
+import { useNavbar } from '../../hooks/useNavbar'
+import { useNavbarStore } from '../../store/navbar'
 import { DATE_NOW } from '../../utils/header'
 import BurgerMenu from '../burger-menu/BurgerMenu'
 import { HeaderSearch } from '../header-search/HeaderSearch'
 import styles from './header.module.css'
 
 const Header = () => {
-	const { toggleNavbar, open } = useNavbarContext()
+	const navbarStore = useNavbarStore((state) => state)
+	const { toggleNavbar } = useNavbar()
 
 	return (
 		<header className={styles.header}>
@@ -19,7 +21,7 @@ const Header = () => {
 					onClick={() => toggleNavbar()}
 					className={styles.header__button}
 				>
-					<BurgerMenu isOpen={open} />
+					<BurgerMenu isOpen={navbarStore.open} />
 				</button>
 			</div>
 			<HeaderSearch placeholder='Ищите еду, кофе и так далее...' />
