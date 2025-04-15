@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-export const useNavbarStore = create((set, get) => ({
+export const useNavbarStore = create((set) => ({
 	open: false,
 	animationClass: '',
 	windowWidth: typeof window !== 'undefined' ? window.innerWidth : 0,

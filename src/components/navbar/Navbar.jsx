@@ -6,14 +6,16 @@ import { AppLogo } from '../../assets/icons/navbar'
 import { NAVBAR_LINKS } from '../../constants'
 import { NAVBAR_ROUTE_KEYS } from '../../constants/navbar'
 import { useBasketContext } from '../../context/basket/BasketContext'
-import { useSidebarContext } from '../../context/sidebar/SidebarContext'
+import { useSidebar } from '../../hooks/useSidebar'
 import { useNavbarStore } from '../../store/navbar'
+import { useSidebarStore } from '../../store/sidebar'
 import styles from './navbar.module.css'
 
 const Navbar = () => {
 	const { basketLength } = useBasketContext()
-	const sidebarContext = useSidebarContext()
 	const navbarStore = useNavbarStore((state) => state)
+	const sidebarStore = useSidebarStore((state) => state)
+	const { toggleSidebar } = useSidebar()
 
 	return (
 		<>
@@ -52,9 +54,9 @@ const Navbar = () => {
 					</ul>
 					<button
 						data-count={basketLength}
-						onClick={sidebarContext.toggleSidebar}
+						onClick={toggleSidebar}
 						className={clsx(styles.basketButton, {
-							[styles.active]: sidebarContext.sidebarVisible,
+							[styles.active]: sidebarStore.open,
 						})}
 					>
 						<span className='sr-only'>Корзина</span>

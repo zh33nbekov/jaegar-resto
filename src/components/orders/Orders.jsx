@@ -1,7 +1,8 @@
 import React, { useCallback, useState } from 'react'
 import { Close } from '../../assets/icons/common/Close'
 import { useBasketContext } from '../../context/basket/BasketContext'
-import { useSidebarContext } from '../../context/sidebar/SidebarContext'
+import { useSidebar } from '../../hooks/useSidebar'
+import { useSidebarStore } from '../../store/sidebar'
 import OrderInfo from '../order-info/OrderInfo'
 import OrderTypes from '../order-types/OrderTypes'
 import Order from '../order/Order'
@@ -16,7 +17,8 @@ const Orders = () => {
 	// })
 	const [isCheckedOrderType, setCheckedOrderType] = useState(null)
 	const toggleOrderType = useCallback((id) => setCheckedOrderType(id), [])
-	const sidebarContext = useSidebarContext()
+	const { handleClose } = useSidebar()
+	const sidebarStore = useSidebarStore()
 	const dishBasketCtx = useBasketContext()
 	const handleKeyDown = (event) => {
 		if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown') {
@@ -30,18 +32,18 @@ const Orders = () => {
 	return (
 		<>
 			<Backdrop
-				open={sidebarContext.sidebarVisible}
-				onClose={sidebarContext.hideSidebar}
-				animationClass={sidebarContext.sidebarAnimationClass}
+				onClose={handleClose}
+				open={sidebarStore.open}
+				animationClass={sidebarStore.animationClass}
 			/>
-			{sidebarContext.sidebarVisible && (
+			{sidebarStore.open && (
 				<Sidebar
-					open={sidebarContext.sidebarVisible}
-					animationClass={sidebarContext.sidebarAnimationClass}
+					open={sidebarStore.open}
+					animationClass={sidebarStore.animationClass}
 				>
 					<div className={styles.orders}>
 						<button
-							onClick={sidebarContext.hideSidebar}
+							onClick={handleClose}
 							className={styles.orders__close}
 						>
 							<Close />
@@ -55,14 +57,14 @@ const Orders = () => {
 						<div className={styles.orders__wrapper}>
 							{dishBasketCtx.basket?.map((elem) => (
 								<Order
-									key={elem.id}
-									id={elem.id}
-									description={elem.description}
+									key={elem.title}
 									price={elem.price}
-									categories={elem.categories}
 									isNew={elem.isNew}
+									title={elem.title}
 									imageURL={elem.imageURL}
+									category={elem.category}
 									onKeyDown={handleKeyDown}
+									description={elem.description}
 									onDelete={removeDishFromBasket}
 								/>
 							))}

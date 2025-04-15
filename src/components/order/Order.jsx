@@ -1,35 +1,32 @@
+import clsx from 'clsx'
 import React from 'react'
 import { Delete } from '../../assets/icons/common/Delete'
 import styles from './order.module.css'
 
-const Order = ({
-	onKeyDown,
-	id,
-	description,
-	price,
-	categories = [],
-	imageURL,
-	onDelete,
-}) => {
-	const drinkCategory = categories?.find(
-		(category) => category.toLowerCase() === 'напитки'
-	)
+const Order = (props) => {
+	const isDrink = props.category === 'напитки'
 
 	return (
 		<div className={styles.order}>
 			<div className={styles.order__header}>
 				<div className={styles.order__headerSummary}>
 					<img
-						className={styles.order__image}
-						style={drinkCategory ? { transform: 'rotate(15deg)' } : {}}
-						src={imageURL}
-						alt={description}
+						src={props.imageURL}
+						alt={props.description}
+						className={clsx(styles.order__image, {
+							[styles.drink]: isDrink,
+						})}
 					/>
 					<div className={styles.order__summary}>
-						<p className={styles.order__description} title={description}>
-							{description}
+						<p
+							className={styles.order__description}
+							title={props.description}
+						>
+							{props.description}
 						</p>
-						<span className={styles.order__price}>{price}&nbsp;сом</span>
+						<span className={styles.order__price}>
+							{props.price}&nbsp;сом
+						</span>
 					</div>
 				</div>
 				<input
@@ -37,10 +34,12 @@ const Order = ({
 					defaultValue={1}
 					min={1}
 					max={10}
-					onKeyDown={onKeyDown}
+					onKeyDown={props.onKeyDown}
 					className={styles.order__quantity}
 				/>
-				<span className={styles.order__totalPrice}>{price}&nbsp;сом</span>
+				<span className={styles.order__totalPrice}>
+					{props.price}&nbsp;сом
+				</span>
 			</div>
 			<div className={styles.order__footer}>
 				<input
@@ -50,7 +49,7 @@ const Order = ({
 				/>
 				<button
 					className={styles.order__deleteButton}
-					onClick={() => onDelete(id)}
+					onClick={() => props.onDelete(props.title)}
 				>
 					<Delete />
 				</button>

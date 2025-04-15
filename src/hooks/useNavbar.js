@@ -8,14 +8,11 @@ export const useNavbar = () => {
 
 		setTimeout(() => {
 			navbarStore.forceCloseNavbar()
-		}, 200)
+		}, 350)
 	}
 	const toggleNavbar = () => {
-		if (navbarStore.open) {
-			handleClose()
-		} else {
-			navbarStore.showNavbar()
-		}
+		if (navbarStore.open) handleClose()
+		navbarStore.showNavbar()
 	}
 
 	return { toggleNavbar }

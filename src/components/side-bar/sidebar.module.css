@@ -7,11 +7,11 @@
 	border-radius: 10px 0 0 10px;
 	background-color: #1f1d2b;
 	padding: 24px;
-	animation: fade-in-right 500ms ease forwards;
+	animation: fade-in-right 0.35s ease forwards;
 	z-index: 99;
 }
 .sidebar.closed {
-	animation: fade-out-right 500ms ease forwards;
+	animation: fade-out-right 0.35s ease forwards;
 }
 @media (max-width: 1050px) {
 }

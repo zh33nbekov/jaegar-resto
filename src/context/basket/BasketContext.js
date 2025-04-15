@@ -28,7 +28,7 @@ const BasketProvider = ({ children }) => {
 	const addProductToBasket = (newProduct) => {
 		let message
 		const doesTheElementExist = basket.find(
-			(product) => product.id === newProduct.id
+			(product) => product.title === newProduct.title
 		)
 		if (!doesTheElementExist) {
 			const updatedBasket = [...basket, newProduct]
@@ -41,8 +41,8 @@ const BasketProvider = ({ children }) => {
 		return message
 	}
 
-	const handleProductDelete = (id) => {
-		const filteredBasket = basket.filter((elem) => elem.id !== id)
+	const handleProductDelete = (title) => {
+		const filteredBasket = basket.filter((elem) => elem.title !== title)
 		setDataToLocalStorage(STORAGE_KEYS.BASKET, filteredBasket)
 		setBasket(filteredBasket)
 	}

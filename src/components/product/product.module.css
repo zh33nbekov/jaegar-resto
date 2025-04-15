@@ -1,9 +1,5 @@
 .product {
 	position: relative;
-	/* width: 192px;
-	height: 226px; */
-	/* width: 145px;
-	height: 226px; */
 	height: 250px;
 	border-radius: 16px;
 	background-color: rgb(31, 29, 43);
@@ -45,6 +41,9 @@
 	pointer-events: none;
 	top: -36px;
 	animation: imageRotate 1s ease-in-out;
+}
+.product__image.drink {
+	transform: rotate(15deg);
 }
 .product__description {
 	font-size: 14px;

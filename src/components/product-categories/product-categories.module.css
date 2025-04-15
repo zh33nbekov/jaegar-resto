@@ -50,10 +50,10 @@
 	background-color: #ea7c69;
 	transition: width 0.22s ease-in-out;
 }
-.product-category:hover::before {
-	width: 100%;
-}
 @media (hover: hover) and (pointer: fine) {
+	.product-category:hover::before {
+		width: 100%;
+	}
 	.product-category:hover {
 		color: #ea7c69;
 	}

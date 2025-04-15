@@ -7,8 +7,8 @@ import { HeaderSearch } from '../header-search/HeaderSearch'
 import styles from './header.module.css'
 
 const Header = () => {
-	const navbarStore = useNavbarStore((state) => state)
 	const { toggleNavbar } = useNavbar()
+	const navbarStore = useNavbarStore((state) => state)
 
 	return (
 		<header className={styles.header}>

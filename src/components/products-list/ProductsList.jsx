@@ -34,6 +34,7 @@ const ProductsList = (props) => {
 						isNew={item.isNew}
 						title={item.title}
 						imageURL={item.imageURL}
+						category={props.category}
 						description={item.description}
 					/>
 				))}

@@ -1,8 +1,8 @@
-import { useRef } from 'react'
+import { memo, useRef } from 'react'
 import { Search } from '../../assets/icons/common/Search'
 import styles from './header-search.module.css'
 
-export const HeaderSearch = (props) => {
+export const HeaderSearch = memo((props) => {
 	const searchRef = useRef(null)
 	return (
 		<div className={styles.search}>
@@ -17,4 +17,5 @@ export const HeaderSearch = (props) => {
 			/>
 		</div>
 	)
-}
+})
+HeaderSearch.displayName = 'HeaderSearch'
