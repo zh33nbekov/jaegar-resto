@@ -1,7 +1,7 @@
 .product {
 	position: relative;
-	width: 192px;
-	height: 226px;
+	/* width: 192px;
+	height: 226px; */
 	/* width: 145px;
 	height: 226px; */
 	border-radius: 16px;
@@ -94,7 +94,7 @@
 	height: 100%;
 	fill: currentColor;
 }
-@media (max-width: 440px) {
+/* @media (max-width: 440px) {
 	.product__image {
 		width: 115px;
 		height: 115px;
@@ -120,7 +120,6 @@
 }
 @media (max-width: 768px) {
 	.product {
-		/* width: 192px; */
 	}
 	.product__button {
 		bottom: 21px;
@@ -162,6 +161,5 @@
 }
 @media (max-width: 550px) {
 	.product {
-		/* width: 100%; */
 	}
-}
+} */
