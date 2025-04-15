@@ -18,18 +18,18 @@ const Product = memo((props) => {
 					[styles.drink]: isDrink,
 				})}
 			/>
-			<h4>{props.title}</h4>
+			<h4 title={props.title} className={styles['product__title']}>
+				{props.title}
+			</h4>
 			<p
 				title={props.description}
 				className={styles['product__description']}
 			>
 				{props.description}
 			</p>
-			<div className={styles['product__bottom']}>
-				<span className={styles['product__price']}>
-					от {props.price}&nbsp;сом
-				</span>
-			</div>
+			<span className={styles['product__price']}>
+				от {props.price}&nbsp;сом
+			</span>
 			<button
 				onClick={() => addToBasket(props)}
 				className={`${styles.product__button} btn`}

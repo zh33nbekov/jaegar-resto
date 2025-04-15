@@ -1,6 +1,7 @@
 .orders {
 	position: relative;
 	height: 100%;
+	min-height: 100%;
 	display: flex;
 	flex-direction: column;
 }
@@ -89,22 +90,6 @@
 	background-color: #ea7c69;
 	color: #fff;
 	border-radius: 10px;
-}
-.basket-is-empty {
-	color: #fff;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	justify-content: center;
-}
-.basket-is-empty__title {
-	font-size: 21px;
-}
-.basket-is-empty__description {
-	padding-top: 5px;
-	font-size: 18px;
 }
 @media (max-width: 390px) {
 	.order__headerSummary {

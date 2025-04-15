@@ -3,6 +3,7 @@ import { Close } from '../../assets/icons/common/Close'
 import { useSidebar } from '../../hooks/useSidebar'
 import { useBasketStore } from '../../store/basket'
 import { useSidebarStore } from '../../store/sidebar'
+import { BasketEmpty } from '../basket-empty/BasketEmpty'
 import OrderInfo from '../order-info/OrderInfo'
 import OrderTypes from '../order-types/OrderTypes'
 import Order from '../order/Order'
@@ -74,16 +75,7 @@ const Orders = () => {
 								/>
 							))}
 						</div>
-						{!basket.length && (
-							<div className={styles['basket-is-empty']}>
-								<h4 className={styles['basket-is-empty__title']}>
-									Ваша корзина пуста.
-								</h4>
-								<p className={styles['basket-is-empty__description']}>
-									Добавьте товары, чтобы продолжить покупки.
-								</p>
-							</div>
-						)}
+						{!basket.length && <BasketEmpty />}
 						<div className={styles.orders__payment}>
 							<div className={styles.orders__discount}>
 								<span className={styles['orders__discount-title']}>

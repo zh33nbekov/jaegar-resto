@@ -8,7 +8,7 @@ import styles from './products.module.css'
 
 const Products = () => {
 	return (
-		<section className={styles.products}>
+		<section id='Продукты' className={styles.products}>
 			<ProductCategories categories={PRODUCT_CATEGORIES} />
 			{PRODUCT_CATEGORIES.map((category, index) => (
 				<ProductsList

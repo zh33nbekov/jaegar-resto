@@ -26,5 +26,4 @@ const ProductCategories = (props) => {
 	)
 }
 
-ProductCategories.displayName = 'ProductCategories'
 export default ProductCategories

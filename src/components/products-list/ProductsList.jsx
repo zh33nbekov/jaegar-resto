@@ -10,12 +10,13 @@ const ProductsList = (props) => {
 	)
 	const productsListRef = React.useRef(null)
 	const intersection = useIntersection(productsListRef, {
-		rootMargin: '0px 0px -60% 0px',
+		rootMargin: '0px 0px -50% 0px',
 		threshold: 0.1,
 	})
 	useEffect(() => {
 		if (intersection?.isIntersecting) {
 			setActiveCategory(productsListRef.current.id)
+			console.log(productsListRef.current.id)
 		}
 	}, [intersection?.isIntersecting, setActiveCategory])
 
