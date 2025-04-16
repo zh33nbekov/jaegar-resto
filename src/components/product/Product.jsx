@@ -30,12 +30,15 @@ const Product = memo((props) => {
 			<span className={styles['product__price']}>
 				от {props.price}&nbsp;сом
 			</span>
-			<button
-				onClick={() => addToBasket(props)}
-				className={`${styles.product__button} btn`}
-			>
-				<ShoppingCart />
-			</button>
+			<div className={styles['product__actions']}>
+				<button
+					// onClick={() => addToBasket(props)}
+					onClick={() => props.onOpen(props.slug)}
+					className={`${styles['product__button-basket-btn']} btn`}
+				>
+					<ShoppingCart />
+				</button>
+			</div>
 		</div>
 	)
 })
