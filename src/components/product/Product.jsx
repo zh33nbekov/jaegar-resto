@@ -5,7 +5,6 @@ import { useBasketStore } from '../../store/basket'
 import styles from './product.module.css'
 
 const Product = memo((props) => {
-	const isDrink = props.category === 'напитки'
 	const addToBasket = useBasketStore((state) => state.addToBasket)
 
 	return (
@@ -14,9 +13,7 @@ const Product = memo((props) => {
 				loading='lazy'
 				alt={props.title}
 				src={props.imageURL}
-				className={clsx(styles['product__image'], {
-					[styles.drink]: isDrink,
-				})}
+				className={styles.product__image}
 			/>
 			<h4 title={props.title} className={styles['product__title']}>
 				{props.title}
@@ -32,9 +29,8 @@ const Product = memo((props) => {
 			</span>
 			<div className={styles['product__actions']}>
 				<button
-					// onClick={() => addToBasket(props)}
 					onClick={() => props.onOpen(props.slug)}
-					className={`${styles['product__button-basket-btn']} btn`}
+					className={`${styles['product__basket-btn']} btn`}
 				>
 					<ShoppingCart />
 				</button>
