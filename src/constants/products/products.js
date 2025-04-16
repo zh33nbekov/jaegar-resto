@@ -1,7 +1,7 @@
 export const MOCK_PRODUCTS = [
 	{
 		title: 'Кола-Барбекю',
-		slug: 'кола-барбекю',
+		slug: 'cola_barbecue',
 		description:
 			'Ветчина из цыпленка, пепперони из цыпленка, колбаски чоризо из цыпленка, моцарелла, томатный соус и соус кола барбекю',
 		price: 495,
@@ -11,7 +11,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Чикен Бомбони',
-		slug: 'чикен-бомбони',
+		slug: 'chicken_bomboni',
 		description:
 			'Куриные кусочки в панировке, сладкий перчик, сыры чеддер, пармезан и моцарелла, красный лук, соусы сладкий чили и альфредо',
 		price: 495,
@@ -21,7 +21,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Чоризо Фреш',
-		slug: 'чоризо-фреш',
+		slug: 'chorizo_fresh',
 		description:
 			'Острые колбаски чоризо из цыпленка, зеленый перец, моцарелла, томатный соус',
 		price: 295,
@@ -31,7 +31,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Сырная',
-		slug: 'сырная',
+		slug: 'syrnaya',
 		description: 'Моцарелла, смесь сыров чеддер и пармезан, соус альфредо',
 		price: 295,
 		isNew: false,
@@ -40,7 +40,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Ветчина и сыр',
-		slug: 'ветчина-и-сыр',
+		slug: 'vetchina_i_syr',
 		description:
 			'Ветчина из цыпленка, увеличенная порция моцареллы, соус альфредо',
 		price: 295,
@@ -50,7 +50,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Двойной цыпленок',
-		slug: 'двойной-цыпленок',
+		slug: 'dvojnoj_cyplenok',
 		description: 'Двойная порция цыпленка, моцарелла, соус альфредо',
 		price: 395,
 		isNew: false,
@@ -59,7 +59,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Маргарита',
-		slug: 'маргарита',
+		slug: 'margarita',
 		description:
 			'Увеличенная порция моцареллы, томаты, итальянские травы, томатный соус',
 		price: 395,
@@ -69,7 +69,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Кебаб Пицца',
-		slug: 'кебаб-пицца',
+		slug: 'kebab_pizza',
 		description:
 			'Донерное мясо из говядины, моцарелла, томаты, красный лук, соленые огурчики, соус ранч, томатный соус',
 		price: 495,
@@ -79,7 +79,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Песто',
-		slug: 'песто',
+		slug: 'pesto',
 		description:
 			'Цыпленок, моцарелла, кубики брынзы, томаты, соус песто, соус альфредо',
 		price: 495,
@@ -89,7 +89,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Карбонара',
-		slug: 'карбонара',
+		slug: 'karbonara',
 		description:
 			'Ветчина из цыпленка, моцарелла, смесь сыров чеддер и пармезан, томаты, красный лук, чеснок сухой, итальянские травы, соус альфредо',
 		price: 465,
@@ -99,7 +99,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Мясная',
-		slug: 'мясная',
+		slug: 'myasnaya',
 		description:
 			'Цыпленок, ветчина из цыпленка, пепперони из цыпленка, колбаски чоризо из цыпленка, моцарелла, томатный соус',
 		price: 495,
@@ -109,7 +109,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Аррива',
-		slug: 'аррива',
+		slug: 'arriva',
 		description:
 			'Цыпленок, колбаски чоризо из цыпленка, моцарелла, сладкий перец, красный лук, томаты, чеснок сухой, соус ранч, бургер соус',
 		price: 465,
@@ -119,7 +119,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Fuse tea Манго-ананас',
-		slug: 'fuse-tea-манго-ананас',
+		slug: 'fuse_tea_mango_ananas',
 		price: 89,
 		isNew: false,
 		category: 'напитки',
@@ -127,7 +127,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Fuse tea Манго-ромашка',
-		slug: 'fuse-tea-манго-ромашка',
+		slug: 'fuse_tea_mango_romashka',
 		price: 89,
 		isNew: false,
 		category: 'напитки',
@@ -135,7 +135,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Piko Апельсин',
-		slug: 'piko-апельсин',
+		slug: 'piko_apelsin',
 		price: 129,
 		isNew: false,
 		category: 'напитки',
@@ -143,7 +143,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Piko Виноград и Алоэ Вера',
-		slug: 'piko-виноград-и-алоэ-вера',
+		slug: 'piko_vinograd_i_aloe_vera',
 		price: 129,
 		isNew: false,
 		category: 'напитки',
@@ -151,7 +151,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Кока-Кола',
-		slug: 'кока-кола',
+		slug: 'koka_kola',
 		price: 79,
 		isNew: false,
 		category: 'напитки',
@@ -159,7 +159,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Фанта',
-		slug: 'фанта',
+		slug: 'fanta',
 		price: 79,
 		isNew: false,
 		category: 'напитки',
@@ -167,7 +167,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Спрайт',
-		slug: 'спрайт',
+		slug: 'sprajt',
 		price: 79,
 		isNew: false,
 		category: 'напитки',
@@ -183,7 +183,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Сок Апельсин',
-		slug: 'сок-апельсин',
+		slug: 'sok_apelsin',
 		price: 220,
 		isNew: false,
 		category: 'напитки',
@@ -191,7 +191,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Сок Яблоко',
-		slug: 'сок-яблоко',
+		slug: 'sok_yabloko',
 		price: 220,
 		isNew: false,
 		category: 'напитки',
@@ -199,7 +199,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Сок Вишня',
-		slug: 'сок-вишня',
+		slug: 'sok_vishnya',
 		price: 220,
 		isNew: false,
 		category: 'напитки',
@@ -207,7 +207,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Капучино',
-		slug: 'капучино',
+		slug: 'kapuchino',
 		price: 169,
 		isNew: false,
 		description:
@@ -217,7 +217,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Латте',
-		slug: 'латте',
+		slug: 'latte',
 		price: 169,
 		isNew: false,
 		description:
@@ -227,7 +227,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Американо',
-		slug: 'американо',
+		slug: 'amerikano',
 		price: 119,
 		isNew: false,
 		description:
@@ -237,7 +237,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Додобоны',
-		slug: 'додобоны',
+		slug: 'dodobony',
 		price: 139,
 		isNew: false,
 		description:
@@ -247,7 +247,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Слоеные палочки с ананасами и брусникой',
-		slug: 'слоеные-палочки-с-ананасами-и-брусникой',
+		slug: 'sloenye_palochki_s_ananasami_i_brusnikoj',
 		price: 285,
 		isNew: false,
 		description:
@@ -257,7 +257,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Бруслетики',
-		slug: 'бруслетики',
+		slug: 'brusletiki',
 		price: 179,
 		isNew: false,
 		description:
@@ -267,7 +267,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Пончик клубничный',
-		slug: 'пончик-клубничный',
+		slug: 'ponchik_klubnichnyj',
 		price: 159,
 		isNew: false,
 		description:
@@ -277,7 +277,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Пончик Три шоколада',
-		slug: 'пончик-три-шоколада',
+		slug: 'ponchik_tri_shokolada',
 		price: 159,
 		isNew: false,
 		description: 'Нежный пончик с шоколадной начинкой, глазурью и посыпкой',
@@ -286,7 +286,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Пончик орео',
-		slug: 'пончик-орео',
+		slug: 'ponchik_oreo',
 		price: 159,
 		isNew: false,
 		description:
@@ -296,7 +296,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Чизкейк',
-		slug: 'чизкейк',
+		slug: 'chizkejk',
 		price: 159,
 		isNew: false,
 		description:
@@ -306,7 +306,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Маффин Три шоколада',
-		slug: 'маффин-три-шоколада',
+		slug: 'maffin_tri_shokolada',
 		price: 139,
 		isNew: false,
 		description:
@@ -316,7 +316,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Сырники',
-		slug: 'сырники',
+		slug: 'syrniki',
 		price: 315,
 		isNew: false,
 		description:
@@ -326,7 +326,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Сырники с малиновым вареньем',
-		slug: 'сырники-с-малиновым-вареньем',
+		slug: 'sirniki_s_malinovim_varenem',
 		price: 315,
 		isNew: false,
 		description:
@@ -336,7 +336,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Макарон Фисташка-малина',
-		slug: 'макарон-фисташка-малина',
+		slug: 'makaron_fistashka_malina',
 		price: 250,
 		isNew: false,
 		description:
@@ -346,7 +346,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Макарон Сникерс',
-		slug: 'макарон-сникерс',
+		slug: 'makaron_snikers',
 		price: 250,
 		isNew: false,
 		description:
@@ -356,7 +356,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Макарон Шоколад-нутелла',
-		slug: 'макарон-шоколад-нутелла',
+		slug: 'makaron_shokolad_nutella',
 		price: 250,
 		isNew: false,
 		description:
@@ -366,7 +366,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Макарон Баунти',
-		slug: 'макарон-баунти',
+		slug: 'makaron_baunti',
 		price: 250,
 		isNew: false,
 		description:
@@ -376,7 +376,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Омлет с ветчиной и грибами',
-		slug: 'омлет-с-ветчиной-и-грибами',
+		slug: 'omlet_s_vetchinoi_i_gribami',
 		price: 179,
 		isNew: false,
 		description:
@@ -386,7 +386,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Омлет с пепперони',
-		slug: 'омлет-с-пепперони',
+		slug: 'omlet_s_pepperoni',
 		price: 179,
 		isNew: false,
 		description:
@@ -396,7 +396,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Омлет сырный',
-		slug: 'омлет-сырный',
+		slug: 'omlet_sirnii',
 		price: 189,
 		isNew: false,
 		description:
@@ -406,7 +406,7 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Додстер',
-		slug: 'додстер',
+		slug: 'dodster',
 		price: 199,
 		isNew: false,
 		description:
@@ -416,13 +416,72 @@ export const MOCK_PRODUCTS = [
 	},
 	{
 		title: 'Острый Стартер',
-		slug: 'острый-стартер',
+		slug: 'ostrii_starter',
 		price: 179,
 		isNew: false,
 		description:
 			'Горячая закуска с острым цыпленком, колбасками чоризо, моцареллой, перцем халапеньо и соусом сальса в тонкой пшеничной лепешке',
 		category: 'завтраки',
 		imageURL: require('../../assets/menu/breakfasts/05.avif'),
+	},
+	{
+		title: 'Салат Цезарь',
+		slug: 'salat_cezar',
+		price: 199,
+		isNew: false,
+		description:
+			'Цыпленок, смесь сыров чеддер и пармезан, томаты черри, пшеничные гренки, листья салата айсберг, итальянские травы и соус Цезарь',
+		category: 'закуски',
+		imageURL: require('../../assets/menu/snacks/01.avif'),
+	},
+	{
+		title: 'Салат Греческий',
+		slug: 'salat_grecheskii',
+		price: 169,
+		isNew: false,
+		description:
+			'Салат айсберг, томаты черри, маслины и огурчики, кубики брынзы, соус бальзамик',
+		category: 'закуски',
+		imageURL: require('../../assets/menu/snacks/02.avif'),
+	},
+	{
+		title: 'Рулетики с пепперони + Рулетики с сыром',
+		slug: 'ruletiki_s_pepperoni_+_ruletiki_s_sirom',
+		price: 255,
+		isNew: false,
+		description:
+			'Микс горячих рулетиков с сырным соусом: 8 штук с пепперони и моцареллой, 8 штук с моцареллой',
+		category: 'закуски',
+		imageURL: require('../../assets/menu/snacks/03.avif'),
+	},
+	{
+		title: 'Ланчбокс с крыльями барбекю',
+		slug: 'lanchboks_s_krilyami_barbekyu',
+		price: 345,
+		isNew: false,
+		description:
+			'Горячий сытный обед с куриными крылышками со специями и ароматом копчения и картофеля из печи и соусом барбекю',
+		category: 'закуски',
+		imageURL: require('../../assets/menu/snacks/04.avif'),
+	},
+	{
+		title: 'Ланчбокс с куриными кусочками',
+		slug: 'lanchboks_s_kurinimi_kusochkami',
+		price: 345,
+		isNew: false,
+		description:
+			'Горячий сытный обед с нежными куриными кусочками, картофелем из печи и сырным соусом',
+		category: 'закуски',
+		imageURL: require('../../assets/menu/snacks/05.avif'),
+	},
+	{
+		title: 'Крылья барбекю',
+		slug: 'krilya_barbekyu',
+		price: 345,
+		isNew: false,
+		description: 'Пикантные куриные крылышки со специями и ароматом копчения',
+		category: 'закуски',
+		imageURL: require('../../assets/menu/snacks/06.avif'),
 	},
 ]
 
