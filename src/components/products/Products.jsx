@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import {
 	PRODUCT_CATEGORIES,
@@ -11,17 +10,15 @@ import styles from './products.module.css'
 
 const Products = () => {
 	const [searchParams, setSearchParams] = useSearchParams()
-	const [product, setProduct] = useState(false)
 
 	const handleOpen = (product) => {
 		setSearchParams({ product })
 	}
-
 	const handleClose = () => {
 		searchParams.delete('product')
 		setSearchParams(searchParams)
 	}
-	const isModalOpen = searchParams.get('product', product)
+	const isModalOpen = searchParams.get('product')
 
 	return (
 		<>
