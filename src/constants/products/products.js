@@ -8,6 +8,14 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'пиццы',
 		imageURL: require('../../assets/menu/pizzas/01.avif'),
+		options: {
+			sizes: [
+				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
+				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
+				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+			],
+			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
+		},
 	},
 	{
 		title: 'Чикен Бомбони',
@@ -18,6 +26,14 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'пиццы',
 		imageURL: require('../../assets/menu/pizzas/02.avif'),
+		options: {
+			sizes: [
+				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
+				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
+				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+			],
+			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
+		},
 	},
 	{
 		title: 'Чоризо Фреш',
@@ -28,6 +44,14 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'пиццы',
 		imageURL: require('../../assets/menu/pizzas/03.avif'),
+		options: {
+			sizes: [
+				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
+				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
+				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+			],
+			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
+		},
 	},
 	{
 		title: 'Сырная',
@@ -37,6 +61,14 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'пиццы',
 		imageURL: require('../../assets/menu/pizzas/04.avif'),
+		options: {
+			sizes: [
+				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
+				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
+				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+			],
+			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
+		},
 	},
 	{
 		title: 'Ветчина и сыр',
@@ -47,6 +79,14 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'пиццы',
 		imageURL: require('../../assets/menu/pizzas/05.avif'),
+		options: {
+			sizes: [
+				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
+				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
+				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+			],
+			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
+		},
 	},
 	{
 		title: 'Двойной цыпленок',
@@ -56,6 +96,14 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'пиццы',
 		imageURL: require('../../assets/menu/pizzas/06.avif'),
+		options: {
+			sizes: [
+				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
+				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
+				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+			],
+			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
+		},
 	},
 	{
 		title: 'Маргарита',
@@ -66,6 +114,14 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'пиццы',
 		imageURL: require('../../assets/menu/pizzas/07.avif'),
+		options: {
+			sizes: [
+				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
+				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
+				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+			],
+			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
+		},
 	},
 	{
 		title: 'Кебаб Пицца',
@@ -76,6 +132,14 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'пиццы',
 		imageURL: require('../../assets/menu/pizzas/08.avif'),
+		options: {
+			sizes: [
+				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
+				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
+				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+			],
+			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
+		},
 	},
 	{
 		title: 'Песто',
@@ -86,6 +150,14 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'пиццы',
 		imageURL: require('../../assets/menu/pizzas/09.avif'),
+		options: {
+			sizes: [
+				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
+				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
+				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+			],
+			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
+		},
 	},
 	{
 		title: 'Карбонара',
@@ -96,6 +168,14 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'пиццы',
 		imageURL: require('../../assets/menu/pizzas/10.avif'),
+		options: {
+			sizes: [
+				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
+				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
+				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+			],
+			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
+		},
 	},
 	{
 		title: 'Мясная',
@@ -106,6 +186,14 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'пиццы',
 		imageURL: require('../../assets/menu/pizzas/11.avif'),
+		options: {
+			sizes: [
+				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
+				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
+				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+			],
+			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
+		},
 	},
 	{
 		title: 'Аррива',
@@ -116,6 +204,14 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'пиццы',
 		imageURL: require('../../assets/menu/pizzas/12.avif'),
+		options: {
+			sizes: [
+				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
+				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
+				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+			],
+			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
+		},
 	},
 	{
 		title: 'Fuse tea Манго-ананас',
@@ -507,3 +603,9 @@ export const PRODUCT_LIST = Array.from(productsMap, ([category, products]) => ({
 	category,
 	products,
 }))
+// options: {
+//       volumes: [
+//         { label: '0.5 л', multiplier: 1 },
+//         { label: '1 л', multiplier: 1.6 },
+//       ],
+//     },

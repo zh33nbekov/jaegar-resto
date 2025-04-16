@@ -1,4 +1,20 @@
 .product-modal {
+	width: 100%;
 	background-color: #fff;
 	color: #000;
+	display: flex;
+}
+.product-image {
+	transition: transform 0.15s ease-in-out;
+	width: 400px;
+	height: 400px;
+}
+.product-image.small {
+	transform: scale(0.6);
+}
+.product-image.medium {
+	transform: scale(0.8);
+}
+.product-image.big {
+	transform: scale(1);
 }
