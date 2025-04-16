@@ -4,7 +4,7 @@ import {
 	PRODUCT_CATEGORIES,
 	PRODUCT_LIST,
 } from '../../constants/products/products'
-import { toSlug } from '../../utils/toSlug'
+import { toSlug } from '../../utils/products'
 import ProductCategories from '../product-categories/ProductCategories'
 import ProductsList from '../products-list/ProductsList'
 import { ProductModal } from '../UI/product-modal/ProductModal'

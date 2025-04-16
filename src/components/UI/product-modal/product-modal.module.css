@@ -43,6 +43,7 @@
 .product__description {
 	color: #5c6370;
 	font-size: 14px;
+	margin: 15px 0;
 }
 .product__options {
 	background-color: #f3f3f7;
@@ -57,7 +58,7 @@
 	border-radius: inherit;
 	font-size: 13px;
 	cursor: pointer;
-	transition: background-color 0.3s, color 0.3s;
+	transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
 	color: #333;
 }
 .product__size.active {
@@ -79,19 +80,21 @@
 .product__add-basket,
 .product__close-button {
 	font-weight: 500;
+	padding: 10px 15px;
 	border-radius: 24px;
+	white-space: nowrap;
 }
 .product__add-basket {
 	color: #fff;
-	padding: 10px 15px;
 	background-color: #ea7c68;
 }
 .product__close-button {
-	padding: 10px 15px;
-	background-color: #e6e6e6;
+	background-color: #f3f3f3;
+	transition: background-color 0.25s ease-in-out;
 }
 @media (hover: hover) and (pointer: fine) {
-	.product__size:not(.active):hover {
+	.product__size:not(.active):hover,
+	.product__close-button:hover {
 		background-color: #e6e6e6;
 	}
 }

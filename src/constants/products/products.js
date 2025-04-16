@@ -220,6 +220,12 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'напитки',
 		imageURL: require('../../assets/menu/drinks/01.avif'),
+		options: {
+			volumes: [
+				{ label: 0.5, multiplier: 1 },
+				{ label: 1, multiplier: 1.6, priceOverride: 220 },
+			],
+		},
 	},
 	{
 		title: 'Fuse tea Манго-ромашка',
@@ -228,6 +234,12 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'напитки',
 		imageURL: require('../../assets/menu/drinks/02.avif'),
+		options: {
+			volumes: [
+				{ label: 0.5, multiplier: 1 },
+				{ label: 1, multiplier: 1.6, priceOverride: 220 },
+			],
+		},
 	},
 	{
 		title: 'Piko Апельсин',
@@ -236,6 +248,12 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'напитки',
 		imageURL: require('../../assets/menu/drinks/03.avif'),
+		options: {
+			volumes: [
+				{ label: 0.5, multiplier: 1 },
+				{ label: 1, multiplier: 1.6, priceOverride: 220 },
+			],
+		},
 	},
 	{
 		title: 'Piko Виноград и Алоэ Вера',
@@ -244,6 +262,12 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'напитки',
 		imageURL: require('../../assets/menu/drinks/04.avif'),
+		options: {
+			volumes: [
+				{ label: 0.5, multiplier: 1 },
+				{ label: 1, multiplier: 1.6, priceOverride: 220 },
+			],
+		},
 	},
 	{
 		title: 'Кока-Кола',
@@ -252,6 +276,12 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'напитки',
 		imageURL: require('../../assets/menu/drinks/05.avif'),
+		options: {
+			volumes: [
+				{ label: 0.5, multiplier: 1 },
+				{ label: 1, multiplier: 1.6, priceOverride: 220 },
+			],
+		},
 	},
 	{
 		title: 'Фанта',
@@ -260,6 +290,12 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'напитки',
 		imageURL: require('../../assets/menu/drinks/06.avif'),
+		options: {
+			volumes: [
+				{ label: 0.5, multiplier: 1 },
+				{ label: 1, multiplier: 1.6, priceOverride: 220 },
+			],
+		},
 	},
 	{
 		title: 'Спрайт',
@@ -268,6 +304,12 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'напитки',
 		imageURL: require('../../assets/menu/drinks/07.avif'),
+		options: {
+			volumes: [
+				{ label: 0.5, multiplier: 1 },
+				{ label: 1, multiplier: 1.6, priceOverride: 220 },
+			],
+		},
 	},
 	{
 		title: 'BonAqua',
@@ -276,6 +318,12 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'напитки',
 		imageURL: require('../../assets/menu/drinks/08.avif'),
+		options: {
+			volumes: [
+				{ label: 0.5, multiplier: 1 },
+				{ label: 1, multiplier: 1.6, priceOverride: 220 },
+			],
+		},
 	},
 	{
 		title: 'Сок Апельсин',
@@ -284,6 +332,12 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'напитки',
 		imageURL: require('../../assets/menu/drinks/09.avif'),
+		options: {
+			volumes: [
+				{ label: 0.5, multiplier: 1 },
+				{ label: 1, multiplier: 1.6, priceOverride: 220 },
+			],
+		},
 	},
 	{
 		title: 'Сок Яблоко',
@@ -292,6 +346,12 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'напитки',
 		imageURL: require('../../assets/menu/drinks/10.avif'),
+		options: {
+			volumes: [
+				{ label: 0.5, multiplier: 1 },
+				{ label: 1, multiplier: 1.6, priceOverride: 220 },
+			],
+		},
 	},
 	{
 		title: 'Сок Вишня',
@@ -300,6 +360,12 @@ export const MOCK_PRODUCTS = [
 		isNew: false,
 		category: 'напитки',
 		imageURL: require('../../assets/menu/drinks/11.avif'),
+		options: {
+			volumes: [
+				{ label: 0.5, multiplier: 1 },
+				{ label: 1, multiplier: 1.6, priceOverride: 220 },
+			],
+		},
 	},
 	{
 		title: 'Капучино',
@@ -603,9 +669,3 @@ export const PRODUCT_LIST = Array.from(productsMap, ([category, products]) => ({
 	category,
 	products,
 }))
-// options: {
-//       volumes: [
-//         { label: '0.5 л', multiplier: 1 },
-//         { label: '1 л', multiplier: 1.6 },
-//       ],
-//     },

@@ -1,16 +1,16 @@
 import clsx from 'clsx'
 import { useState } from 'react'
+import { getFinalPrice } from '../../../utils/products'
 import { Backdrop } from '../backdrop/Backdrop'
 import { Modal } from '../modal/Modal'
 import styles from './product-modal.module.css'
 
 export const ProductModal = ({ product, onClose }) => {
 	const [selectedSizeIndex, setSelectedSizeIndex] = useState(0)
-
-	const basePrice = product.price
-	const multiplier =
-		product.options?.sizes?.[selectedSizeIndex]?.multiplier || 1
-	const finalPrice = Math.round(basePrice * multiplier)
+	const selectedOption =
+		product.options?.sizes?.[selectedSizeIndex] ??
+		product.options?.volumes?.[selectedSizeIndex]
+	const finalPrice = getFinalPrice(product.price, selectedOption)
 
 	return (
 		<>
@@ -54,6 +54,24 @@ export const ProductModal = ({ product, onClose }) => {
 											onClick={() => setSelectedSizeIndex(index)}
 										>
 											{size.size} см
+										</button>
+									))}
+								</div>
+							</div>
+						)}
+						{product.options?.volumes && (
+							<div className={styles['product__option-group']}>
+								<div className={styles.product__options}>
+									{product.options.volumes.map((vol, index) => (
+										<button
+											key={vol.label}
+											onClick={() => setSelectedSizeIndex(index)}
+											className={clsx(styles.product__size, {
+												[styles.active]:
+													index === selectedSizeIndex,
+											})}
+										>
+											{vol.label} мл
 										</button>
 									))}
 								</div>
