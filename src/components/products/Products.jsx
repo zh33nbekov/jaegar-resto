@@ -11,22 +11,21 @@ import styles from './products.module.css'
 
 const Products = () => {
 	const [searchParams, setSearchParams] = useSearchParams()
-	const [open, setOpen] = useState(false)
+	const [product, setProduct] = useState(false)
 
 	const handleOpen = (product) => {
-		setOpen(true)
 		setSearchParams({ product })
 	}
 
 	const handleClose = () => {
-		setOpen(false)
 		searchParams.delete('product')
 		setSearchParams(searchParams)
 	}
+	const isModalOpen = searchParams.get('product', product)
 
 	return (
 		<>
-			<ProductModal open={open} onClose={handleClose} />
+			<ProductModal open={isModalOpen} onClose={handleClose} />
 			<section id='Продукты' className={styles.products}>
 				<ProductCategories categories={PRODUCT_CATEGORIES} />
 				{PRODUCT_CATEGORIES.map((category, index) => (
