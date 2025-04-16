@@ -28,9 +28,9 @@ export const MOCK_PRODUCTS = [
 		imageURL: require('../../assets/menu/pizzas/02.avif'),
 		options: {
 			sizes: [
-				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
-				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
-				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+				{ label: 'Маленькая', multiplier: 1, size: 25 },
+				{ label: 'Средняя', multiplier: 1.3, size: 30 },
+				{ label: 'Большая', multiplier: 1.6, size: 35 },
 			],
 			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
 		},
@@ -46,9 +46,9 @@ export const MOCK_PRODUCTS = [
 		imageURL: require('../../assets/menu/pizzas/03.avif'),
 		options: {
 			sizes: [
-				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
-				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
-				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+				{ label: 'Маленькая', multiplier: 1, size: 25 },
+				{ label: 'Средняя', multiplier: 1.3, size: 30 },
+				{ label: 'Большая', multiplier: 1.6, size: 35 },
 			],
 			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
 		},
@@ -63,9 +63,9 @@ export const MOCK_PRODUCTS = [
 		imageURL: require('../../assets/menu/pizzas/04.avif'),
 		options: {
 			sizes: [
-				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
-				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
-				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+				{ label: 'Маленькая', multiplier: 1, size: 25 },
+				{ label: 'Средняя', multiplier: 1.3, size: 30 },
+				{ label: 'Большая', multiplier: 1.6, size: 35 },
 			],
 			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
 		},
@@ -81,9 +81,9 @@ export const MOCK_PRODUCTS = [
 		imageURL: require('../../assets/menu/pizzas/05.avif'),
 		options: {
 			sizes: [
-				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
-				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
-				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+				{ label: 'Маленькая', multiplier: 1, size: 25 },
+				{ label: 'Средняя', multiplier: 1.3, size: 30 },
+				{ label: 'Большая', multiplier: 1.6, size: 35 },
 			],
 			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
 		},
@@ -98,9 +98,9 @@ export const MOCK_PRODUCTS = [
 		imageURL: require('../../assets/menu/pizzas/06.avif'),
 		options: {
 			sizes: [
-				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
-				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
-				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+				{ label: 'Маленькая', multiplier: 1, size: 25 },
+				{ label: 'Средняя', multiplier: 1.3, size: 30 },
+				{ label: 'Большая', multiplier: 1.6, size: 35 },
 			],
 			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
 		},
@@ -116,9 +116,9 @@ export const MOCK_PRODUCTS = [
 		imageURL: require('../../assets/menu/pizzas/07.avif'),
 		options: {
 			sizes: [
-				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
-				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
-				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+				{ label: 'Маленькая', multiplier: 1, size: 25 },
+				{ label: 'Средняя', multiplier: 1.3, size: 30 },
+				{ label: 'Большая', multiplier: 1.6, size: 35 },
 			],
 			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
 		},
@@ -134,9 +134,9 @@ export const MOCK_PRODUCTS = [
 		imageURL: require('../../assets/menu/pizzas/08.avif'),
 		options: {
 			sizes: [
-				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
-				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
-				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+				{ label: 'Маленькая', multiplier: 1, size: 25 },
+				{ label: 'Средняя', multiplier: 1.3, size: 30 },
+				{ label: 'Большая', multiplier: 1.6, size: 35 },
 			],
 			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
 		},
@@ -152,9 +152,9 @@ export const MOCK_PRODUCTS = [
 		imageURL: require('../../assets/menu/pizzas/09.avif'),
 		options: {
 			sizes: [
-				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
-				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
-				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+				{ label: 'Маленькая', multiplier: 1, size: 25 },
+				{ label: 'Средняя', multiplier: 1.3, size: 30 },
+				{ label: 'Большая', multiplier: 1.6, size: 35 },
 			],
 			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
 		},
@@ -170,9 +170,9 @@ export const MOCK_PRODUCTS = [
 		imageURL: require('../../assets/menu/pizzas/10.avif'),
 		options: {
 			sizes: [
-				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
-				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
-				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+				{ label: 'Маленькая', multiplier: 1, size: 25 },
+				{ label: 'Средняя', multiplier: 1.3, size: 30 },
+				{ label: 'Большая', multiplier: 1.6, size: 35 },
 			],
 			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
 		},
@@ -188,9 +188,9 @@ export const MOCK_PRODUCTS = [
 		imageURL: require('../../assets/menu/pizzas/11.avif'),
 		options: {
 			sizes: [
-				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
-				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
-				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+				{ label: 'Маленькая', multiplier: 1, size: 25 },
+				{ label: 'Средняя', multiplier: 1.3, size: 30 },
+				{ label: 'Большая', multiplier: 1.6, size: 35 },
 			],
 			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
 		},
@@ -206,9 +206,9 @@ export const MOCK_PRODUCTS = [
 		imageURL: require('../../assets/menu/pizzas/12.avif'),
 		options: {
 			sizes: [
-				{ label: 'Маленькая', multiplier: 1, size: '25 см' },
-				{ label: 'Средняя', multiplier: 1.3, size: '30 см' },
-				{ label: 'Большая', multiplier: 1.6, size: '35 см' },
+				{ label: 'Маленькая', multiplier: 1, size: 25 },
+				{ label: 'Средняя', multiplier: 1.3, size: 30 },
+				{ label: 'Большая', multiplier: 1.6, size: 35 },
 			],
 			ingredients: ['Сыр', 'Курица', 'Перец', 'Лук'],
 		},

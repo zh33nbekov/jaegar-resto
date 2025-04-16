@@ -36,29 +36,18 @@ export const ProductModal = ({ product, onClose }) => {
 							)}
 						/>
 					</div>
-					<div className={styles['product__summary']}>
-						<h2 className={styles['product__title']}>{product.title}</h2>
-						<p className={styles['product__description']}>
+					<div className={styles.product__summary}>
+						<h2 className={styles.product__title}>{product.title}</h2>
+						<p className={styles.product__description}>
 							{product.description}
 						</p>
 						{product.options?.sizes && (
-							<div className={styles.optionGroup}>
-								<div className={styles.options}>
+							<div className={styles['product__option-group']}>
+								<div className={styles.product__options}>
 									{product.options.sizes.map((size, index) => (
-										// <button
-										// 	key={size.label}
-										// 	onClick={() => setSelectedSizeIndex(index)}
-										// 	className={
-										// 		index === selectedSizeIndex
-										// 			? styles.selected
-										// 			: ''
-										// 	}
-										// >
-										// 	{size.size}
-										// </button>
 										<button
 											key={size.label}
-											className={clsx(styles.sizeButton, {
+											className={clsx(styles.product__size, {
 												[styles.active]:
 													index === selectedSizeIndex,
 											})}
@@ -70,13 +59,22 @@ export const ProductModal = ({ product, onClose }) => {
 								</div>
 							</div>
 						)}
-						<p>
+						<p className={styles.product__price}>
 							<strong>Цена:</strong> {finalPrice} ₽
 						</p>
-						<button onClick={() => alert('Добавлено в корзину')}>
-							Добавить в корзину
-						</button>
-						<button onClick={onClose}>Закрыть</button>
+						<div className={styles.product__actions}>
+							<button
+								className={clsx(styles['product__add-basket'], 'btn')}
+							>
+								Добавить в корзину
+							</button>
+							<button
+								onClick={onClose}
+								className={styles['product__close-button']}
+							>
+								Закрыть
+							</button>
+						</div>
 					</div>
 				</div>
 			</Modal>
