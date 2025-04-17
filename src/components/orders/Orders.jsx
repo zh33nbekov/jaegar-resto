@@ -21,6 +21,7 @@ const Orders = () => {
 	const { handleClose } = useSidebar()
 	const sidebarStore = useSidebarStore()
 	const basket = useBasketStore((state) => state.items)
+	console.log(basket, 'basket')
 	const removeFromBasket = useBasketStore((state) => state.removeFromBasket)
 	const handleKeyDown = (event) => {
 		if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown') {

@@ -1,12 +1,9 @@
 import clsx from 'clsx'
 import React, { memo } from 'react'
 import { ShoppingCart } from '../../assets/icons/common/ShoppingCart'
-import { useBasketStore } from '../../store/basket'
 import styles from './product.module.css'
 
 const Product = memo((props) => {
-	const addToBasket = useBasketStore((state) => state.addToBasket)
-
 	return (
 		<div className={clsx(styles['product'], { [styles.new]: props.isNew })}>
 			<img
