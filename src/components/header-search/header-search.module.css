@@ -1,7 +1,7 @@
 .search {
-	border: 1px solid rgb(57, 60, 73);
+	border: 1px solid #393c49;
 	border-radius: 8px;
-	background: rgb(45, 48, 62);
+	background-color: #2d303e;
 	width: 255px;
 	position: relative;
 	border: 1px solid transparent;
@@ -58,7 +58,7 @@
 	transform-origin: center;
 }
 .search__input::placeholder {
-	color: rgb(171, 187, 194);
+	color: #abbbc2;
 	font-size: 14px;
 	font-weight: 400;
 }

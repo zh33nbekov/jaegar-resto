@@ -9,8 +9,8 @@
 	font-size: 14px;
 	font-weight: 600;
 	border-radius: 8px;
-	border: 1px solid rgb(57, 60, 73);
-	background-color: rgb(31, 29, 43);
+	border: 1px solid #393c49;
+	background-color: #1f1d2b;
 	transition: all 200ms ease;
 }
 .orderType.active {

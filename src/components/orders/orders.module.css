@@ -58,7 +58,7 @@
 	justify-content: space-between;
 }
 .orders__discount-title {
-	color: rgb(171, 187, 194);
+	color: #abbbc2;
 	font-size: 14px;
 	font-weight: 400;
 }
@@ -74,7 +74,7 @@
 	padding-bottom: 17px;
 }
 .orders__total-title {
-	color: rgb(171, 187, 194);
+	color: #abbbc2;
 	font-size: 14px;
 	font-weight: 400;
 }

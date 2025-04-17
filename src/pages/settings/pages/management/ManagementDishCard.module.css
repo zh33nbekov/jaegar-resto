@@ -1,7 +1,7 @@
 .dish {
 	width: 221px;
 	height: 299px;
-	border: 1px solid rgb(57, 60, 73);
+	border: 1px solid #393c49;
 	border-radius: 8px;
 	display: flex;
 	flex-direction: column;
@@ -38,7 +38,7 @@
 	color: #fff;
 }
 .dish__info span {
-	color: rgb(171, 187, 194);
+	color: #abbbc2;
 	font-size: 14px;
 	font-weight: 400;
 }

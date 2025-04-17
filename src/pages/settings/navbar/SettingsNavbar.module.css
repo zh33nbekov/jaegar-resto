@@ -3,7 +3,7 @@
 	flex-direction: column;
 	width: 275px;
 	height: 100%;
-	background-color: rgb(31, 29, 43);
+	background-color: #1f1d2b;
 	border-radius: 8px;
 }
 .navigation__item:nth-child(1) {
@@ -59,7 +59,7 @@
 	color: #fff;
 }
 .navigation__linkDescription {
-	color: rgb(171, 187, 194);
+	color: #abbbc2;
 	font-size: 12px;
 	font-weight: 400;
 	padding-top: 4px;
