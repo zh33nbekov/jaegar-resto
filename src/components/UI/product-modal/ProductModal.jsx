@@ -5,12 +5,19 @@ import { Backdrop } from '../backdrop/Backdrop'
 import { Modal } from '../modal/Modal'
 import styles from './product-modal.module.css'
 
-export const ProductModal = ({ product, onClose, animate }) => {
+export const ProductModal = ({ product, onAddToBasket, onClose, animate }) => {
 	const [selectedSizeIndex, setSelectedSizeIndex] = useState(0)
 	const selectedOption =
 		product.options?.sizes?.[selectedSizeIndex] ??
 		product.options?.volumes?.[selectedSizeIndex]
 	const finalPrice = getFinalPrice(product.price, selectedOption)
+	const handleSelectedSizeIndex = (index) => {
+		setSelectedSizeIndex(index)
+	}
+	const transferProductForBasket = () => {
+		const { isNew, options, slug, ...rest } = product
+		return { ...rest, options: selectedOption }
+	}
 
 	return (
 		<>
@@ -51,7 +58,7 @@ export const ProductModal = ({ product, onClose, animate }) => {
 												[styles.active]:
 													index === selectedSizeIndex,
 											})}
-											onClick={() => setSelectedSizeIndex(index)}
+											onClick={() => handleSelectedSizeIndex(index)}
 										>
 											{size.size} см
 										</button>
@@ -82,6 +89,9 @@ export const ProductModal = ({ product, onClose, animate }) => {
 						</p>
 						<div className={styles.product__actions}>
 							<button
+								onClick={() =>
+									onAddToBasket(transferProductForBasket())
+								}
 								className={clsx(styles['product__add-basket'], 'btn')}
 							>
 								Добавить в корзину

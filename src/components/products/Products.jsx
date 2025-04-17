@@ -5,6 +5,7 @@ import {
 	PRODUCT_CATEGORIES,
 	PRODUCT_LIST,
 } from '../../constants/products/products'
+import { useBasketStore } from '../../store/basket'
 import { toSlug } from '../../utils/products'
 import ProductCategories from '../product-categories/ProductCategories'
 import ProductsList from '../products-list/ProductsList'
@@ -14,6 +15,7 @@ import styles from './products.module.css'
 const Products = () => {
 	const [animate, setAnimate] = useState('')
 	const [searchParams, setSearchParams] = useSearchParams()
+	const addToBasket = useBasketStore((state) => state.addToBasket)
 	const selectedProductSlug = searchParams.get('product')
 	const timeoutRef = useRef(null)
 
@@ -37,6 +39,9 @@ const Products = () => {
 	const product = MOCK_PRODUCTS.find(
 		(p) => toSlug(p.slug) === selectedProductSlug
 	)
+	const handleAddToBasket = (product) => {
+		addToBasket(product)
+	}
 
 	return (
 		<>
@@ -45,6 +50,7 @@ const Products = () => {
 					animate={animate}
 					product={product}
 					onClose={handleClose}
+					onAddToBasket={handleAddToBasket}
 				/>
 			)}
 			<section id='Продукты' className={styles.products}>
@@ -53,9 +59,9 @@ const Products = () => {
 					<ProductsList
 						key={category}
 						category={category}
-						products={PRODUCT_LIST[index].products}
 						onOpen={handleOpen}
 						onClose={handleClose}
+						products={PRODUCT_LIST[index].products}
 					/>
 				))}
 			</section>
