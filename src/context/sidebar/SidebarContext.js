@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useRef, useState } from 'react'
 
 const SidebarContext = createContext({
 	hideSidebar: () => {},
@@ -11,6 +11,7 @@ export const useSidebarContext = () => useContext(SidebarContext)
 const SidebarProvider = ({ children }) => {
 	const [sidebarVisible, setSidebarVisible] = useState(false)
 	const [sidebarAnimationClass, setSidebarAnimationClass] = useState('')
+	const timeoutRef = useRef(null)
 
 	const toggleSidebar = () => {
 		if (sidebarVisible) hideSidebar()
@@ -18,12 +19,16 @@ const SidebarProvider = ({ children }) => {
 	}
 	const hideSidebar = () => {
 		setSidebarAnimationClass('closed')
-		const sideBarId = setTimeout(() => {
+
+		if (timeoutRef.current) {
+			clearTimeout(timeoutRef.current)
+		}
+
+		timeoutRef.current = setTimeout(() => {
 			setSidebarVisible(false)
 			setSidebarAnimationClass('')
-		}, 500)
-
-		return () => clearTimeout(sideBarId)
+			timeoutRef.current = null
+		}, 350)
 	}
 
 	const values = {
