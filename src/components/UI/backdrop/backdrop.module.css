@@ -6,13 +6,13 @@
 	height: 100vh;
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 50;
-	animation: opened 300ms ease;
+	animation: fadeIn 0.2s ease-in-out;
 }
 .backdrop.closed {
-	animation: closed 300ms ease forwards;
+	animation: fadeOut 0.2s ease-in-out forwards;
 }
 
-@keyframes opened {
+@keyframes fadeIn {
 	from {
 		opacity: 0;
 	}
@@ -20,7 +20,7 @@
 		opacity: 1;
 	}
 }
-@keyframes closed {
+@keyframes fadeOut {
 	to {
 		opacity: 0;
 	}

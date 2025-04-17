@@ -5,7 +5,7 @@ import { Backdrop } from '../backdrop/Backdrop'
 import { Modal } from '../modal/Modal'
 import styles from './product-modal.module.css'
 
-export const ProductModal = ({ product, onClose }) => {
+export const ProductModal = ({ product, onClose, animate }) => {
 	const [selectedSizeIndex, setSelectedSizeIndex] = useState(0)
 	const selectedOption =
 		product.options?.sizes?.[selectedSizeIndex] ??
@@ -14,8 +14,8 @@ export const ProductModal = ({ product, onClose }) => {
 
 	return (
 		<>
-			<Backdrop open={true} onClose={onClose} />
-			<Modal open={true}>
+			<Backdrop open={true} onClose={onClose} animationClass={animate} />
+			<Modal open={true} animationClass={animate}>
 				<div className={styles['product']}>
 					<div className={clsx(styles['product__image-wrapper'])}>
 						<img

@@ -47,12 +47,12 @@ export const NAVBAR_LINKS = [
 	{
 		srOnly: 'Чат',
 		icon: Message,
-		path: '/a',
+		path: '/chat',
 	},
 	{
 		srOnly: 'Уведомление',
 		icon: Notification,
-		path: '/b',
+		path: '/chat',
 	},
 	{
 		srOnly: 'Настройки',

@@ -4,25 +4,25 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	z-index: 55;
-	animation: opened 300ms ease forwards;
+	animation: fadeIn 0.2s ease-in-out;
 }
 .modal.closed {
-	animation: closed 300ms ease;
+	animation: fadeOut 0.2s ease-in-out forwards;
 }
 
-@keyframes opened {
+@keyframes fadeIn {
 	from {
 		opacity: 0;
-		margin-top: -333px;
+		transform: translate(-50%, -50%) translateY(-100px);
 	}
 	to {
 		opacity: 1;
-		margin-top: 0;
+		transform: translate(-50%, -50%) translateY(0);
 	}
 }
-@keyframes closed {
+@keyframes fadeOut {
 	to {
 		opacity: 0;
-		margin-top: -333px;
+		transform: translate(-50%, -50%) translateY(-100px);
 	}
 }

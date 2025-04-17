@@ -34,11 +34,11 @@ const ProductsList = (props) => {
 						price={item.price}
 						isNew={item.isNew}
 						title={item.title}
+						onOpen={props.onOpen}
+						onClose={props.onClose}
 						imageURL={item.imageURL}
 						category={props.category}
 						description={item.description}
-						onOpen={props.onOpen}
-						onClose={props.onClose}
 					/>
 				))}
 			</div>

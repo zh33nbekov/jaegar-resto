@@ -1,9 +1,9 @@
 import clsx from 'clsx'
-import React from 'react'
+import React, { memo } from 'react'
 import { useCategoryStore } from '../../store/product-category'
 import styles from './product-categories.module.css'
 
-const ProductCategories = (props) => {
+const ProductCategories = memo((props) => {
 	const activeCategory = useCategoryStore((state) => state.activeCategory)
 	return (
 		<ul className={styles['product-categories']}>
@@ -24,6 +24,6 @@ const ProductCategories = (props) => {
 			))}
 		</ul>
 	)
-}
+})
 
 export default ProductCategories

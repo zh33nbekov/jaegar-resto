@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import {
 	MOCK_PRODUCTS,
@@ -11,15 +12,27 @@ import { ProductModal } from '../UI/product-modal/ProductModal'
 import styles from './products.module.css'
 
 const Products = () => {
+	const [animate, setAnimate] = useState('')
 	const [searchParams, setSearchParams] = useSearchParams()
 	const selectedProductSlug = searchParams.get('product')
+	const timeoutRef = useRef(null)
 
 	const handleOpen = (product) => {
 		setSearchParams({ product })
 	}
 	const handleClose = () => {
-		searchParams.delete('product')
-		setSearchParams(searchParams)
+		setAnimate('closed')
+
+		if (timeoutRef.current !== null) {
+			clearTimeout(timeoutRef.current)
+		}
+
+		timeoutRef.current = setTimeout(() => {
+			searchParams.delete('product')
+			setSearchParams(searchParams)
+			setAnimate('')
+			timeoutRef.current = null
+		}, 200)
 	}
 	const product = MOCK_PRODUCTS.find(
 		(p) => toSlug(p.slug) === selectedProductSlug
@@ -27,7 +40,13 @@ const Products = () => {
 
 	return (
 		<>
-			{product && <ProductModal onClose={handleClose} product={product} />}
+			{product && (
+				<ProductModal
+					animate={animate}
+					product={product}
+					onClose={handleClose}
+				/>
+			)}
 			<section id='Продукты' className={styles.products}>
 				<ProductCategories categories={PRODUCT_CATEGORIES} />
 				{PRODUCT_CATEGORIES.map((category, index) => (

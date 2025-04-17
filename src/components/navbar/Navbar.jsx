@@ -41,9 +41,9 @@ const Navbar = () => {
 								<NavLink
 									to={elem.path}
 									className={({ isActive }) =>
-										`${styles.navigation__link} ${
-											isActive && styles.active
-										}`
+										clsx(styles.navigation__link, {
+											[styles.active]: isActive,
+										})
 									}
 								>
 									<span className='sr-only'>{elem.srOnly}</span>
