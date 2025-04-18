@@ -223,7 +223,7 @@ export const MOCK_PRODUCTS = [
 		options: {
 			volumes: [
 				{ label: 0.5, multiplier: 1 },
-				{ label: 1, multiplier: 1.6, priceOverride: 220 },
+				{ label: 1, multiplier: 1.6 },
 			],
 		},
 	},
@@ -237,7 +237,7 @@ export const MOCK_PRODUCTS = [
 		options: {
 			volumes: [
 				{ label: 0.5, multiplier: 1 },
-				{ label: 1, multiplier: 1.6, priceOverride: 220 },
+				{ label: 1, multiplier: 1.6 },
 			],
 		},
 	},
@@ -251,7 +251,7 @@ export const MOCK_PRODUCTS = [
 		options: {
 			volumes: [
 				{ label: 0.5, multiplier: 1 },
-				{ label: 1, multiplier: 1.6, priceOverride: 220 },
+				{ label: 1, multiplier: 1.6 },
 			],
 		},
 	},
@@ -265,7 +265,7 @@ export const MOCK_PRODUCTS = [
 		options: {
 			volumes: [
 				{ label: 0.5, multiplier: 1 },
-				{ label: 1, multiplier: 1.6, priceOverride: 220 },
+				{ label: 1, multiplier: 1.6 },
 			],
 		},
 	},
@@ -279,7 +279,7 @@ export const MOCK_PRODUCTS = [
 		options: {
 			volumes: [
 				{ label: 0.5, multiplier: 1 },
-				{ label: 1, multiplier: 1.6, priceOverride: 220 },
+				{ label: 1, multiplier: 1.6 },
 			],
 		},
 	},
@@ -293,7 +293,7 @@ export const MOCK_PRODUCTS = [
 		options: {
 			volumes: [
 				{ label: 0.5, multiplier: 1 },
-				{ label: 1, multiplier: 1.6, priceOverride: 220 },
+				{ label: 1, multiplier: 1.6 },
 			],
 		},
 	},
@@ -307,7 +307,7 @@ export const MOCK_PRODUCTS = [
 		options: {
 			volumes: [
 				{ label: 0.5, multiplier: 1 },
-				{ label: 1, multiplier: 1.6, priceOverride: 220 },
+				{ label: 1, multiplier: 1.6 },
 			],
 		},
 	},
@@ -321,7 +321,7 @@ export const MOCK_PRODUCTS = [
 		options: {
 			volumes: [
 				{ label: 0.5, multiplier: 1 },
-				{ label: 1, multiplier: 1.6, priceOverride: 220 },
+				{ label: 1, multiplier: 1.6 },
 			],
 		},
 	},
@@ -335,7 +335,7 @@ export const MOCK_PRODUCTS = [
 		options: {
 			volumes: [
 				{ label: 0.5, multiplier: 1 },
-				{ label: 1, multiplier: 1.6, priceOverride: 220 },
+				{ label: 1, multiplier: 1.6 },
 			],
 		},
 	},
@@ -349,7 +349,7 @@ export const MOCK_PRODUCTS = [
 		options: {
 			volumes: [
 				{ label: 0.5, multiplier: 1 },
-				{ label: 1, multiplier: 1.6, priceOverride: 220 },
+				{ label: 1, multiplier: 1.6 },
 			],
 		},
 	},
@@ -363,7 +363,7 @@ export const MOCK_PRODUCTS = [
 		options: {
 			volumes: [
 				{ label: 0.5, multiplier: 1 },
-				{ label: 1, multiplier: 1.6, priceOverride: 220 },
+				{ label: 1, multiplier: 1.6 },
 			],
 		},
 	},

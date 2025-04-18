@@ -1,0 +1,9 @@
+.product__title {
+	font-size: 24px;
+	font-weight: 500;
+}
+.product__description {
+	color: #5c6370;
+	font-size: 14px;
+	margin: 15px 0;
+}

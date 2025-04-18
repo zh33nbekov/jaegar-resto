@@ -1,0 +1,31 @@
+.product__title {
+	font-size: 24px;
+	font-weight: 500;
+}
+.product__description {
+	color: #5c6370;
+	font-size: 14px;
+	margin: 15px 0;
+}
+.product__options {
+	background-color: #f3f3f7;
+	display: flex;
+	justify-content: space-between;
+	border-radius: 24px;
+	padding: 3px;
+}
+.product__size {
+	padding: 10px 16px;
+	width: 100%;
+	border-radius: inherit;
+	font-size: 13px;
+	cursor: pointer;
+	transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+	color: #333;
+}
+.product__size.active {
+	color: #000;
+	font-weight: 600;
+	background-color: #fff;
+	box-shadow: 0 2px 4px #0000001a;
+}

@@ -1,9 +1,17 @@
 import clsx from 'clsx'
 import { useState } from 'react'
-import { getFinalPrice } from '../../../utils/products'
-import { Backdrop } from '../backdrop/Backdrop'
-import { Modal } from '../modal/Modal'
+import { getFinalPrice } from '../../utils/products'
+import { Drink } from '../drink/Drink'
+import { Other } from '../other/Other'
+import { Pizza } from '../pizza/Pizza'
+import { Backdrop } from '../UI/backdrop/Backdrop'
+import { Modal } from '../UI/modal/Modal'
 import styles from './product-modal.module.css'
+
+const otherProducts = {
+	пиццы: 'пиццы',
+	напитки: 'напитки',
+}
 
 export const ProductModal = ({ product, onAddToBasket, onClose, animate }) => {
 	const [selectedSizeIndex, setSelectedSizeIndex] = useState(0)
@@ -18,6 +26,9 @@ export const ProductModal = ({ product, onAddToBasket, onClose, animate }) => {
 		const { isNew, options, slug, ...rest } = product
 		return { ...rest, options: selectedOption }
 	}
+	const isPizza = product.category === 'пиццы'
+	const isDrink = product.category === 'напитки'
+	const otherProduct = !otherProducts[product.category]
 
 	return (
 		<>
@@ -31,8 +42,7 @@ export const ProductModal = ({ product, onAddToBasket, onClose, animate }) => {
 							className={clsx(
 								styles['product__image'],
 								{
-									[styles.small]:
-										selectedSizeIndex === 0 && product.options?.sizes,
+									[styles.small]: selectedSizeIndex === 0,
 								},
 								{
 									[styles.medium]: selectedSizeIndex === 1,
@@ -44,45 +54,28 @@ export const ProductModal = ({ product, onAddToBasket, onClose, animate }) => {
 						/>
 					</div>
 					<div className={styles.product__summary}>
-						<h2 className={styles.product__title}>{product.title}</h2>
-						<p className={styles.product__description}>
-							{product.description}
-						</p>
-						{product.options?.sizes && (
-							<div className={styles['product__option-group']}>
-								<div className={styles.product__options}>
-									{product.options.sizes.map((size, index) => (
-										<button
-											key={size.label}
-											className={clsx(styles.product__size, {
-												[styles.active]:
-													index === selectedSizeIndex,
-											})}
-											onClick={() => handleSelectedSizeIndex(index)}
-										>
-											{size.size} см
-										</button>
-									))}
-								</div>
-							</div>
+						{isPizza && (
+							<Pizza
+								title={product.title}
+								description={product.description}
+								sizes={product.options.sizes}
+								activeSize={selectedSizeIndex}
+								onChangeSize={handleSelectedSizeIndex}
+							/>
 						)}
-						{product.options?.volumes && (
-							<div className={styles['product__option-group']}>
-								<div className={styles.product__options}>
-									{product.options.volumes.map((vol, index) => (
-										<button
-											key={vol.label}
-											onClick={() => setSelectedSizeIndex(index)}
-											className={clsx(styles.product__size, {
-												[styles.active]:
-													index === selectedSizeIndex,
-											})}
-										>
-											{vol.label} мл
-										</button>
-									))}
-								</div>
-							</div>
+						{isDrink && (
+							<Drink
+								onChangeVolume={handleSelectedSizeIndex}
+								selectedVolume={selectedSizeIndex}
+								title={product.title}
+								volumes={product.options.volumes}
+							/>
+						)}
+						{otherProduct && (
+							<Other
+								title={product.title}
+								description={product.description}
+							/>
 						)}
 						<p className={styles.product__price}>
 							<strong>Цена:</strong> {finalPrice} ₽
