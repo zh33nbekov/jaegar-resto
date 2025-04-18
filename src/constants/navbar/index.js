@@ -26,6 +26,7 @@ export const NAVBAR_ROUTE_KEYS = {
 	NOTIFICATIONS: 'notifications',
 	SECURITY: 'security',
 	ABOUT_US: 'about-us',
+	CHAT: '/chat',
 }
 
 export const NAVBAR_LINKS = [
@@ -50,9 +51,9 @@ export const NAVBAR_LINKS = [
 		path: '/chat',
 	},
 	{
-		srOnly: 'Уведомление',
+		srOnly: 'Уведомления',
 		icon: Notification,
-		path: '/chat',
+		path: '/notifications',
 	},
 	{
 		srOnly: 'Настройки',

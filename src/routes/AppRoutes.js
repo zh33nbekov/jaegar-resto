@@ -4,8 +4,12 @@ import { NAVBAR_ROUTE_KEYS } from '../constants/navbar'
 
 const MainPage = lazy(() => import('../pages/main/MainPage'))
 const DiscountPage = lazy(() => import('../pages/discount/DiscountPage'))
-const SettingsPage = lazy(() => import('../pages/settings/SettingsPage'))
 const DashboardPage = lazy(() => import('../pages/dashboard/DashboardPage'))
+const ChatPage = lazy(() => import('../pages/chat/ChatPage'))
+const NotificationsPage = lazy(() =>
+	import('../pages/notifications/NotificationsPage')
+)
+const SettingsPage = lazy(() => import('../pages/settings/SettingsPage'))
 const AppereancePage = lazy(() =>
 	import('../pages/settings/pages/appereance/AppereancePage')
 )
@@ -15,7 +19,7 @@ const RestaurantPage = lazy(() =>
 const ManagementPage = lazy(() =>
 	import('../pages/settings/pages/management/ManagementPage')
 )
-const NotificationsPage = lazy(() =>
+const SettingsNotificationsPage = lazy(() =>
 	import('../pages/settings/pages/notifications/NotificationsPage')
 )
 const SecurityPage = lazy(() =>
@@ -30,6 +34,11 @@ const AppRoutes = () => {
 		<Routes>
 			<Route path={NAVBAR_ROUTE_KEYS.HOME} element={<MainPage />}></Route>
 			<Route path={NAVBAR_ROUTE_KEYS.DISCOUNT} element={<DiscountPage />} />
+			<Route path={NAVBAR_ROUTE_KEYS.CHAT} element={<ChatPage />} />
+			<Route
+				path={NAVBAR_ROUTE_KEYS.NOTIFICATIONS}
+				element={<NotificationsPage />}
+			/>
 			<Route
 				path={NAVBAR_ROUTE_KEYS.DASHBOARD}
 				element={<DashboardPage />}
@@ -49,7 +58,7 @@ const AppRoutes = () => {
 				/>
 				<Route
 					path={NAVBAR_ROUTE_KEYS.NOTIFICATIONS}
-					element={<NotificationsPage />}
+					element={<SettingsNotificationsPage />}
 				/>
 				<Route
 					path={NAVBAR_ROUTE_KEYS.SECURITY}
