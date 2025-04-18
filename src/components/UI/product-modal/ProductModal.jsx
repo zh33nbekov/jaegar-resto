@@ -10,7 +10,7 @@ export const ProductModal = ({ product, onAddToBasket, onClose, animate }) => {
 	const selectedOption =
 		product.options?.sizes?.[selectedSizeIndex] ??
 		product.options?.volumes?.[selectedSizeIndex]
-	const finalPrice = getFinalPrice(product.price, selectedOption)
+	const finalPrice = getFinalPrice(product?.price, selectedOption)
 	const handleSelectedSizeIndex = (index) => {
 		setSelectedSizeIndex(index)
 	}
