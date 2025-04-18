@@ -16,6 +16,7 @@ const Navbar = () => {
 	const sidebarStore = useSidebarStore((state) => state)
 	const basketLength = useBasketStore((state) => state.items.length)
 	const { toggleSidebar } = useSidebar()
+	const navbarPosition = navbarStore.windowWidth > 655 ? 'sticky' : 'fixed'
 
 	return (
 		<>
@@ -25,11 +26,7 @@ const Navbar = () => {
 						[styles[navbarStore.animationClass]]:
 							navbarStore.animationClass,
 					})}
-					style={
-						navbarStore.windowWidth > 655
-							? undefined
-							: { position: 'fixed' }
-					}
+					style={{ position: navbarPosition }}
 				>
 					<NavLink to={NAVBAR_ROUTE_KEYS.HOME} className={styles.appLogo}>
 						<span className='sr-only'>Логотип</span>
@@ -53,8 +50,8 @@ const Navbar = () => {
 						))}
 					</ul>
 					<button
-						data-count={basketLength}
 						onClick={toggleSidebar}
+						data-count={basketLength}
 						className={clsx(styles.basketButton, {
 							[styles.active]: sidebarStore.open,
 						})}
