@@ -12,7 +12,7 @@ export const useBasketStore = create(
 					set({
 						items: get().items.map((i) =>
 							i.title === item.title
-								? { ...i, quantity: i.quantity + item.quantity }
+								? { ...i, price: i.price + item.price }
 								: i
 						),
 					})

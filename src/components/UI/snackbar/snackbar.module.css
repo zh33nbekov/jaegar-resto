@@ -10,12 +10,12 @@
 	border: 1px solid rgba(255, 255, 255, 0.3);
 	padding: 10px;
 	width: 333px;
-	animation: desktopOpen 500ms ease forwards;
+	animation: desktopOpen 0.5s ease-in-out;
 	z-index: 100;
 }
 .snackbar:hover .closeButton > svg {
 	transform: rotate(360deg);
-	transition: transform 555ms ease-in-out;
+	transition: transform 0.55s ease-in-out;
 }
 .snackbar__content {
 	position: relative;
@@ -40,7 +40,7 @@
 	stroke: currentColor;
 }
 .snackbar.closed {
-	animation: desktopClose 500ms ease forwards;
+	animation: desktopClose 0.5s ease-in-out forwards;
 }
 .snackbar__message {
 	color: #fff;

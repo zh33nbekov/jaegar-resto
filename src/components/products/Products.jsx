@@ -5,17 +5,21 @@ import {
 	PRODUCT_CATEGORIES,
 	PRODUCT_LIST,
 } from '../../constants/products/products'
+import { useSnackbar } from '../../hooks/useSnackbar'
 import { useBasketStore } from '../../store/basket'
 import { toSlug } from '../../utils/products'
 import ProductCategories from '../product-categories/ProductCategories'
 import ProductsList from '../products-list/ProductsList'
 import { ProductModal } from '../UI/product-modal/ProductModal'
+import { Snackbar } from '../UI/snackbar/Snackbar'
 import styles from './products.module.css'
 
 const Products = () => {
 	const [animate, setAnimate] = useState('')
 	const [searchParams, setSearchParams] = useSearchParams()
 	const addToBasket = useBasketStore((state) => state.addToBasket)
+	const { open, animationClass, message, showSnackbar, hideSnackbar } =
+		useSnackbar()
 	const selectedProductSlug = searchParams.get('product')
 	const timeoutRef = useRef(null)
 
@@ -39,12 +43,20 @@ const Products = () => {
 	const product = MOCK_PRODUCTS.find(
 		(p) => toSlug(p.slug) === selectedProductSlug
 	)
+
 	const handleAddToBasket = (product) => {
 		addToBasket(product)
+		showSnackbar(`${product.title} добавлен в корзину`)
 	}
 
 	return (
 		<>
+			<Snackbar
+				open={open}
+				message={message}
+				onClose={hideSnackbar}
+				animationClass={animationClass}
+			/>
 			{product && (
 				<ProductModal
 					animate={animate}
@@ -53,7 +65,7 @@ const Products = () => {
 					onAddToBasket={handleAddToBasket}
 				/>
 			)}
-			<section id='Продукты' className={styles.products}>
+			<section id='Меню' className={styles.products}>
 				<ProductCategories categories={PRODUCT_CATEGORIES} />
 				{PRODUCT_CATEGORIES.map((category, index) => (
 					<ProductsList

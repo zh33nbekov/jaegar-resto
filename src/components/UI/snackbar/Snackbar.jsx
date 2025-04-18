@@ -1,10 +1,10 @@
 import clsx from 'clsx'
-import React, { memo } from 'react'
+import React from 'react'
 import { createPortal } from 'react-dom'
 import { Close } from '../../../assets/icons/common/Close'
 import styles from './snackbar.module.css'
 
-export const Snackbar = memo(({ open, onClose, animationClass, options }) => {
+export const Snackbar = ({ open, onClose, animationClass, message }) => {
 	if (!open) return
 	return (
 		<>
@@ -14,13 +14,11 @@ export const Snackbar = memo(({ open, onClose, animationClass, options }) => {
 						<button onClick={onClose} className={styles.closeButton}>
 							<Close />
 						</button>
-						<p className={styles.snackbar__message}>{options?.message}</p>
+						<p className={styles.snackbar__message}>{message}</p>
 					</div>
 				</div>,
 				document.getElementById('snackbar')
 			)}
 		</>
 	)
-})
-
-Snackbar.displayName = 'Snackbar'
+}
