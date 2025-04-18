@@ -5,12 +5,13 @@ import {
 	PRODUCT_CATEGORIES,
 	PRODUCT_LIST,
 } from '../../constants/products/products'
+import { useScrollLock } from '../../hooks/useScrollLock'
 import { useSnackbar } from '../../hooks/useSnackbar'
 import { useBasketStore } from '../../store/basket'
 import { toSlug } from '../../utils/products'
 import ProductCategories from '../product-categories/ProductCategories'
+import { ProductModal } from '../product-modal/ProductModal'
 import ProductsList from '../products-list/ProductsList'
-import { ProductModal } from '../UI/product-modal/ProductModal'
 import { Snackbar } from '../UI/snackbar/Snackbar'
 import styles from './products.module.css'
 
@@ -18,6 +19,7 @@ const Products = () => {
 	const [animate, setAnimate] = useState('')
 	const [searchParams, setSearchParams] = useSearchParams()
 	const addToBasket = useBasketStore((state) => state.addToBasket)
+	const { lockScroll, unlockScroll } = useScrollLock()
 	const { open, animationClass, message, showSnackbar, hideSnackbar } =
 		useSnackbar()
 	const selectedProductSlug = searchParams.get('product')
@@ -25,8 +27,10 @@ const Products = () => {
 
 	const handleOpen = (product) => {
 		setSearchParams({ product })
+		lockScroll()
 	}
 	const handleClose = () => {
+		unlockScroll()
 		setAnimate('closed')
 
 		if (timeoutRef.current !== null) {
