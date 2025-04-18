@@ -3,25 +3,20 @@ import { Close } from '../../assets/icons/common/Close'
 import { useSidebar } from '../../hooks/useSidebar'
 import { useBasketStore } from '../../store/basket'
 import { useSidebarStore } from '../../store/sidebar'
-import { BasketEmpty } from '../basket-empty/BasketEmpty'
 import OrderInfo from '../order-info/OrderInfo'
 import OrderTypes from '../order-types/OrderTypes'
 import Order from '../order/Order'
+import { OrdersEmpty } from '../orders-empty/OrdersEmpty'
 import Sidebar from '../side-bar/Sidebar'
 import { Backdrop } from '../UI'
 import styles from './orders.module.css'
 
 const Orders = () => {
-	// const [] = useState({
-	// 	amount: 1,
-	// 	note: '',
-	// })
 	const [isCheckedOrderType, setCheckedOrderType] = useState(null)
 	const toggleOrderType = useCallback((id) => setCheckedOrderType(id), [])
 	const { handleClose } = useSidebar()
 	const sidebarStore = useSidebarStore()
 	const basket = useBasketStore((state) => state.items)
-	console.log(basket, 'basket')
 	const removeFromBasket = useBasketStore((state) => state.removeFromBasket)
 	const handleKeyDown = (event) => {
 		if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown') {
@@ -76,7 +71,7 @@ const Orders = () => {
 								/>
 							))}
 						</div>
-						{!basket.length && <BasketEmpty />}
+						{!basket.length && <OrdersEmpty />}
 						<div className={styles.orders__payment}>
 							<div className={styles.orders__discount}>
 								<span className={styles['orders__discount-title']}>

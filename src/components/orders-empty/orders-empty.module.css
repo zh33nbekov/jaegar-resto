@@ -1,4 +1,4 @@
-.basket-empty {
+.orders-empty {
 	color: #fff;
 	width: 100%;
 	height: 100%;
@@ -8,10 +8,10 @@
 	flex-direction: column;
 	justify-content: center;
 }
-.basket-empty__title {
+.orders-empty__title {
 	font-size: 19px;
 }
-.basket-empty__description {
+.orders-empty__description {
 	padding-top: 5px;
 	font-size: 17px;
 }
