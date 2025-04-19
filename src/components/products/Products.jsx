@@ -13,7 +13,6 @@ import ProductCategories from '../product-categories/ProductCategories'
 import { ProductModal } from '../product-modal/ProductModal'
 import ProductsList from '../products-list/ProductsList'
 import { Snackbar } from '../UI/snackbar/Snackbar'
-import styles from './products.module.css'
 
 const Products = () => {
 	const [animate, setAnimate] = useState('')
@@ -69,7 +68,7 @@ const Products = () => {
 					onAddToBasket={handleAddToBasket}
 				/>
 			)}
-			<section id='Меню' className={styles.products}>
+			<section id='Меню'>
 				<ProductCategories categories={PRODUCT_CATEGORIES} />
 				{PRODUCT_CATEGORIES.map((category, index) => (
 					<ProductsList
