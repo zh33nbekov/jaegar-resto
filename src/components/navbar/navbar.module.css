@@ -1,12 +1,10 @@
 .navigation {
 	padding: 20px 0;
 	background-color: #1f1d2b;
-	height: 100dvh;
-	min-height: 100%;
-	overscroll-behavior: contain;
+	height: 100%;
+	min-height: 100svh;
 	display: flex;
 	align-items: center;
-	position: sticky;
 	top: 0;
 	width: clamp(63px, 51.2px + 1.79vw, 77px);
 	flex-direction: column;
