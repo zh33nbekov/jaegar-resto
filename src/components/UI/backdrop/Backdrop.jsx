@@ -6,12 +6,7 @@ import styles from './backdrop.module.css'
 
 export const Backdrop = ({ open, onClose, animationClass, zIndex }) => {
 	const { lockScroll, unlockScroll } = useScrollLock()
-	if (open) {
-		// lockScroll()
-	} else {
-		// unlockScroll()
-		return
-	}
+	if (!open) return
 
 	return (
 		<>

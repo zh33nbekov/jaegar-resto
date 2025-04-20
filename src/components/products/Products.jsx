@@ -18,7 +18,6 @@ const Products = () => {
 	const [animate, setAnimate] = useState('')
 	const [searchParams, setSearchParams] = useSearchParams()
 	const addToBasket = useBasketStore((state) => state.addToBasket)
-	const { lockScroll, unlockScroll } = useScrollLock()
 	const { open, animationClass, message, showSnackbar, hideSnackbar } =
 		useSnackbar()
 	const selectedProductSlug = searchParams.get('product')
@@ -26,10 +25,8 @@ const Products = () => {
 
 	const handleOpen = (product) => {
 		setSearchParams({ product })
-		lockScroll()
 	}
 	const handleClose = () => {
-		unlockScroll()
 		setAnimate('closed')
 
 		if (timeoutRef.current !== null) {
@@ -51,6 +48,7 @@ const Products = () => {
 		addToBasket(product)
 		showSnackbar(`${product.title} добавлен в корзину`)
 	}
+	useScrollLock(product)
 
 	return (
 		<>

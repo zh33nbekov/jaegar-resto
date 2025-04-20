@@ -1,21 +1,21 @@
-import { useState } from 'react'
+import { useEffect } from 'react'
 
-export const useScrollLock = () => {
-	const [isScrollLocked, setScrollLocked] = useState(false)
-
+export const useScrollLock = (open) => {
 	const lockScroll = () => {
-		if (!isScrollLocked) {
-			document.documentElement.style.overflow = 'hidden'
-			setScrollLocked(true)
-		}
+		document.documentElement.style.overflow = 'hidden'
 	}
 
 	const unlockScroll = () => {
-		if (isScrollLocked) {
-			document.documentElement.removeAttribute('style')
-			setScrollLocked(false)
-		}
+		document.documentElement.removeAttribute('style')
 	}
+
+	useEffect(() => {
+		if (open) {
+			lockScroll()
+		} else {
+			unlockScroll()
+		}
+	}, [open])
 
 	return { lockScroll, unlockScroll }
 }
