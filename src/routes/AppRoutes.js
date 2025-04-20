@@ -28,6 +28,7 @@ const SecurityPage = lazy(() =>
 const AboutUsPage = lazy(() =>
 	import('../pages/settings/pages/about-us/AboutUsPage')
 )
+const DebuggerPage = lazy(() => import('../pages/debugger/DebuggerPage'))
 
 const AppRoutes = () => {
 	return (
@@ -69,6 +70,7 @@ const AppRoutes = () => {
 					element={<AboutUsPage />}
 				/>
 			</Route>
+			<Route path='/debugger' element={<DebuggerPage />} />
 		</Routes>
 	)
 }
