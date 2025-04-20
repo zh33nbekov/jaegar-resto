@@ -9,7 +9,6 @@ export const Drink = ({ volumes, onChangeVolume, selectedVolume, title }) => {
 
 	useEffect(() => {
 		const btn = document.getElementById(volumes[active].label)
-		console.log(btn)
 		if (btn) {
 			const styles = btn.getBoundingClientRect()
 			setPosition({ width: styles.width, left: btn.offsetLeft })
