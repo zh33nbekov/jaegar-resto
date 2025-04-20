@@ -1,0 +1,10 @@
+.interactive-button {
+	width: 100%;
+	padding: 10px 16px;
+	border-radius: inherit;
+	font-size: 13px;
+	cursor: pointer;
+	transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+	color: #333;
+	z-index: 2;
+}

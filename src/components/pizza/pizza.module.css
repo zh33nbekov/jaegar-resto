@@ -13,6 +13,7 @@
 	justify-content: space-between;
 	border-radius: 24px;
 	padding: 3px;
+	position: relative;
 }
 .product__size {
 	padding: 10px 16px;
@@ -23,9 +24,7 @@
 	transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
 	color: #333;
 }
-.product__size.active {
-	color: #000;
-	font-weight: 600;
+.indicator {
 	background-color: #fff;
 	box-shadow: 0 2px 4px #0000001a;
 }

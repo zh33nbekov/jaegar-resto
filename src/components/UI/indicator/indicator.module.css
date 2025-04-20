@@ -1,0 +1,8 @@
+.indicator {
+	background-color: #00000059;
+	height: 35.5px;
+	border-radius: 24px;
+	position: absolute;
+	transition: left 0.15s ease-in-out;
+	z-index: 1;
+}

@@ -57,18 +57,18 @@ export const ProductModal = ({ product, onAddToBasket, onClose, animate }) => {
 						{isPizza && (
 							<Pizza
 								title={product.title}
-								description={product.description}
 								sizes={product.options.sizes}
 								activeSize={selectedSizeIndex}
+								description={product.description}
 								onChangeSize={handleSelectedSizeIndex}
 							/>
 						)}
 						{isDrink && (
 							<Drink
-								onChangeVolume={handleSelectedSizeIndex}
-								selectedVolume={selectedSizeIndex}
 								title={product.title}
 								volumes={product.options.volumes}
+								selectedVolume={selectedSizeIndex}
+								onChangeVolume={handleSelectedSizeIndex}
 							/>
 						)}
 						{otherProduct && (

@@ -1,7 +1,20 @@
-import clsx from 'clsx'
+import { useEffect, useState } from 'react'
+import { Indicator } from '../UI/indicator/Indicator'
+import { InteractiveButton } from '../UI/interactive-button/InteractiveButton'
 import styles from './pizza.module.css'
 
 export const Pizza = (props) => {
+	const [active, setActive] = useState(0)
+	const [position, setPosition] = useState({})
+
+	useEffect(() => {
+		const btn = document.getElementById(props.sizes[active]?.size)
+		if (btn) {
+			const styles = btn.getBoundingClientRect()
+			setPosition({ width: styles.width, left: btn.offsetLeft })
+		}
+	}, [props.sizes, active])
+
 	return (
 		<>
 			<h2 className={styles.product__title}>{props.title}</h2>
@@ -9,17 +22,27 @@ export const Pizza = (props) => {
 			{props.sizes && (
 				<div className={styles['product__option-group']}>
 					<div className={styles.product__options}>
-						{props.sizes.map((size, index) => (
-							<button
-								key={size.label}
-								className={clsx(styles.product__size, {
-									[styles.active]: index === props.activeSize,
-								})}
-								onClick={() => props.onChangeSize(index)}
-							>
-								{size.size} см
-							</button>
-						))}
+						{props.sizes.map((size, index) => {
+							return (
+								<InteractiveButton
+									key={index}
+									index={index}
+									id={size.size}
+									active={active}
+									label={size.size}
+									position={position}
+									onClick={(index) => {
+										setActive(index)
+										props.onChangeSize(index)
+									}}
+									setPosition={setPosition}
+									className={styles.product__size}
+								>
+									{size.size} см
+								</InteractiveButton>
+							)
+						})}
+						<Indicator position={position} className={styles.indicator} />
 					</div>
 				</div>
 			)}
