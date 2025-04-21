@@ -93,6 +93,7 @@ button {
 	border: 0;
 	cursor: pointer;
 	background: none;
+	-webkit-tap-highlight-color: transparent;
 }
 input {
 	border: none;
