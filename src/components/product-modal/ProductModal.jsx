@@ -13,7 +13,7 @@ const otherProducts = {
 	напитки: 'напитки',
 }
 
-export const ProductModal = ({ product, onAddToBasket, onClose, animate }) => {
+const ProductModal = ({ product, onAddToBasket, onClose, animate }) => {
 	const [selectedSizeIndex, setSelectedSizeIndex] = useState(0)
 	const selectedOption =
 		product.options?.sizes?.[selectedSizeIndex] ??
@@ -102,3 +102,4 @@ export const ProductModal = ({ product, onAddToBasket, onClose, animate }) => {
 		</>
 	)
 }
+export default ProductModal

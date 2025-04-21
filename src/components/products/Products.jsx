@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { lazy, useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import {
 	MOCK_PRODUCTS,
@@ -10,9 +10,10 @@ import { useSnackbar } from '../../hooks/useSnackbar'
 import { useBasketStore } from '../../store/basket'
 import { toSlug } from '../../utils/products'
 import ProductCategories from '../product-categories/ProductCategories'
-import { ProductModal } from '../product-modal/ProductModal'
 import ProductsList from '../products-list/ProductsList'
 import { Snackbar } from '../UI/snackbar/Snackbar'
+
+const ProductModal = lazy(() => import('../product-modal/ProductModal'))
 
 const Products = () => {
 	const [animate, setAnimate] = useState('')
