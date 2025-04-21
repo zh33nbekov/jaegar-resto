@@ -1,2 +1,3 @@
 User-agent: *
 Disallow:
+Sitemap: https://jaegar-resto-kg.vercel.app/sitemap.xml
