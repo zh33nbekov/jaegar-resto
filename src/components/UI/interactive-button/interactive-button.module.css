@@ -7,5 +7,5 @@
 	transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
 	color: #333;
 	z-index: 2;
-	-webkit-tap-highlight-color: blueviolet;
+	-webkit-tap-highlight-color: transparent;
 }
