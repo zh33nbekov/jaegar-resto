@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import { Link } from 'react-router-dom'
 import { AppLogo } from '../../assets/icons/navbar'
 import styles from './footer.module.css'
 
@@ -20,24 +21,28 @@ const Footer = () => {
 					<h4 className={styles.footer__heading}>Навигация</h4>
 					<ul className={styles.footer__list}>
 						<li className={styles['footer__list-item']}>
-							<a className={styles['footer__list-link']} href='/'>
+							<Link className={styles['footer__list-link']}>
 								Главная
-							</a>
+							</Link>
 						</li>
 						<li className={styles['footer__list-item']}>
-							<a className={styles['footer__list-link']} href='/menu'>
-								Меню
-							</a>
+							<Link className={styles['footer__list-link']}>Меню</Link>
 						</li>
 						<li className={styles['footer__list-item']}>
-							<a className={styles['footer__list-link']} href='/about'>
+							<Link
+								className={styles['footer__list-link']}
+								href='/about'
+							>
 								О нас
-							</a>
+							</Link>
 						</li>
 						<li className={styles['footer__list-item']}>
-							<a className={styles['footer__list-link']} href='/contact'>
+							<Link
+								className={styles['footer__list-link']}
+								href='/contact'
+							>
 								Контакты
-							</a>
+							</Link>
 						</li>
 					</ul>
 				</div>
@@ -45,28 +50,25 @@ const Footer = () => {
 					<h4 className={styles.footer__heading}>Контакты</h4>
 					<ul className={styles.footer__list}>
 						<li className={styles['footer__list-item']}>
-							<a
+							<Link
+								to='tel:+996999555999'
 								className={styles['footer__list-link']}
-								href='tel:+996703001555'
 							>
-								+996 (703) 001-555
-							</a>
+								+996 (999) 555-999
+							</Link>
 						</li>
 						<li className={styles['footer__list-item']}>
-							<a
+							<Link
+								to='mailto:info@restaurant.ru'
 								className={styles['footer__list-link']}
-								href='mailto:info@restaurant.ru'
 							>
 								info@restaurant.ru
-							</a>
+							</Link>
 						</li>
 						<li className={styles['footer__list-item']}>
-							<a
-								className={styles['footer__list-link']}
-								href='mailto:info@restaurant.ru'
-							>
+							<Link className={styles['footer__list-link']}>
 								г. Бишкек
-							</a>
+							</Link>
 						</li>
 					</ul>
 				</div>
@@ -74,14 +76,14 @@ const Footer = () => {
 					<h4 className={styles.footer__heading}>Мы в соцсетях</h4>
 					<ul className={styles.footer__list}>
 						<li className={styles['footer__list-item']}>
-							<a className={styles['footer__list-link']} href='/'>
+							<Link className={styles['footer__list-link']}>
 								Facebook
-							</a>
+							</Link>
 						</li>
 						<li className={styles['footer__list-item']}>
-							<a className={styles['footer__list-link']} href='/'>
+							<Link className={styles['footer__list-link']}>
 								Instagram
-							</a>
+							</Link>
 						</li>
 					</ul>
 				</div>
