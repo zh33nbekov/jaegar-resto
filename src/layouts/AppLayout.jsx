@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useIntersection } from 'react-use'
 import Footer from '../components/footer/Footer'
 import Navbar from '../components/navbar/Navbar'
+import Header from '../components/header/Header'
 
 const styles = {
 	width: '100%',
@@ -31,6 +32,7 @@ const AppLayout = ({ children }) => {
 			<div style={styles}>
 				<Navbar />
 				<main className='wrapper'>
+					<Header />
 					{children}
 					<hr ref={footerTriggerRef} style={lineStyles} />
 					{isIntersecting && <Footer />}
