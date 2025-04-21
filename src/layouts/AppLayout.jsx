@@ -10,6 +10,7 @@ const styles = {
 }
 const lineStyles = {
 	border: 'none',
+	height: '1px',
 }
 
 const AppLayout = ({ children }) => {
