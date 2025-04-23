@@ -38,7 +38,6 @@ const Orders = () => {
 				open={sidebarStore.open}
 				animationClass={sidebarStore.animationClass}
 			/>
-
 			<Sidebar
 				open={sidebarStore.open}
 				animationClass={sidebarStore.animationClass}

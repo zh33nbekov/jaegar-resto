@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import { memo } from 'react'
 import styles from './order-types.module.css'
 
-const orderTypeButtons = [
+const ORDER_TYPE_OPTIONS = [
 	{ title: 'Пообедать в' },
 	{ title: 'Идти' },
 	{ title: 'Доставка' },
@@ -11,7 +11,7 @@ const orderTypeButtons = [
 const OrderTypes = memo((props) => {
 	return (
 		<div className={styles.orderTypes}>
-			{orderTypeButtons.map((btn, index) => (
+			{ORDER_TYPE_OPTIONS.map((btn, index) => (
 				<button
 					key={index}
 					onClick={() => props.onToggleOrderType(index)}
