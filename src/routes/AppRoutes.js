@@ -2,10 +2,9 @@ import React, { lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { NAVBAR_ROUTE_KEYS } from '../constants/navbar'
 import { withLazy } from '../HOC/withLazy'
-import MainPage from '../pages/main/MainPage'
 
 const LazyMainPage = lazy(() => import('../pages/main/MainPage'))
-// const MainPage = withLazy(LazyMainPage)
+const MainPage = withLazy(LazyMainPage)
 const LazyDiscountPage = lazy(() => import('../pages/discount/DiscountPage'))
 const DiscountPage = withLazy(LazyDiscountPage)
 const LazyDashboardPage = lazy(() => import('../pages/dashboard/DashboardPage'))
