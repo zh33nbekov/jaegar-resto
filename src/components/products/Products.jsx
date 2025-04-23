@@ -5,6 +5,7 @@ import {
 	PRODUCT_CATEGORIES,
 	PRODUCT_LIST,
 } from '../../constants/products/products'
+import { withLazy } from '../../HOC/withLazy'
 import { useScrollLock } from '../../hooks/useScrollLock'
 import { useSnackbar } from '../../hooks/useSnackbar'
 import { useBasketStore } from '../../store/basket'
@@ -13,7 +14,8 @@ import ProductCategories from '../product-categories/ProductCategories'
 import ProductsList from '../products-list/ProductsList'
 import { Snackbar } from '../UI/snackbar/Snackbar'
 
-const ProductModal = lazy(() => import('../product-modal/ProductModal'))
+const LazyProductModal = lazy(() => import('../product-modal/ProductModal'))
+const ProductModal = withLazy(LazyProductModal)
 
 const Products = () => {
 	const [animate, setAnimate] = useState('')

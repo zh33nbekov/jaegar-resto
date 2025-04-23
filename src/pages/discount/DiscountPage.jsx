@@ -24,4 +24,5 @@ const DiscountPage = () => {
 		</AppLayout>
 	)
 }
+
 export default DiscountPage

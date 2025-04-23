@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import AppLayout from '../../layouts/AppLayout'
 
-const DashboardPage = () => {
+const DasboardPage = () => {
 	return (
 		<AppLayout>
 			<Helmet>
@@ -24,4 +24,5 @@ const DashboardPage = () => {
 		</AppLayout>
 	)
 }
-export default DashboardPage
+
+export default DasboardPage

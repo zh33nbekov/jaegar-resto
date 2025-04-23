@@ -1,7 +1,7 @@
 import AppLayout from '../../layouts/AppLayout'
 
 const ChatPage = () => {
-	return <AppLayout></AppLayout>
+	return <AppLayout />
 }
 
 export default ChatPage

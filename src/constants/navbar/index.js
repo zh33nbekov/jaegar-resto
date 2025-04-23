@@ -20,11 +20,9 @@ export const NAVBAR_ROUTE_KEYS = {
 	DASHBOARD: '/dashboard',
 	DISCOUNT: '/discounts',
 	SETTINGS: '/settings',
-	APPEREANCE: 'design',
 	RESTAURANT: 'restaurant',
 	MANAGEMENT: 'management',
-	NOTIFICATIONS: 'notifications',
-	SECURITY: 'security',
+	NOTIFICATIONS: '/notifications',
 	ABOUT_US: 'about-us',
 	CHAT: '/chat',
 }
@@ -48,12 +46,12 @@ export const NAVBAR_LINKS = [
 	{
 		srOnly: 'Чат',
 		icon: Message,
-		path: '/chat',
+		path: NAVBAR_ROUTE_KEYS.CHAT,
 	},
 	{
 		srOnly: 'Уведомления',
 		icon: Notification,
-		path: '/notifications',
+		path: NAVBAR_ROUTE_KEYS.NOTIFICATIONS,
 	},
 	{
 		srOnly: 'Настройки',
@@ -67,7 +65,6 @@ export const SETTINGS_NAVBAR_LINKS = [
 		id: 0,
 		name: 'Дизайн',
 		description: 'Темный и светлый режимы, размер шрифта',
-		path: NAVBAR_ROUTE_KEYS.APPEREANCE,
 		icon: Heart,
 	},
 	{
@@ -88,14 +85,12 @@ export const SETTINGS_NAVBAR_LINKS = [
 		id: 3,
 		name: 'Уведомления',
 		description: 'Настройте свои уведомления',
-		path: NAVBAR_ROUTE_KEYS.NOTIFICATIONS,
 		icon: Notifications,
 	},
 	{
 		id: 4,
 		name: 'Защита',
 		description: 'Настройка пароля, PIN-кода и т.д',
-		path: NAVBAR_ROUTE_KEYS.SECURITY,
 		icon: Security,
 	},
 	{

@@ -80,7 +80,6 @@ const ManagementPage = () => {
 		event.preventDefault()
 		// dishesCtx.editDish(editDish.id, editDish)
 	}
-
 	return (
 		<>
 			<Helmet>
@@ -173,4 +172,5 @@ const ManagementPage = () => {
 		</>
 	)
 }
+
 export default ManagementPage

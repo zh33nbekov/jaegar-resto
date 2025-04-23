@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 import styles from './sidebar.module.css'
 
-const Sidebar = memo(({ open, children, animationClass }) => {
+export const Sidebar = memo(({ open, children, animationClass }) => {
 	if (!open) return
 
 	return (
@@ -12,4 +12,3 @@ const Sidebar = memo(({ open, children, animationClass }) => {
 })
 
 Sidebar.displayName = 'Sidebar'
-export default Sidebar

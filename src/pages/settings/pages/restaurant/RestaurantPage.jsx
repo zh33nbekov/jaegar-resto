@@ -24,4 +24,5 @@ const RestaurantPage = () => {
 		</div>
 	)
 }
+
 export default RestaurantPage

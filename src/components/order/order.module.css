@@ -35,9 +35,6 @@
 	object-fit: cover;
 	transition: transform 111ms ease-in-out;
 }
-.order__image.drink {
-	transform: rotate(15deg);
-}
 .order__summary {
 	width: 140px;
 	display: flex;

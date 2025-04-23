@@ -1,4 +1,3 @@
-import React from 'react'
 import { Helmet } from 'react-helmet'
 import Products from '../../components/products/Products'
 import AppLayout from '../../layouts/AppLayout'
@@ -21,4 +20,5 @@ const MainPage = () => {
 		</AppLayout>
 	)
 }
+
 export default MainPage

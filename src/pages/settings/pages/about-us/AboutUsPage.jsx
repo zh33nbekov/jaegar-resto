@@ -24,4 +24,5 @@ const AboutUsPage = () => {
 		</div>
 	)
 }
+
 export default AboutUsPage

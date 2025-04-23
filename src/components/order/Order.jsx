@@ -1,21 +1,16 @@
-import clsx from 'clsx'
 import React from 'react'
 import { Delete } from '../../assets/icons/common/Delete'
 import styles from './order.module.css'
 
 const Order = (props) => {
-	const isDrink = props.category === 'напитки'
-
 	return (
 		<div className={styles.order}>
 			<div className={styles.order__header}>
 				<div className={styles['order__header-summary']}>
 					<img
 						src={props.imageURL}
-						alt={props.description}
-						className={clsx(styles.order__image, {
-							[styles.drink]: isDrink,
-						})}
+						alt={props.title}
+						className={styles.order__image}
 					/>
 					<div className={styles.order__summary}>
 						<p className={styles.order__title} title={props.title}>

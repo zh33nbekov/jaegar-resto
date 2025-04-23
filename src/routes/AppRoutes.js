@@ -1,34 +1,36 @@
 import React, { lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { NAVBAR_ROUTE_KEYS } from '../constants/navbar'
+import { withLazy } from '../HOC/withLazy'
 
-const MainPage = lazy(() => import('../pages/main/MainPage'))
-const DiscountPage = lazy(() => import('../pages/discount/DiscountPage'))
-const DashboardPage = lazy(() => import('../pages/dashboard/DashboardPage'))
-const ChatPage = lazy(() => import('../pages/chat/ChatPage'))
-const NotificationsPage = lazy(() =>
+const LazyMainPage = lazy(() => import('../pages/main/MainPage'))
+const MainPage = withLazy(LazyMainPage)
+const LazyDiscountPage = lazy(() => import('../pages/discount/DiscountPage'))
+const DiscountPage = withLazy(LazyDiscountPage)
+const LazyDashboardPage = lazy(() => import('../pages/dashboard/DashboardPage'))
+const DashboardPage = withLazy(LazyDashboardPage)
+const LazyChatPage = lazy(() => import('../pages/chat/ChatPage'))
+const ChatPage = withLazy(LazyChatPage)
+const LazyNotificationsPage = lazy(() =>
 	import('../pages/notifications/NotificationsPage')
 )
-const SettingsPage = lazy(() => import('../pages/settings/SettingsPage'))
-const AppereancePage = lazy(() =>
-	import('../pages/settings/pages/appereance/AppereancePage')
-)
-const RestaurantPage = lazy(() =>
+const NotificationsPage = withLazy(LazyNotificationsPage)
+const LazySettingsPage = lazy(() => import('../pages/settings/SettingsPage'))
+const SettingsPage = withLazy(LazySettingsPage)
+const LazyRestaurantPage = lazy(() =>
 	import('../pages/settings/pages/restaurant/RestaurantPage')
 )
-const ManagementPage = lazy(() =>
+const RestaurantPage = withLazy(LazyRestaurantPage)
+const LazyManagementPage = lazy(() =>
 	import('../pages/settings/pages/management/ManagementPage')
 )
-const SettingsNotificationsPage = lazy(() =>
-	import('../pages/settings/pages/notifications/NotificationsPage')
-)
-const SecurityPage = lazy(() =>
-	import('../pages/settings/pages/security/SecurityPage')
-)
-const AboutUsPage = lazy(() =>
+const ManagementPage = withLazy(LazyManagementPage)
+const LazyAboutUsPage = lazy(() =>
 	import('../pages/settings/pages/about-us/AboutUsPage')
 )
-const DebuggerPage = lazy(() => import('../pages/debugger/DebuggerPage'))
+const AboutUsPage = withLazy(LazyAboutUsPage)
+const LazyDebuggerPage = lazy(() => import('../pages/debugger/DebuggerPage'))
+const DebuggerPage = withLazy(LazyDebuggerPage)
 
 const AppRoutes = () => {
 	return (
@@ -46,24 +48,12 @@ const AppRoutes = () => {
 			/>
 			<Route path={NAVBAR_ROUTE_KEYS.SETTINGS} element={<SettingsPage />}>
 				<Route
-					path={NAVBAR_ROUTE_KEYS.APPEREANCE}
-					element={<AppereancePage />}
-				/>
-				<Route
 					path={NAVBAR_ROUTE_KEYS.RESTAURANT}
 					element={<RestaurantPage />}
 				/>
 				<Route
 					path={NAVBAR_ROUTE_KEYS.MANAGEMENT}
 					element={<ManagementPage />}
-				/>
-				<Route
-					path={NAVBAR_ROUTE_KEYS.NOTIFICATIONS}
-					element={<SettingsNotificationsPage />}
-				/>
-				<Route
-					path={NAVBAR_ROUTE_KEYS.SECURITY}
-					element={<SecurityPage />}
 				/>
 				<Route
 					path={NAVBAR_ROUTE_KEYS.ABOUT_US}

@@ -42,4 +42,5 @@ const SettingsPage = () => {
 		</SettingsLayout>
 	)
 }
+
 export default SettingsPage
