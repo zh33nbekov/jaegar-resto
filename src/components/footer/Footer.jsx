@@ -59,10 +59,10 @@ const Footer = () => {
 						</li>
 						<li className={styles['footer__list-item']}>
 							<Link
-								to='mailto:info@restaurant.ru'
+								to='mailto:jaegar-resto@gmail.com'
 								className={styles['footer__list-link']}
 							>
-								info@restaurant.ru
+								jaegar-resto@gmail.com
 							</Link>
 						</li>
 						<li className={styles['footer__list-item']}>
