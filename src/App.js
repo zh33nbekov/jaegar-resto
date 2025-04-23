@@ -1,5 +1,6 @@
 import { lazy } from 'react'
 import { Preloader } from './components/UI'
+import { Progress } from './components/UI/progress/Progress'
 import { withLazy } from './HOC/withLazy'
 import NavbarProvider from './providers/NavbarProvider'
 import AppRoutes from './routes/AppRoutes'
@@ -12,6 +13,7 @@ const AppContent = () => {
 	const sidebarStore = useSidebarStore()
 	return (
 		<>
+			<Progress />
 			<Preloader />
 			{sidebarStore.open && <Orders />}
 		</>
