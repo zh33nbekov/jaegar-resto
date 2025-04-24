@@ -108,11 +108,13 @@
 	border-radius: 8px;
 	margin-left: auto;
 	color: #ea7c69;
-	transition: color 0.15s ease-in-out, border 0.15s ease-in-out;
+	transition: color 0.25s ease-in-out, border 0.25s ease-in-out;
 }
-.order__delete-button:hover {
-	color: red;
-	border: 1px solid red;
+@media (hover: hover) and (pointer: fine) {
+	.order__delete-button:hover {
+		color: red;
+		border: 1px solid red;
+	}
 }
 .order__delete-button svg > path {
 	fill: currentColor;
