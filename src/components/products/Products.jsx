@@ -51,7 +51,7 @@ const Products = () => {
 		addToBasket(product)
 		showSnackbar(`${product.title} добавлен в корзину`)
 	}
-	useScrollLock(product)
+	useScrollLock(Boolean(product))
 
 	return (
 		<>
