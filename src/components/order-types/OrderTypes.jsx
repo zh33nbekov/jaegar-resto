@@ -4,10 +4,7 @@ import { Indicator } from '../UI/indicator/Indicator'
 import { InteractiveButton } from '../UI/interactive-button/InteractiveButton'
 import styles from './order-types.module.css'
 
-const ORDER_TYPE_OPTIONS = [
-	{ title: 'У нас' },
-	{ title: 'У себя' },
-]
+const ORDER_TYPE_OPTIONS = [{ title: 'У нас' }, { title: 'У себя' }]
 
 const OrderTypes = memo((props) => {
 	const [active, setActive] = useState(0)
@@ -22,7 +19,7 @@ const OrderTypes = memo((props) => {
 			const styles = btn.getBoundingClientRect()
 			setPosition({ width: styles.width, left: btn.offsetLeft })
 		}
-	}, [props.sizes, active])
+	}, [active])
 
 	return (
 		<div className={styles.orderTypes}>
