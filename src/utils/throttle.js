@@ -1,16 +1,28 @@
 export const throttle = (func, limit) => {
-	let inThrottle
+	let inThrottle = false
 	let lastTime = 0
-	return () => {
-		if (inThrottle) return
+	let timeoutId = null
+
+	const throttled = () => {
 		const now = Date.now()
-		if (now - lastTime >= limit) {
-			func()
-			lastTime = now
-		}
+		if (inThrottle || now - lastTime < limit) return
+
+		func()
+		lastTime = now
 		inThrottle = true
-		setTimeout(() => {
+
+		timeoutId = setTimeout(() => {
 			inThrottle = false
 		}, limit)
 	}
+
+	const cancel = () => {
+		if (timeoutId !== null) {
+			clearTimeout(timeoutId)
+			inThrottle = false
+			timeoutId = null
+		}
+	}
+
+	return { throttled, cancel }
 }

@@ -4,12 +4,15 @@ import { throttle } from '../utils/throttle'
 
 const NavbarProvider = ({ children }) => {
 	const updateWindowWidth = useNavbarStore((state) => state.updateWindowWidth)
+	const { throttled, cancel } = throttle(updateWindowWidth, 500)
 
 	useEffect(() => {
-		const throttledResize = throttle(updateWindowWidth, 500)
-		window.addEventListener('resize', throttledResize)
-		return () => window.removeEventListener('resize', throttledResize)
-	}, [updateWindowWidth])
+		window.addEventListener('resize', throttled)
+		return () => {
+			cancel()
+			window.removeEventListener('resize', throttled)
+		}
+	}, [cancel, throttled, updateWindowWidth])
 
 	return children
 }
