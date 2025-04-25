@@ -8,20 +8,12 @@ import { useSidebarStore } from './store/sidebar'
 const LazyOrders = lazy(() => import('./components/orders/Orders'))
 const Orders = withLazy(LazyOrders)
 
-const AppContent = () => {
+const App = () => {
 	const sidebarStore = useSidebarStore()
 	return (
-		<>
+		<NavbarProvider>
 			<Progress />
 			{sidebarStore.open && <Orders />}
-		</>
-	)
-}
-
-const App = () => {
-	return (
-		<NavbarProvider>
-			<AppContent />
 			<AppRoutes />
 		</NavbarProvider>
 	)
