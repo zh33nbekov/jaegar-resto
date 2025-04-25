@@ -25,7 +25,7 @@ const ProductsList = (props) => {
 			ref={productsListRef}
 			className={styles['products-list']}
 		>
-			<h4 className={styles['products-list__category']}>{props.category}</h4>
+			<h1 className={styles['products-list__category']}>{props.category}</h1>
 			<div className={styles['products-list__wrapper']}>
 				{props.products?.map((item) => (
 					<Product

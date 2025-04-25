@@ -18,7 +18,7 @@ const Footer = () => {
 					</p>
 				</div>
 				<div className={styles.footer__block}>
-					<h4 className={styles.footer__heading}>Навигация</h4>
+					<h3 className={styles.footer__heading}>Навигация</h3>
 					<ul className={styles.footer__list}>
 						<li className={styles['footer__list-item']}>
 							<Link className={styles['footer__list-link']}>
@@ -47,7 +47,7 @@ const Footer = () => {
 					</ul>
 				</div>
 				<div className={styles.footer__block}>
-					<h4 className={styles.footer__heading}>Контакты</h4>
+					<h3 className={styles.footer__heading}>Контакты</h3>
 					<ul className={styles.footer__list}>
 						<li className={styles['footer__list-item']}>
 							<Link
@@ -73,7 +73,7 @@ const Footer = () => {
 					</ul>
 				</div>
 				<div className={styles.footer__block}>
-					<h4 className={styles.footer__heading}>Мы в соцсетях</h4>
+					<h3 className={styles.footer__heading}>Мы в соцсетях</h3>
 					<ul className={styles.footer__list}>
 						<li className={styles['footer__list-item']}>
 							<Link className={styles['footer__list-link']}>

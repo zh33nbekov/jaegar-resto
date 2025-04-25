@@ -12,9 +12,9 @@ const Product = memo((props) => {
 				src={props.imageURL}
 				className={styles.product__image}
 			/>
-			<h4 title={props.title} className={styles['product__title']}>
+			<h2 title={props.title} className={styles['product__title']}>
 				{props.title}
-			</h4>
+			</h2>
 			<p
 				title={props.description}
 				className={styles['product__description']}
@@ -25,6 +25,7 @@ const Product = memo((props) => {
 				от {props.price}&nbsp;сом
 			</span>
 			<button
+				aria-label='Add to cart'
 				onClick={() => props.onOpen(props.slug)}
 				className={`${styles['product__basket-btn']} btn`}
 			>
