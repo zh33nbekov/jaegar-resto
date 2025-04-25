@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Indicator } from '../UI/indicator/Indicator'
-import { InteractiveButton } from '../UI/interactive-button/InteractiveButton'
+import { Indicator } from '../UI'
+import { InteractiveButton } from '../UI'
 import styles from './pizza.module.css'
 import clsx from 'clsx'
 

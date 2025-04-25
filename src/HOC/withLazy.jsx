@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-import { Spinner } from '../components/UI/spinner/Spinner'
+import { Spinner } from '../components/UI'
 
 export const withLazy = (Component) => {
 	const WrappedWithSuspense = (props) => {

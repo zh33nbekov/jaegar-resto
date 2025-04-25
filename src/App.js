@@ -1,5 +1,5 @@
 import { lazy } from 'react'
-import { Progress } from './components/UI/progress/Progress'
+import { Progress } from './components/UI'
 import { withLazy } from './HOC/withLazy'
 import NavbarProvider from './providers/NavbarProvider'
 import AppRoutes from './routes/AppRoutes'
