@@ -77,7 +77,7 @@ const Products = () => {
 						category={category}
 						onOpen={handleOpen}
 						onClose={handleClose}
-						products={PRODUCT_LIST[index].products}
+						products={PRODUCT_LIST[index]?.products}
 					/>
 				))}
 			</section>
