@@ -15,5 +15,5 @@ export const useNavbar = () => {
 		navbarStore.showNavbar()
 	}
 
-	return { toggleNavbar }
+	return { handleClose, toggleNavbar }
 }

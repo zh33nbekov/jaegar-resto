@@ -22,7 +22,7 @@
 	flex-shrink: 0;
 	white-space: nowrap;
 }
-.header__button {
+.header__toggle {
 	width: 33px;
 	height: 20px;
 	display: flex;
@@ -39,7 +39,7 @@
 	}
 }
 @media (min-width: 656px) {
-	.header__button {
+	.header__toggle {
 		display: none;
 	}
 }

@@ -5,18 +5,24 @@ import { ShoppingCart } from '../../assets/icons/common/ShoppingCart'
 import { AppLogo } from '../../assets/icons/navbar'
 import { NAVBAR_LINKS } from '../../constants'
 import { NAVBAR_ROUTE_KEYS } from '../../constants/navbar'
+import { useNavbar } from '../../hooks/useNavbar'
 import { useSidebar } from '../../hooks/useSidebar'
 import { useBasketStore } from '../../store/basket'
 import { useNavbarStore } from '../../store/navbar'
 import { useSidebarStore } from '../../store/sidebar'
+import BurgerMenu from '../burger-menu/BurgerMenu'
 import styles from './navbar.module.css'
+import { useScrollLock } from '../../hooks/useScrollLock'
 
 const Navbar = () => {
+	const { handleClose } = useNavbar()
 	const navbarStore = useNavbarStore((state) => state)
 	const sidebarStore = useSidebarStore((state) => state)
 	const basketLength = useBasketStore((state) => state.items.length)
 	const { toggleSidebar } = useSidebar()
 	const navbarPosition = navbarStore.windowWidth > 655 ? 'sticky' : 'fixed'
+	const toggleButton = JSON.parse(localStorage.getItem('toggleButton') || '{}')
+	useScrollLock(navbarStore.open)
 
 	return (
 		<>
@@ -58,6 +64,18 @@ const Navbar = () => {
 					>
 						<span className='sr-only'>Корзина</span>
 						<ShoppingCart />
+					</button>
+					<button
+						onClick={() => handleClose()}
+						className={styles.navbar__toggle}
+						style={{
+							top: toggleButton.top,
+							left: toggleButton.left,
+							width: toggleButton.width,
+							height: toggleButton.height,
+						}}
+					>
+						<BurgerMenu isOpen={true} />
 					</button>
 				</nav>
 			) : null}

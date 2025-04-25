@@ -9,6 +9,7 @@ import styles from './header.module.css'
 const Header = () => {
 	const { toggleNavbar } = useNavbar()
 	const navbarStore = useNavbarStore((state) => state)
+	const ref = React.useRef(null)
 
 	return (
 		<header className={styles.header}>
@@ -18,8 +19,16 @@ const Header = () => {
 					<span className={styles.header__date}>{DATE_NOW}</span>
 				</div>
 				<button
-					onClick={() => toggleNavbar()}
-					className={styles.header__button}
+					onClick={() => {
+						toggleNavbar()
+						const toggleButtonStyles = ref.current.getBoundingClientRect()
+						window.localStorage.setItem(
+							'toggleButton',
+							JSON.stringify(toggleButtonStyles)
+						)
+					}}
+					className={styles.header__toggle}
+					ref={ref}
 				>
 					<BurgerMenu isOpen={navbarStore.open} />
 				</button>
