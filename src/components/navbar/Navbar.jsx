@@ -6,13 +6,13 @@ import { AppLogo } from '../../assets/icons/navbar'
 import { NAVBAR_LINKS } from '../../constants'
 import { NAVBAR_ROUTE_KEYS } from '../../constants/navbar'
 import { useNavbar } from '../../hooks/useNavbar'
+import { useScrollLock } from '../../hooks/useScrollLock'
 import { useSidebar } from '../../hooks/useSidebar'
 import { useBasketStore } from '../../store/basket'
 import { useNavbarStore } from '../../store/navbar'
 import { useSidebarStore } from '../../store/sidebar'
 import BurgerMenu from '../burger-menu/BurgerMenu'
 import styles from './navbar.module.css'
-import { useScrollLock } from '../../hooks/useScrollLock'
 
 const Navbar = () => {
 	const { handleClose } = useNavbar()

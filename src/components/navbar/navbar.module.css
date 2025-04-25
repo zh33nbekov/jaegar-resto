@@ -10,12 +10,12 @@
 	flex-direction: column;
 	justify-content: space-between;
 	border-radius: 0 10px 10px 0;
-	animation: slideIn 0.35s ease-in-out;
+	animation: slideIn 0.25s ease-in-out;
 	position: relative;
 	z-index: 49;
 }
 .navigation.closed {
-	animation: slideOut 0.35s ease-in-out forwards;
+	animation: slideOut 0.25s ease-in-out forwards;
 }
 .navigation__list {
 	display: flex;
@@ -130,36 +130,10 @@
 }
 @media (max-width: 655px) {
 	.navigation {
-		top: 0;
-		inset: 0;
 		width: 100vw;
 	}
-	/* .navigation {
-		animation: slideInMob 0.35s ease-in-out;
-		width: 100vw;
-		min-width: 100vw;
-	}
-	.navigation.closed {
-		animation: slideOutMob 0.35s ease-in-out forwards;
-	} */
 }
 @keyframes slideIn {
-	from {
-		opacity: 0;
-		transform: translateX(-100px);
-	}
-	to {
-		opacity: 1;
-		transform: translateX(0);
-	}
-}
-@keyframes slideOut {
-	to {
-		transform: translateX(-100px);
-		opacity: 0;
-	}
-}
-@keyframes slideInMob {
 	from {
 		opacity: 0;
 		transform: translateY(-100px);
@@ -169,7 +143,7 @@
 		transform: translateY(0);
 	}
 }
-@keyframes slideOutMob {
+@keyframes slideOut {
 	to {
 		transform: translateY(-100px);
 		opacity: 0;
