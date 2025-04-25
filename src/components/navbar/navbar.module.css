@@ -10,7 +10,6 @@
 	flex-direction: column;
 	justify-content: space-between;
 	border-radius: 0 10px 10px 0;
-	animation: slideIn 0.25s ease-in-out;
 	position: relative;
 	z-index: 49;
 }
@@ -130,6 +129,7 @@
 }
 @media (max-width: 655px) {
 	.navigation {
+		animation: slideIn 0.25s ease-in-out;
 		width: 100vw;
 	}
 }
