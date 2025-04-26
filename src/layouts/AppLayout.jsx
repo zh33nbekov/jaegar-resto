@@ -1,6 +1,7 @@
 import Footer from '../components/footer/Footer'
 import Header from '../components/header/Header'
 import Navbar from '../components/navbar/Navbar'
+import NavbarProvider from '../providers/NavbarProvider'
 
 const styles = {
 	width: '100%',
@@ -12,7 +13,9 @@ const AppLayout = ({ children }) => {
 	return (
 		<>
 			<div style={styles}>
-				<Navbar />
+				<NavbarProvider>
+					<Navbar />
+				</NavbarProvider>
 				<main className='wrapper'>
 					<Header />
 					{children}

@@ -8,7 +8,6 @@ import { NAVBAR_ROUTE_KEYS } from '../../constants/navbar'
 import { useNavbar } from '../../hooks/useNavbar'
 import { useScrollLock } from '../../hooks/useScrollLock'
 import { useSidebar } from '../../hooks/useSidebar'
-import NavbarProvider from '../../providers/NavbarProvider'
 import { useBasketStore } from '../../store/basket'
 import { useNavbarStore } from '../../store/navbar'
 import { useSidebarStore } from '../../store/sidebar'
@@ -26,7 +25,7 @@ const Navbar = () => {
 	useScrollLock(navbarStore.open)
 
 	return (
-		<NavbarProvider>
+		<>
 			{navbarStore.open || navbarStore.isVisible ? (
 				<nav
 					className={clsx(styles.navigation, {
@@ -80,7 +79,7 @@ const Navbar = () => {
 					</button>
 				</nav>
 			) : null}
-		</NavbarProvider>
+		</>
 	)
 }
 
