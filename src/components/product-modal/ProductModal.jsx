@@ -24,7 +24,7 @@ const ProductModal = ({ product, onAddToBasket, onClose, animate }) => {
 	}
 	const transferProductForBasket = () => {
 		const { isNew, options, slug, ...rest } = product
-		return { ...rest, options: selectedOption }
+		return { ...rest, price: finalPrice, options: selectedOption }
 	}
 	const isPizza = product.category === 'пиццы'
 	const isDrink = product.category === 'напитки'
