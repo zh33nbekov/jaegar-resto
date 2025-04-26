@@ -1,0 +1,34 @@
+/* .draggable {
+	width: 100px;
+	height: 100px;
+	background-color: #4caf50;
+	position: fixed;
+	cursor: grab;
+	user-select: none;
+	border-radius: 8px;
+	transition: box-shadow 0.2s ease;
+	z-index: 999;
+}
+
+.dragging {
+	cursor: grabbing;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+} */
+
+.draggable {
+	width: 120px;
+	height: 120px;
+	background-color: #ff5722;
+	position: absolute;
+	z-index: 999;
+	cursor: grab;
+	user-select: none;
+	touch-action: none;
+	transition: box-shadow 0.2s ease;
+	border-radius: 10px;
+}
+
+.dragging {
+	cursor: grabbing;
+	box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+}

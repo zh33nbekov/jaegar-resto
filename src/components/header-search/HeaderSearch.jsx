@@ -5,7 +5,7 @@ import styles from './header-search.module.css'
 export const HeaderSearch = memo((props) => {
 	const [searchTerm, setSearchTerm] = useState(() => {
 		const storageSearchTerm = localStorage.getItem('searchTerm')
-		return storageSearchTerm
+		return storageSearchTerm || ''
 	})
 	const searchRef = useRef(null)
 

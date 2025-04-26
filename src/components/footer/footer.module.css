@@ -45,17 +45,18 @@
 	font-size: 15px;
 	opacity: 0.8;
 	position: relative;
-	transition: opacity 0.25s ease-in-out;
+	transition: opacity 0.25s ease, transform 0.25s ease;
+	display: inline-block;
 }
 .footer__list-link::before {
 	content: '';
 	position: absolute;
-	bottom: -1.5px;
+	bottom: 5px;
 	left: 0;
 	width: 0;
 	height: 0.8px;
 	background-color: currentColor;
-	transition: width 0.25s ease-in-out;
+	transition: width 0.25s ease;
 }
 .footer__socials {
 	display: flex;
@@ -65,6 +66,7 @@
 @media (hover: hover) and (pointer: fine) {
 	.footer__list-link:hover {
 		opacity: 1;
+		transform: translateY(3px);
 	}
 	.footer__list-link:hover::before {
 		width: 100%;

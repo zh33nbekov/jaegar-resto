@@ -1,10 +1,11 @@
 import clsx from 'clsx'
 import { Link } from 'react-router-dom'
 import { AppLogo } from '../../assets/icons/navbar'
+import { useFooter } from '../../hooks/useFooter'
 import styles from './footer.module.css'
 
 const Footer = () => {
-	const fullYear = new Date().getFullYear()
+	const { FULL_YEAR } = useFooter()
 	return (
 		<footer className={clsx(styles.footer)}>
 			<div className={styles.footer__top}>
@@ -91,7 +92,7 @@ const Footer = () => {
 			<hr className={styles.footer__line} />
 			<div className={styles.footer__bottom}>
 				<p className={styles.footer__policy}>
-					© {fullYear} Jaegar Resto. <br /> Все права защищены.
+					© {FULL_YEAR} Jaegar Resto. <br /> Все права защищены.
 				</p>
 			</div>
 		</footer>

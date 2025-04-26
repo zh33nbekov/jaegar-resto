@@ -1,23 +1,20 @@
 import React, { useRef } from 'react'
+import { useHeader } from '../../hooks/useHeader'
 import { useNavbar } from '../../hooks/useNavbar'
 import { useNavbarStore } from '../../store/navbar'
-import { DATE_NOW } from '../../utils/header'
 import BurgerMenu from '../burger-menu/BurgerMenu'
 import { HeaderSearch } from '../header-search/HeaderSearch'
 import styles from './header.module.css'
 
 const Header = () => {
+	const { DATE_NOW } = useHeader()
 	const { toggleNavbar } = useNavbar()
 	const navbarStore = useNavbarStore((state) => state)
 	const ref = useRef(null)
-
-	const handleToggleClick = () => {
-		toggleNavbar()
-		const toggleButtonStyles = ref.current.getBoundingClientRect()
-		window.localStorage.setItem(
-			'toggleButton',
-			JSON.stringify(toggleButtonStyles)
-		)
+	const handleClick = () => {
+		import('../../utils/header').then((module) => {
+			module.handleToggleClick(ref, toggleNavbar)
+		})
 	}
 
 	return (
@@ -30,7 +27,7 @@ const Header = () => {
 				<button
 					ref={ref}
 					aria-label='menu-button'
-					onClick={handleToggleClick}
+					onClick={handleClick}
 					className={styles.header__toggle}
 				>
 					<BurgerMenu isOpen={navbarStore.open} />
