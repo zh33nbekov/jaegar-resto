@@ -1,3 +1,4 @@
+import { BasketButton } from '../components/basket-button/BasketButton'
 import Footer from '../components/footer/Footer'
 import Header from '../components/header/Header'
 import Navbar from '../components/navbar/Navbar'
@@ -20,6 +21,7 @@ const AppLayout = ({ children }) => {
 					<Header />
 					{children}
 					<Footer />
+					<BasketButton />
 				</main>
 			</div>
 		</>

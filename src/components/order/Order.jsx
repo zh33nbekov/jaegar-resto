@@ -7,12 +7,12 @@ const Order = (props) => {
 			<div className={styles.order__header}>
 				<div className={styles['order__header-summary']}>
 					<img
-						src={props.imageURL}
 						alt={props.title}
+						src={props.imageURL}
 						className={styles.order__image}
 					/>
 					<div className={styles.order__summary}>
-						<p className={styles.order__title} title={props.title}>
+						<p title={props.title} className={styles.order__title}>
 							{props.title}
 						</p>
 						<span className={styles.order__price}>
@@ -21,11 +21,11 @@ const Order = (props) => {
 					</div>
 				</div>
 				<input
-					type='number'
-					defaultValue={1}
 					min={1}
 					max={10}
-					onKeyDown={props.onKeyDown}
+					type='number'
+					id={props.price}
+					defaultValue={1}
 					className={styles.order__quantity}
 				/>
 				<span className={styles['order__total-price']}>
@@ -34,8 +34,9 @@ const Order = (props) => {
 			</div>
 			<div className={styles.order__footer}>
 				<input
-					className={styles.order__message}
 					type='text'
+					id={props.title}
+					className={styles.order__message}
 					placeholder='Примечание к заказу...'
 				/>
 				<button

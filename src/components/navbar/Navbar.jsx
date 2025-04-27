@@ -1,5 +1,4 @@
 import clsx from 'clsx'
-
 import { NavLink } from 'react-router-dom'
 import { ShoppingCart } from '../../assets/icons/common/ShoppingCart'
 import { AppLogo } from '../../assets/icons/navbar'
@@ -58,7 +57,7 @@ const Navbar = () => {
 					<button
 						onClick={toggleSidebar}
 						data-count={basketLength}
-						className={clsx(styles.basketButton, {
+						className={clsx(styles['basket-button'], {
 							[styles.active]: sidebarStore.open,
 						})}
 					>

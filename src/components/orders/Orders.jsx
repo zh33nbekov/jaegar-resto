@@ -18,11 +18,6 @@ const Orders = () => {
 	const sidebarStore = useSidebarStore()
 	const basket = useBasketStore((state) => state.items)
 	const removeFromBasket = useBasketStore((state) => state.removeFromBasket)
-	const handleKeyDown = (event) => {
-		if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown') {
-			event.preventDefault()
-		}
-	}
 	const handleDelete = (title) => {
 		removeFromBasket(title)
 	}
@@ -62,7 +57,6 @@ const Orders = () => {
 								onDelete={handleDelete}
 								imageURL={elem.imageURL}
 								category={elem.category}
-								onKeyDown={handleKeyDown}
 								description={elem.description}
 							/>
 						))}

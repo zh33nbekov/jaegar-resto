@@ -18,6 +18,7 @@ export const HeaderSearch = memo((props) => {
 				type='search'
 				ref={searchRef}
 				value={searchTerm}
+				id='search-products'
 				placeholder={props.placeholder}
 				className={styles.search__input}
 				onChange={(e) => {

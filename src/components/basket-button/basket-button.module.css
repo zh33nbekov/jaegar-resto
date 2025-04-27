@@ -1,0 +1,49 @@
+.basket-button {
+	position: fixed;
+	right: 25px;
+	bottom: 25px;
+	width: 44px;
+	height: 44px;
+	color: #eb786a;
+	display: flex;
+	border-radius: 50%;
+	align-items: center;
+	justify-content: center;
+	background-color: #e7e7e7;
+	box-shadow: 0 0 11px #000;
+	transition: color 0.25s ease-in-out;
+}
+.basket-button svg {
+	fill: currentColor;
+	width: 63%;
+	height: 63%;
+}
+.basket-button::before {
+	content: attr(data-order-count);
+	position: absolute;
+	top: -3px;
+	right: -5px;
+	color: #ea7c69;
+	width: 18.3px;
+	font-weight: bold;
+	height: 18.3px;
+	border-radius: 50%;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 12.3px;
+	transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+}
+.basket-button.active {
+	color: #fff;
+}
+.basket-button.active::before {
+	color: #fff;
+	background-color: #ea7c69;
+}
+@media (min-width: 656px) {
+	.basket-button {
+		display: none;
+	}
+}

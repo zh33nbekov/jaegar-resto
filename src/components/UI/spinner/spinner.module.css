@@ -9,6 +9,8 @@
 	width: 100%;
 	height: 100%;
 	background-color: #23273291;
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
 }
 .spinner {
 	width: clamp(34px, 31.1px + 0.89vw, 44px);
