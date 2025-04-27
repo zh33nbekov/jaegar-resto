@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import React, { memo } from 'react'
+import { memo } from 'react'
 import { ShoppingCart } from '../../assets/icons/common/ShoppingCart'
 import styles from './product.module.css'
 

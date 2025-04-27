@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import React, { memo } from 'react'
+import { memo } from 'react'
 import { useCategoryStore } from '../../store/product-category'
 import styles from './product-categories.module.css'
 

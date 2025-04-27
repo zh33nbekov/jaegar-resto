@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './other.module.css'
 
 export const Other = (props) => {

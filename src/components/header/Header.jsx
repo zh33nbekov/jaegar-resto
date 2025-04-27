@@ -1,20 +1,27 @@
-import React, { useRef } from 'react'
+import { memo, useRef } from 'react'
 import { useHeader } from '../../hooks/useHeader'
+import { useLazyImport } from '../../hooks/useLazyImport'
 import { useNavbar } from '../../hooks/useNavbar'
 import { useNavbarStore } from '../../store/navbar'
 import BurgerMenu from '../burger-menu/BurgerMenu'
 import { HeaderSearch } from '../header-search/HeaderSearch'
 import styles from './header.module.css'
 
-const Header = () => {
+const Header = memo(() => {
+	const loadHeaderUtils = useLazyImport(() =>
+		import(/* webpackChunkName: "toggle-header" */ '../../async/header')
+	)
 	const { DATE_NOW } = useHeader()
 	const { toggleNavbar } = useNavbar()
-	const navbarStore = useNavbarStore((state) => state)
+	const navbarOpen = useNavbarStore((state) => state.open)
 	const ref = useRef(null)
-	const handleClick = () => {
-		import('../../utils/header').then((module) => {
-			module.handleToggleClick(ref, toggleNavbar)
-		})
+	const handleClick = async () => {
+		try {
+			const { handleToggleClick } = await loadHeaderUtils()
+			handleToggleClick(ref, toggleNavbar)
+		} catch (error) {
+			console.error('Ошибка загрузки модуля:', error)
+		}
 	}
 
 	return (
@@ -30,11 +37,13 @@ const Header = () => {
 					onClick={handleClick}
 					className={styles.header__toggle}
 				>
-					<BurgerMenu isOpen={navbarStore.open} />
+					<BurgerMenu isOpen={navbarOpen} />
 				</button>
 			</div>
 			<HeaderSearch placeholder='Ищите еду, кофе и так далее...' />
 		</header>
 	)
-}
+})
+
+Header.displayName = 'Header'
 export default Header

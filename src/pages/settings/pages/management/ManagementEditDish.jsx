@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import styles from './ManagementEditDish.module.css';
 
 const ManagementEditDish = ({ data, onChange, onSave }) => {

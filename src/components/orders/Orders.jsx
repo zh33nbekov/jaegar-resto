@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import { useCallback, useState } from 'react'
 import { Close } from '../../assets/icons/common/Close'
 import { useSidebar } from '../../hooks/useSidebar'
 import { useBasketStore } from '../../store/basket'

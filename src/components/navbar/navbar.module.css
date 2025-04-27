@@ -115,22 +115,11 @@
 		display: none;
 	}
 }
-@media (max-width: 800px) {
-	.navigation {
-		width: 70px;
-	}
-	.navigation__item:not(:first-child) .navigation__link {
-		padding: 10px;
-	}
-	button.navigation__link::before {
-		top: -1px;
-		right: -1px;
-	}
-}
 @media (max-width: 655px) {
 	.navigation {
 		animation: slideIn 0.25s ease-in-out;
 		width: 100vw;
+		border-radius: 0;
 	}
 }
 @keyframes slideIn {

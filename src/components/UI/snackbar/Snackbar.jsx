@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import React from 'react'
+
 import { createPortal } from 'react-dom'
 import { Close } from '../../../assets/icons/common/Close'
 import styles from './snackbar.module.css'

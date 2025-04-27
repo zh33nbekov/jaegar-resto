@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import EditIcon from '../../../../assets/icons/edit.svg';
 import styles from './ManagementDishCard.module.css';
 

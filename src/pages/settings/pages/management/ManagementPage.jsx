@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Helmet } from 'react-helmet'
 import OptionIcon from '../../../../assets/icons/option.svg'
 import PlusIcon from '../../../../assets/icons/plus.svg'

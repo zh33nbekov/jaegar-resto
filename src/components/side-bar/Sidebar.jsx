@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './sidebar.module.css'
 
 export const Sidebar = ({ open, children, animationClass }) => {

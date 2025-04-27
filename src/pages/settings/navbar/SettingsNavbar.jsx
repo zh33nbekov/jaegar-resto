@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import React from 'react'
+
 import { NavLink } from 'react-router-dom'
 import { SETTINGS_NAVBAR_LINKS } from '../../../constants/navbar'
 import styles from './SettingsNavbar.module.css'

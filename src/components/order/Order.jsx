@@ -1,4 +1,3 @@
-import React from 'react'
 import { Delete } from '../../assets/icons/common/Delete'
 import styles from './order.module.css'
 
