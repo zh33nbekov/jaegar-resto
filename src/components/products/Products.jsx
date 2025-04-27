@@ -14,7 +14,11 @@ import ProductCategories from '../product-categories/ProductCategories'
 import ProductsList from '../products-list/ProductsList'
 import { Snackbar } from '../UI'
 
-const LazyProductModal = lazy(() => import('../product-modal/ProductModal'))
+const LazyProductModal = lazy(() =>
+	import(
+		/* webpackChunkName: "product-modal" */ '../product-modal/ProductModal'
+	)
+)
 const ProductModal = withLazy(LazyProductModal)
 
 const Products = () => {

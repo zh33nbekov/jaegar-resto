@@ -4,7 +4,9 @@ import { withLazy } from './HOC/withLazy'
 import AppRoutes from './routes/AppRoutes'
 import { useSidebarStore } from './store/sidebar'
 
-const LazyOrders = lazy(() => import('./components/orders/Orders'))
+const LazyOrders = lazy(() =>
+	import(/* webpackChunkName: "orders" */ './components/orders/Orders')
+)
 const Orders = withLazy(LazyOrders)
 
 const App = () => {
