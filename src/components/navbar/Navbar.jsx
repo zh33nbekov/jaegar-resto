@@ -65,14 +65,9 @@ const Navbar = () => {
 						<ShoppingCart />
 					</button>
 					<button
+						style={{ ...toggleButton }}
 						onClick={() => handleClose()}
 						className={styles.navbar__toggle}
-						style={{
-							top: toggleButton.top,
-							left: toggleButton.left,
-							width: toggleButton.width,
-							height: toggleButton.height,
-						}}
 					>
 						<BurgerMenu isOpen={true} />
 					</button>
