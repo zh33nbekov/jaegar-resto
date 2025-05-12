@@ -1,5 +1,5 @@
 import { lazy } from 'react'
-import { Progress } from './components/UI'
+import { Progress } from './components/UI/progress/Progress'
 import { withLazy } from './HOC/withLazy'
 import AppRoutes from './routes/AppRoutes'
 import { useSidebarStore } from './store/sidebar'

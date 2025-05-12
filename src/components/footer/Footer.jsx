@@ -1,8 +1,8 @@
 import clsx from 'clsx'
 import { Link } from 'react-router-dom'
-import { AppLogo } from '../../assets/icons/navbar'
 import { useFooter } from '../../hooks/useFooter'
 import styles from './footer.module.css'
+import { AppLogo } from '../../assets/icons/navbar/AppLogo'
 
 const Footer = () => {
 	const { FULL_YEAR } = useFooter()

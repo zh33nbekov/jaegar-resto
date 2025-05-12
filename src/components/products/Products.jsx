@@ -12,7 +12,7 @@ import { useBasketStore } from '../../store/basket'
 import { toSlug } from '../../utils/products'
 import ProductCategories from '../product-categories/ProductCategories'
 import ProductsList from '../products-list/ProductsList'
-import { Snackbar } from '../UI'
+import { Snackbar } from '../UI/snackbar/Snackbar'
 
 const LazyProductModal = lazy(() =>
 	import(

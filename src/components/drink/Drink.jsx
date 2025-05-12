@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Indicator } from '../UI'
-import { InteractiveButton } from '../UI'
+import { Indicator } from '../UI/indicator/Indicator'
+import { InteractiveButton } from '../UI/interactive-button/InteractiveButton'
 import styles from './drink.module.css'
 
 export const Drink = ({ volumes, onChangeVolume, selectedVolume, title }) => {

@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { memo, useEffect, useState } from 'react'
-import { Indicator } from '../UI'
-import { InteractiveButton } from '../UI'
+import { Indicator } from '../UI/indicator/Indicator'
+import { InteractiveButton } from '../UI/interactive-button/InteractiveButton'
 import styles from './order-types.module.css'
 
 const ORDER_TYPE_OPTIONS = [{ title: 'У нас' }, { title: 'У себя' }]

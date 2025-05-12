@@ -1,19 +1,15 @@
-import {
-	Dashboard,
-	Discount,
-	Home,
-	Message,
-	Notification,
-	Settings,
-} from '../../assets/icons/navbar'
-import {
-	AboutUs,
-	Heart,
-	Management,
-	Notifications,
-	Restaurant,
-	Security,
-} from '../../assets/icons/navigation'
+import { Dashboard } from '../../assets/icons/navbar/Dashboard'
+import { Discount } from '../../assets/icons/navbar/Discount'
+import { Home } from '../../assets/icons/navbar/Home'
+import { Message } from '../../assets/icons/navbar/Message'
+import { Notification } from '../../assets/icons/navbar/Notification'
+import { Settings } from '../../assets/icons/navbar/Settings'
+import { AboutUs } from '../../assets/icons/navigation/AboutUs'
+import { Heart } from '../../assets/icons/navigation/Heart'
+import { Management } from '../../assets/icons/navigation/Management'
+import { Notifications } from '../../assets/icons/navigation/Notifications'
+import { Restaurant } from '../../assets/icons/navigation/Restaurant'
+import { Security } from '../../assets/icons/navigation/Security'
 
 export const NAVBAR_ROUTE_KEYS = {
 	HOME: '/',

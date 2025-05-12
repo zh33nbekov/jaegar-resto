@@ -1,6 +1,0 @@
-export { AboutUs } from './AboutUs'
-export { Heart } from './Heart'
-export { Management } from './Management'
-export { Notifications } from './Notifications'
-export { Restaurant } from './Restaurant'
-export { Security } from './Security'

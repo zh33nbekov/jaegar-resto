@@ -1,9 +1,7 @@
 import clsx from 'clsx'
 import { NavLink } from 'react-router-dom'
-import { ShoppingCart } from '../../assets/icons/common/ShoppingCart'
-import { AppLogo } from '../../assets/icons/navbar'
-import { NAVBAR_LINKS } from '../../constants'
-import { NAVBAR_ROUTE_KEYS } from '../../constants/navbar'
+import { AppLogo } from '../../assets/icons/navbar/AppLogo'
+import { NAVBAR_LINKS, NAVBAR_ROUTE_KEYS } from '../../constants/navbar'
 import { useNavbar } from '../../hooks/useNavbar'
 import { useScrollLock } from '../../hooks/useScrollLock'
 import { useSidebar } from '../../hooks/useSidebar'
@@ -12,6 +10,7 @@ import { useNavbarStore } from '../../store/navbar'
 import { useSidebarStore } from '../../store/sidebar'
 import BurgerMenu from '../burger-menu/BurgerMenu'
 import styles from './navbar.module.css'
+import { ShoppingCart } from '../../assets/icons/common/ShoppingCart'
 
 const Navbar = () => {
 	const { handleClose } = useNavbar()

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import { Indicator, InteractiveButton } from '../UI'
 import styles from './pizza.module.css'
+import { InteractiveButton } from '../UI/interactive-button/InteractiveButton'
+import { Indicator } from '../UI/indicator/Indicator'
 
 export const Pizza = (props) => {
 	const [active, setActive] = useState(0)

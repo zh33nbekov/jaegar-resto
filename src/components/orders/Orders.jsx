@@ -8,7 +8,7 @@ import OrderTypes from '../order-types/OrderTypes'
 import Order from '../order/Order'
 import { OrdersEmpty } from '../orders-empty/OrdersEmpty'
 import { Sidebar } from '../side-bar/Sidebar'
-import { Backdrop } from '../UI'
+import { Backdrop } from '../UI/backdrop/Backdrop'
 import styles from './orders.module.css'
 
 const Orders = () => {

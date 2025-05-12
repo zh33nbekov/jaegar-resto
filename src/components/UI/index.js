@@ -1,7 +1,0 @@
-export { Backdrop } from './backdrop/Backdrop'
-export { Indicator } from './indicator/Indicator'
-export { InteractiveButton } from './interactive-button/InteractiveButton'
-export { Modal } from './modal/Modal'
-export { Progress } from './progress/Progress'
-export { Snackbar } from './snackbar/Snackbar'
-export { Spinner } from './spinner/Spinner'
