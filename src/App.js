@@ -10,7 +10,6 @@ const LazyOrders = lazy(() =>
 const Orders = withLazy(LazyOrders)
 
 const App = () => {
-	console.log(window)
 	const sidebarStore = useSidebarStore()
 	return (
 		<>
